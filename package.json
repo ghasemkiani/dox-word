@@ -1,14 +1,14 @@
 {
-  "name": "@ghasemkiani/doxword",
-  "version": "1.0.0",
-  "description": "DOX Components for Word",
+  "name": "@ghasemkiani/dox-word",
+  "version": "1.0.1",
+  "description": "DOX components for Word",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ghasemkiani/doxword.git"
+    "url": "git+https://gitlab.com/ghasemkiani/dox-word.git"
   },
   "keywords": [
     "javascript",
@@ -21,14 +21,15 @@
   "author": "Ghasem Kiani",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/ghasemkiani/doxword/issues"
+    "url": "https://gitlab.com/ghasemkiani/dox-word/issues"
   },
-  "homepage": "https://gitlab.com/ghasemkiani/doxword#readme",
+  "homepage": "https://gitlab.com/ghasemkiani/dox-word#readme",
   "devDependencies": {
     "mocha": "^6.1.4"
   },
   "dependencies": {
-    "@ghasemkiani/commonbase": "github:ghasemkiani/commonbase",
+    "@ghasemkiani/base": "github:ghasemkiani/base",
+    "@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
     "@ghasemkiani/dox": "gitlab:ghasemkiani/dox"
   }
 }

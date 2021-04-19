@@ -1,7 +1,7 @@
 //	@ghasemkiani/doxword/section
 
-const {cutil} = require("@ghasemkiani/commonbase/cutil");
-const {quantity} = require("@ghasemkiani/commonbase/util/quantity");
+const {cutil} = require("@ghasemkiani/base/cutil");
+const {quantity} = require("@ghasemkiani/base-utils/quantity");
 const {Stylesheet} = require("@ghasemkiani/wdom/css/stylesheet");
 const {Component} = require("@ghasemkiani/dox/component");
 
