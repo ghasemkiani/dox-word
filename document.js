@@ -1,29 +1,18 @@
-//	@ghasemkiani/dox-word/section
+//	@ghasemkiani/dox-word/document
 
 const {cutil} = require("@ghasemkiani/base/cutil");
 const {quantity} = require("@ghasemkiani/base-utils/quantity");
 const {Stylesheet} = require("@ghasemkiani/wdom/css/stylesheet");
 const {Component} = require("@ghasemkiani/dox/component");
 
-class Section extends Component {
+class Document extends Component {
 	static count = 0;
 	render(wnode) {
 		let component = this;
+		let {context} = component;
+		let {renderer} = context;
 		
-		let size = component.wnode.attr("size") || "A4";
-		if(/A4/i.test(size)) {
-			size = "210mm 297mm";
-		} else if(/A5/i.test(size)) {
-			size = "148mm 210mm";
-		}
-		
-		let width = component.wnode.attr("width");
-		let height = component.wnode.attr("height");
-		if(!cutil.isNil(width) && !cutil.isNil(height)) {
-			width = quantity.length({space: false}).u("px").s(width).s();
-			height = quantity.length({space: false}).u("px").s(height).s();
-			size = `${width} ${height}`;
-		}
+		let tab = component.wnode.attr("tab") || "0.5in";
 		
 		let margin = component.wnode.attr("margin") || "25mm 20mm 20mm 20mm";
 		let marginHeader = component.wnode.attr("marginHeader") || "10mm";
@@ -57,4 +46,4 @@ class Section extends Component {
 	}
 }
 
-module.exports = {Section};
+module.exports = {Document};
