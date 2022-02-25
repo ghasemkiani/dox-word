@@ -2,6 +2,6 @@
 
 const {Section} = require("@ghasemkiani/doxword/section");
 
-module.exports = {
+export {
 	Section,
 };

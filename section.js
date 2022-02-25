@@ -1,9 +1,10 @@
 //	@ghasemkiani/dox-word/section
 
-const {cutil} = require("@ghasemkiani/base/cutil");
-const {quantity} = require("@ghasemkiani/base-utils/quantity");
-const {Stylesheet} = require("@ghasemkiani/wdom/css/stylesheet");
-const {Component} = require("@ghasemkiani/dox/component");
+import {cutil} from "@ghasemkiani/base";
+import {quantity} from "@ghasemkiani/base-utils";
+import {css} from "@ghasemkiani/wdom";
+const {Stylesheet} = css;
+import {Component} from "@ghasemkiani/dox";
 
 class Section extends Component {
 	static count = 0;
@@ -57,4 +58,4 @@ class Section extends Component {
 	}
 }
 
-module.exports = {Section};
+export {Section};
