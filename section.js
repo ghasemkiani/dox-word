@@ -8,7 +8,7 @@ import {Component} from "@ghasemkiani/dox";
 
 class Section extends Component {
 	static count = 0;
-	render(wnode) {
+	async toRender(wnode) {
 		let component = this;
 		
 		let size = component.wnode.attr("size") || "A4";
@@ -52,9 +52,11 @@ class Section extends Component {
 				});
 			}).string);
 		});
+		let wn;
 		wnode.ch(`div.${cls}`, wnode => {
-			component.renderBody(wnode);
+			wn = wnode;
 		});
+		await component.toRenderBody(wn);
 	}
 }
 

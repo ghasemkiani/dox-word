@@ -8,7 +8,7 @@ import {Component} from "@ghasemkiani/dox";
 
 class Document extends Component {
 	static count = 0;
-	render(wnode) {
+	async toRender(wnode) {
 		let component = this;
 		let {context} = component;
 		let {renderer} = context;
@@ -41,9 +41,11 @@ class Document extends Component {
 				});
 			}).string);
 		});
+		let wn;
 		wnode.ch(`div.${cls}`, wnode => {
-			component.renderBody(wnode);
+			wn = wnode;
 		});
+		await component.toRenderBody(wn);
 	}
 }
 
