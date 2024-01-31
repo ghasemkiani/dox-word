@@ -1,35 +1,33 @@
 {
-  "name": "@ghasemkiani/dox-word",
-  "version": "1.0.1",
-  "description": "DOX components for Word",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/ghasemkiani/dox-word.git"
-  },
-  "keywords": [
-    "javascript",
-    "nodejs",
-    "dox",
-    "document",
-    "processor",
-    "component"
-  ],
-  "author": "Ghasem Kiani",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://gitlab.com/ghasemkiani/dox-word/issues"
-  },
-  "homepage": "https://gitlab.com/ghasemkiani/dox-word#readme",
-  "devDependencies": {
-    "mocha": "^6.1.4"
-  },
-  "dependencies": {
-    "@ghasemkiani/base": "github:ghasemkiani/base",
-    "@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
-    "@ghasemkiani/dox": "gitlab:ghasemkiani/dox"
-  }
+	"name": "@ghasemkiani/dox-word",
+	"version": "1.0.2",
+	"description": "DOX components for Word",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "node --test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://gitlab.com/ghasemkiani/dox-word.git"
+	},
+	"keywords": [
+		"javascript",
+		"nodejs",
+		"dox",
+		"document",
+		"processor",
+		"component"
+	],
+	"author": "Ghasem Kiani",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://gitlab.com/ghasemkiani/dox-word/issues"
+	},
+	"homepage": "https://gitlab.com/ghasemkiani/dox-word#readme",
+	"dependencies": {
+		"@ghasemkiani/base": "github:ghasemkiani/base",
+		"@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
+		"@ghasemkiani/dox": "github:ghasemkiani/dox"
+	}
 }

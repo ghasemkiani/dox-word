@@ -1,32 +1,29 @@
-//	@ghasemkiani/dox-word/document
-
 import {cutil} from "@ghasemkiani/base";
 import {quantity} from "@ghasemkiani/base-utils";
-import {css} from "@ghasemkiani/wdom";
-const {Stylesheet} = css;
 import {Component} from "@ghasemkiani/dox";
 
+import {Section} from "./section.js";
+
 class Document extends Component {
-	static count = 0;
-	async toRender(wnode) {
+	async toRender(node) {
 		let component = this;
+		let {x} = component;
 		let {context} = component;
-		let {renderer} = context;
 		
-		let tab = component.wnode.attr("tab") || "0.5in";
+		let tab = x.attr(component.node, "tab") || "0.5in";
 		
-		let margin = component.wnode.attr("margin") || "25mm 20mm 20mm 20mm";
-		let marginHeader = component.wnode.attr("marginHeader") || "10mm";
-		let marginFooter = component.wnode.attr("marginFooter") || "10mm";
-		let dir = component.wnode.attr("dir") || "ltr";
-		let facingPages = component.wnode.attr("facingPages") || "yes";
-		let titlePage = component.wnode.attr("titlePage") || "yes";
+		let margin = x.attr(component.node, "margin") || "25mm 20mm 20mm 20mm";
+		let marginHeader = x.attr(component.node, "marginHeader") || "10mm";
+		let marginFooter = x.attr(component.node, "marginFooter") || "10mm";
+		let dir = x.attr(component.node, "dir") || "ltr";
+		let facingPages = x.attr(component.node, "facingPages") || "yes";
+		let titlePage = x.attr(component.node, "titlePage") || "yes";
 		
 		Section.count++;
 		let page = `page${(Section.count).toFixed(0).padStart(3, "0")}`;
 		let cls = `section${(Section.count).toFixed(0).padStart(3, "0")}`;
-		wnode.ch("style", wnode => {
-			wnode.t(new Stylesheet().chain(ss => {
+		x.ch(node, "style", node => {
+			x.t(node, x.ss(ss => {
 				ss.rule(`@page ${page}`, {
 					"size": size,
 					"margin": margin,
@@ -41,11 +38,11 @@ class Document extends Component {
 				});
 			}).string);
 		});
-		let wn;
-		wnode.ch(`div.${cls}`, wnode => {
-			wn = wnode;
+		let node1;
+		x.ch(node, `div.${cls}`, node => {
+			node1 = node;
 		});
-		await component.toRenderBody(wn);
+		await component.toRenderBody(node1);
 	}
 }
 

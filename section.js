@@ -1,43 +1,46 @@
-//	@ghasemkiani/dox-word/section
-
 import {cutil} from "@ghasemkiani/base";
 import {quantity} from "@ghasemkiani/base-utils";
-import {css} from "@ghasemkiani/wdom";
-const {Stylesheet} = css;
 import {Component} from "@ghasemkiani/dox";
 
 class Section extends Component {
-	static count = 0;
-	async toRender(wnode) {
+	static {
+		cutil.extend(this, {
+			count: 0,
+		});
+		cutil.extend(this.prototype, {
+			//
+		});
+	}
+	async toRender(node) {
 		let component = this;
 		
-		let size = component.wnode.attr("size") || "A4";
+		let size = x.attr(component.node, "size") || "A4";
 		if(/A4/i.test(size)) {
 			size = "210mm 297mm";
 		} else if(/A5/i.test(size)) {
 			size = "148mm 210mm";
 		}
 		
-		let width = component.wnode.attr("width");
-		let height = component.wnode.attr("height");
-		if(!cutil.isNil(width) && !cutil.isNil(height)) {
+		let width = x.attr(component.node, "width");
+		let height = x.attr(component.node, "height");
+		if(cutil.a(width) && cutil.a(height)) {
 			width = quantity.length({space: false}).u("px").s(width).s();
 			height = quantity.length({space: false}).u("px").s(height).s();
 			size = `${width} ${height}`;
 		}
 		
-		let margin = component.wnode.attr("margin") || "25mm 20mm 20mm 20mm";
-		let marginHeader = component.wnode.attr("marginHeader") || "10mm";
-		let marginFooter = component.wnode.attr("marginFooter") || "10mm";
-		let dir = component.wnode.attr("dir") || "ltr";
-		let facingPages = component.wnode.attr("facingPages") || "yes";
-		let titlePage = component.wnode.attr("titlePage") || "yes";
+		let margin = x.attr(component.node, "margin") || "25mm 20mm 20mm 20mm";
+		let marginHeader = x.attr(component.node, "marginHeader") || "10mm";
+		let marginFooter = x.attr(component.node, "marginFooter") || "10mm";
+		let dir = x.attr(component.node, "dir") || "ltr";
+		let facingPages = x.attr(component.node, "facingPages") || "yes";
+		let titlePage = x.attr(component.node, "titlePage") || "yes";
 		
 		Section.count++;
 		let page = `page${(Section.count).toFixed(0).padStart(3, "0")}`;
 		let cls = `section${(Section.count).toFixed(0).padStart(3, "0")}`;
-		wnode.ch("style", wnode => {
-			wnode.t(new Stylesheet().chain(ss => {
+		x.ch(node, "style", node => {
+			node.t(x.ss(ss => {
 				ss.rule(`@page ${page}`, {
 					"size": size,
 					"margin": margin,
@@ -52,11 +55,11 @@ class Section extends Component {
 				});
 			}).string);
 		});
-		let wn;
-		wnode.ch(`div.${cls}`, wnode => {
-			wn = wnode;
+		let node1;
+		x.ch(node, `div.${cls}`, node => {
+			node1 = node;
 		});
-		await component.toRenderBody(wn);
+		await component.toRenderBody(node1);
 	}
 }
 
