@@ -2611,30 +2611,16 @@
 		<p class="MsoHeader" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
 	</div>
 	<div style="mso-element:footer" id="ef2">
-		<p class="MsoFooter" dir="RTL"><!--[if supportFields]><span lang=FA><span
-style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span
-dir=LTR>page</span><span dir=RTL></span><span dir=RTL></span> <span lang=FA><span
-style='mso-element:field-separator'></span></span><![endif]--><span lang="FA">4</span><!--[if supportFields]><span
-lang=FA><span style='mso-element:field-end'></span></span><![endif]--></p>
+		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA">4</span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
 	</div>
 	<div style="mso-element:footer" id="f2">
-		<p class="MsoFooter" dir="RTL"><!--[if supportFields]><span lang=FA><span
-style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span
-dir=LTR>page</span><span dir=RTL></span><span dir=RTL></span> <span lang=FA><span
-style='mso-element:field-separator'></span></span><![endif]--><span lang="FA">4</span><!--[if supportFields]><span
-lang=FA><span style='mso-element:field-end'></span></span><![endif]--></p>
+		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA">4</span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
 	</div>
 	<div style="mso-element:header" id="fh2">
-		<p class="MsoHeader" dir="RTL"><span dir="LTR">
-				<o:p> </o:p>
-			</span></p>
+		<p class="MsoHeader" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
 	</div>
 	<div style="mso-element:footer" id="ff2">
-		<p class="MsoFooter" dir="RTL"><!--[if supportFields]><span lang=FA><span
-style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span
-dir=LTR>page</span><span dir=RTL></span><span dir=RTL></span> <span lang=FA><span
-style='mso-element:field-separator'></span></span><![endif]--><span lang="FA"><span style="mso-no-proof:yes">7</span></span><!--[if supportFields]><span lang=FA><span
-style='mso-element:field-end'></span></span><![endif]--></p>
+		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA"><span style="mso-no-proof:yes">7</span></span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
 	</div>
 </body>
 
