@@ -1,6 +1,6 @@
 {
 	"name": "@ghasemkiani/dox-word",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "DOX components for Word",
 	"type": "module",
 	"main": "index.js",
@@ -28,6 +28,8 @@
 	"dependencies": {
 		"@ghasemkiani/base": "github:ghasemkiani/base",
 		"@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
-		"@ghasemkiani/dox": "github:ghasemkiani/dox"
+		"@ghasemkiani/dox": "github:ghasemkiani/dox",
+		"@ghasemkiani/dox-base": "github:ghasemkiani/dox-base",
+		"@ghasemkiani/dox-cmn": "github:ghasemkiani/dox-cmn"
 	}
 }

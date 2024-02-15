@@ -1,7 +1,2 @@
-//	@ghasemkiani/doxword
-
-const {Section} = require("@ghasemkiani/doxword/section");
-
-export {
-	Section,
-};
+export * from "./document.js";
+export * from "./section.js";
