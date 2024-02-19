@@ -1,7 +1,5 @@
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
-	<cmn:script>
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><cmn:script>
 		let nresult = renderer.x.dfrag();
 		await context.templateComponent.toRenderBody(nresult);
-		context.parent.nresult = nresult;
-	</cmn:script>
-</cmn:g>
+		context.templateComponent.context.parent.nresult = nresult;
+	</cmn:script></cmn:g>

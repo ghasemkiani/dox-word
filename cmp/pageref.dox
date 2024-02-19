@@ -1,0 +1,15 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<b:body dummy="{context.templateComponentPageRef = context.templateComponent}" component="{context.templateComponentPageRef}"/>
+	<wrd:field>
+		<wrd:code>pageref</wrd:code>
+		<b:if cond="{!context.templateComponentPageRef.props.dontLink}">
+			<span> </span>
+			<span dir="ltr">\h</span>
+			<span> </span>
+			<span dir="ltr">
+				<b:out text="{context.templateComponentPageRef.props.bookmark}"/>
+			</span>
+		</b:if>
+		<wrd:result>*</wrd:result>
+	</wrd:field>
+</cmn:g>
