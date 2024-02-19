@@ -1,0 +1,7 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		let ncode = renderer.x.dfrag();
+		await context.templateComponent.toRenderBody(ncode);
+		context.parent.ncode = ncode;
+	</cmn:script>
+</cmn:g>

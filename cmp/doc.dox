@@ -3,10 +3,10 @@
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="ProgId" content="Word.Document" />
-	<meta name="Generator" content="Microsoft Word 15" />
-	<meta name="Originator" content="Microsoft Word 15" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+	<meta name="ProgId" content="Word.Document"  />
+	<meta name="Generator" content="Microsoft Word 15"  />
+	<meta name="Originator" content="Microsoft Word 15"  />
 	<title>رویان</title>
 	<xml>
 		<o:DocumentProperties>
@@ -26,44 +26,44 @@
 			<o:Version>16.00</o:Version>
 		</o:DocumentProperties>
 		<o:OfficeDocumentSettings>
-			<o:AllowPNG/>
+			<o:AllowPNG />
 		</o:OfficeDocumentSettings>
 	</xml>
 		<xml>
 		<w:WordDocument>
-			<w:DisplayBackgroundShape/>
+			<w:DisplayBackgroundShape />
 			<w:TrackMoves>false</w:TrackMoves>
-			<w:TrackFormatting/>
-			<w:PunctuationKerning/>
-			<w:ValidateAgainstSchemas/>
+			<w:TrackFormatting />
+			<w:PunctuationKerning />
+			<w:ValidateAgainstSchemas />
 			<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
 			<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
 			<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-			<w:DoNotPromoteQF/>
+			<w:DoNotPromoteQF />
 			<w:LidThemeOther>EN-US</w:LidThemeOther>
 			<w:LidThemeAsian>X-NONE</w:LidThemeAsian>
 			<w:LidThemeComplexScript>AR-SA</w:LidThemeComplexScript>
 			<w:Compatibility>
-				<w:BreakWrappedTables/>
-				<w:SnapToGridInCell/>
-				<w:WrapTextWithPunct/>
-				<w:UseAsianBreakRules/>
-				<w:UseWord2010TableStyleRules/>
-				<w:DontGrowAutofit/>
-				<w:SplitPgBreakAndParaMark/>
+				<w:BreakWrappedTables />
+				<w:SnapToGridInCell />
+				<w:WrapTextWithPunct />
+				<w:UseAsianBreakRules />
+				<w:UseWord2010TableStyleRules />
+				<w:DontGrowAutofit />
+				<w:SplitPgBreakAndParaMark />
 			</w:Compatibility>
 			<m:mathPr>
-				<m:mathFont m:val="Cambria Math"/>
-				<m:brkBin m:val="before"/>
-				<m:brkBinSub m:val="&#45;-"/>
-				<m:smallFrac/>
-				<m:dispDef/>
-				<m:lMargin m:val="0"/>
-				<m:rMargin m:val="0"/>
-				<m:defJc m:val="centerGroup"/>
-				<m:wrapIndent m:val="1440"/>
-				<m:intLim m:val="subSup"/>
-				<m:naryLim m:val="undOvr"/>
+				<m:mathFont m:val="Cambria Math" />
+				<m:brkBin m:val="before" />
+				<m:brkBinSub m:val="--" />
+				<m:smallFrac />
+				<m:dispDef />
+				<m:lMargin m:val="0" />
+				<m:rMargin m:val="0" />
+				<m:defJc m:val="centerGroup" />
+				<m:wrapIndent m:val="1440" />
+				<m:intLim m:val="subSup" />
+				<m:naryLim m:val="undOvr" />
 			</m:mathPr>
 		</w:WordDocument>
 	</xml>
@@ -71,7 +71,6 @@
 		p.MsoNormal,
 		li.MsoNormal,
 		div.MsoNormal {
-			mso-style-qformat: yes;
 			mso-style-parent: "";
 			margin: 0mm;
 			text-align: right;
@@ -85,8 +84,6 @@
 		}
 
 		h1 {
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -109,9 +106,6 @@
 		}
 
 		h2 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -134,9 +128,6 @@
 		}
 
 		h3 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -158,9 +149,6 @@
 		}
 
 		h4 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -183,9 +171,6 @@
 		}
 
 		h5 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -207,9 +192,6 @@
 		}
 
 		h6 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -234,9 +216,6 @@
 		p.MsoHeading7,
 		li.MsoHeading7,
 		div.MsoHeading7 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -259,9 +238,6 @@
 		p.MsoHeading8,
 		li.MsoHeading8,
 		div.MsoHeading8 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -285,9 +261,6 @@
 		p.MsoHeading9,
 		li.MsoHeading9,
 		div.MsoHeading9 {
-			mso-style-noshow: yes;
-			mso-style-priority: 9;
-			mso-style-qformat: yes;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MyNormal1;
 			margin-top: 12.0pt;
@@ -311,8 +284,6 @@
 		li.MsoToc1,
 		div.MsoToc1 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 0mm;
@@ -332,8 +303,6 @@
 		li.MsoToc2,
 		div.MsoToc2 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 12.0pt;
@@ -353,8 +322,6 @@
 		li.MsoToc3,
 		div.MsoToc3 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 24.0pt;
@@ -374,8 +341,6 @@
 		li.MsoToc4,
 		div.MsoToc4 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 36.0pt;
@@ -395,8 +360,6 @@
 		li.MsoToc5,
 		div.MsoToc5 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 48.0pt;
@@ -416,8 +379,6 @@
 		li.MsoToc6,
 		div.MsoToc6 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 60.0pt;
@@ -437,8 +398,6 @@
 		li.MsoToc7,
 		div.MsoToc7 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 72.0pt;
@@ -458,8 +417,6 @@
 		li.MsoToc8,
 		div.MsoToc8 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 84.0pt;
@@ -479,8 +436,6 @@
 		li.MsoToc9,
 		div.MsoToc9 {
 			mso-style-update: auto;
-			mso-style-noshow: yes;
-			mso-style-priority: 39;
 			mso-style-next: Normal;
 			margin-top: 0mm;
 			margin-right: 96.0pt;
@@ -499,8 +454,6 @@
 		p.MsoFootnoteText,
 		li.MsoFootnoteText,
 		div.MsoFootnoteText {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: right;
 			mso-pagination: none;
@@ -515,7 +468,6 @@
 		p.MsoHeader,
 		li.MsoHeader,
 		div.MsoHeader {
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: center;
 			mso-pagination: none;
@@ -531,7 +483,6 @@
 		p.MsoFooter,
 		li.MsoFooter,
 		div.MsoFooter {
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: center;
 			mso-pagination: none;
@@ -547,8 +498,6 @@
 		p.MsoTof,
 		li.MsoTof,
 		div.MsoTof {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			mso-style-next: Normal;
 			margin: 0mm;
 			text-align: right;
@@ -564,8 +513,6 @@
 		p.MsoEnvelopeReturn,
 		li.MsoEnvelopeReturn,
 		div.MsoEnvelopeReturn {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: right;
 			mso-pagination: none;
@@ -586,7 +533,6 @@
 
 		a:link,
 		span.MsoHyperlink {
-			mso-style-priority: 99;
 			color: windowtext;
 			text-decoration: none;
 			text-underline: none;
@@ -594,8 +540,6 @@
 
 		a:visited,
 		span.MsoHyperlinkFollowed {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			color: purple;
 			mso-themecolor: followedhyperlink;
 			text-decoration: underline;
@@ -605,8 +549,6 @@
 		p.MsoPlainText,
 		li.MsoPlainText,
 		div.MsoPlainText {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: right;
 			mso-pagination: none;
@@ -619,8 +561,6 @@
 		}
 
 		p {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			margin: 0mm;
 			text-align: right;
 			mso-pagination: none;
@@ -633,8 +573,6 @@
 		}
 
 		code {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			mso-ansi-font-size: 12.0pt;
 			mso-bidi-font-size: 12.0pt;
 			font-family: "Courier New";
@@ -645,8 +583,6 @@
 		}
 
 		pre {
-			mso-style-noshow: yes;
-			mso-style-priority: 99;
 			margin: 0mm;
 			margin-bottom: .0001pt;
 			text-align: left;
@@ -661,8 +597,6 @@
 		}
 
 		span.MsoIntenseReference {
-			mso-style-priority: 32;
-			mso-style-qformat: yes;
 			font-variant: small-caps;
 			color: #4F81BD;
 			mso-themecolor: accent1;
@@ -674,7 +608,6 @@
 		li.MyBase,
 		div.MyBase {
 			mso-style-name: MyBase;
-			mso-style-qformat: yes;
 			margin: 0mm;
 			text-align: justify;
 			text-justify: kashida;
@@ -694,7 +627,6 @@
 		li.MyNormal,
 		div.MyNormal {
 			mso-style-name: MyNormal;
-			mso-style-priority: 99;
 			mso-style-parent: MyBase;
 			margin: 0mm;
 			text-align: justify;
@@ -716,7 +648,6 @@
 		li.MyNormal1,
 		div.MyNormal1 {
 			mso-style-name: MyNormal1;
-			mso-style-priority: 99;
 			mso-style-parent: MyNormal;
 			mso-style-next: MyNormal;
 			margin: 0mm;
@@ -902,7 +833,6 @@
 		li.MyFigure,
 		div.MyFigure {
 			mso-style-name: MyFigure;
-			mso-style-priority: 99;
 			mso-style-parent: MyCenterText;
 			mso-style-next: MyCaption;
 			margin-top: 3.0pt;
@@ -968,7 +898,6 @@
 		li.MyTitle,
 		div.MyTitle {
 			mso-style-name: MyTitle;
-			mso-style-priority: 99;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MySubtitle;
 			margin-top: 24.0pt;
@@ -992,7 +921,6 @@
 		li.MySubtitle,
 		div.MySubtitle {
 			mso-style-name: MySubtitle;
-			mso-style-priority: 99;
 			mso-style-parent: MyHeadingBase;
 			mso-style-next: MySubtitle1;
 			margin-top: 3.0pt;
@@ -1016,7 +944,6 @@
 		li.MySubtitle1,
 		div.MySubtitle1 {
 			mso-style-name: MySubtitle1;
-			mso-style-priority: 99;
 			mso-style-parent: MySubtitle;
 			mso-style-next: MyCenterText;
 			margin-top: 6.0pt;
@@ -1041,7 +968,6 @@
 		li.MySubtitle1CxSpFirst,
 		div.MySubtitle1CxSpFirst {
 			mso-style-name: MySubtitle1CxSpFirst;
-			mso-style-priority: 99;
 			mso-style-parent: MySubtitle;
 			mso-style-next: MyCenterText;
 			mso-style-type: export-only;
@@ -1068,7 +994,6 @@
 		li.MySubtitle1CxSpMiddle,
 		div.MySubtitle1CxSpMiddle {
 			mso-style-name: MySubtitle1CxSpMiddle;
-			mso-style-priority: 99;
 			mso-style-parent: MySubtitle;
 			mso-style-next: MyCenterText;
 			mso-style-type: export-only;
@@ -1092,7 +1017,6 @@
 		li.MySubtitle1CxSpLast,
 		div.MySubtitle1CxSpLast {
 			mso-style-name: MySubtitle1CxSpLast;
-			mso-style-priority: 99;
 			mso-style-parent: MySubtitle;
 			mso-style-next: MyCenterText;
 			mso-style-type: export-only;
@@ -2066,7 +1990,6 @@
 
 		span.MyEmphasis {
 			mso-style-name: MyEmphasis;
-			mso-style-priority: 99;
 			font-style: italic;
 		}
 
@@ -2098,7 +2021,6 @@
 		li.MyRightTextSmall,
 		div.MyRightTextSmall {
 			mso-style-name: MyRightTextSmall;
-			mso-style-qformat: yes;
 			mso-style-parent: MyRightText;
 			margin: 0mm;
 			text-align: right;
@@ -2153,7 +2075,6 @@
 		li.MyCenterTextTiny,
 		div.MyCenterTextTiny {
 			mso-style-name: MyCenterTextTiny;
-			mso-style-priority: 99;
 			mso-style-parent: MyCenterText;
 			margin: 0mm;
 			text-align: center;
@@ -2370,11 +2291,11 @@
 	}
 	</style>
 	<xml>
-		<o:shapedefaults v:ext="edit" spidmax="1027"/>
+		<o:shapedefaults v:ext="edit" spidmax="1027" />
 	</xml>
 	<xml>
 		<o:shapelayout v:ext="edit">
-			<o:idmap v:ext="edit" data="1"/>
+			<o:idmap v:ext="edit" data="1" />
 		</o:shapelayout>
 	</xml>
 </head>
@@ -2384,23 +2305,23 @@
 		<p class="MsoNormal" dir="RTL">
 			<o:wrapblock>
 				<v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
-					<v:stroke joinstyle="miter"/>
+					<v:stroke joinstyle="miter" />
 					<v:formulas>
-						<v:f eqn="if lineDrawn pixelLineWidth 0"/>
-						<v:f eqn="sum @0 1 0"/>
-						<v:f eqn="sum 0 0 @1"/>
-						<v:f eqn="prod @2 1 2"/>
-						<v:f eqn="prod @3 21600 pixelWidth"/>
-						<v:f eqn="prod @3 21600 pixelHeight"/>
-						<v:f eqn="sum @0 0 1"/>
-						<v:f eqn="prod @6 1 2"/>
-						<v:f eqn="prod @7 21600 pixelWidth"/>
-						<v:f eqn="sum @8 21600 0"/>
-						<v:f eqn="prod @7 21600 pixelHeight"/>
-						<v:f eqn="sum @10 21600 0"/>
+						<v:f eqn="if lineDrawn pixelLineWidth 0" />
+						<v:f eqn="sum @0 1 0" />
+						<v:f eqn="sum 0 0 @1" />
+						<v:f eqn="prod @2 1 2" />
+						<v:f eqn="prod @3 21600 pixelWidth" />
+						<v:f eqn="prod @3 21600 pixelHeight" />
+						<v:f eqn="sum @0 0 1" />
+						<v:f eqn="prod @6 1 2" />
+						<v:f eqn="prod @7 21600 pixelWidth" />
+						<v:f eqn="sum @8 21600 0" />
+						<v:f eqn="prod @7 21600 pixelHeight" />
+						<v:f eqn="sum @10 21600 0" />
 					</v:formulas>
-					<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
-					<o:lock v:ext="edit" aspectratio="t"/>
+					<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" />
+					<o:lock v:ext="edit" aspectratio="t" />
 				</v:shapetype>
 				<v:shape id="Picture_x0020_2" o:spid="_x0000_s1026" type="#_x0000_t75" style='
 					position:absolute;
@@ -2428,121 +2349,121 @@
 					mso-width-relative:page;
 					mso-height-relative:page
 				'>
-					<v:imagedata src="../../cover/cover-a.png"/>
-					<o:lock v:ext="edit" aspectratio="f"/>
-					<w:wrap anchorx="page" anchory="page"/>
+					<v:imagedata src="../../cover/cover-a.png" />
+					<o:lock v:ext="edit" aspectratio="f" />
+					<w:wrap anchorx="page" anchory="page" />
 				</v:shape>
 			</o:wrapblock>
 		</p>
 	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&#xA;&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:&#xA;FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break" /></span>
+	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"  /></span>
 	<div class="WordSection1a" dir="RTL">
-		<br style="mso-ignore:vglayout" clear="ALL" />
+		<br style="mso-ignore:vglayout" clear="ALL"  />
 		<p class="MyTitle" dir="RTL"><span style='mso-element:field-begin'></span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span><span style='mso-spacerun:yes'> </span>title «</span><span lang="FA">رویان</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span>» <span style='mso-element:field-separator'></span></span><span lang="FA">رویان</span><span style='mso-element:field-end'></span><span lang="FA"><o:p></o:p></span></p>
 		<p class="MySubtitle" dir="RTL"><span lang="FA">داستان کوتاه<o:p></o:p></span></p>
 		<p class="MySubtitle1CxSpFirst" dir="RTL"><span lang="FA">نوشتهٔ اَندی وِیر<o:p></o:p></span></p>
 		<p class="MySubtitle1CxSpLast" dir="RTL"><span lang="FA">ترجمهٔ قاسم کیانی مقدم<o:p></o:p></span></p>
 		<p class="MsoNormal" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
 		<div align="right" dir="rtl">
-			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;&#xA; mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:&#xA; -2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;&#xA; mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;&#xA; mso-table-dir:bidi">
+			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:-2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi">
 				<tbody>
 					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes">
 						<td width="100%" valign="top" style="width:100.0%;padding:0mm 0mm 0mm 0mm">
-							<p class="MyCenterText" dir="RTL" style="mso-element:frame;mso-element-wrap:around;&#xA;  mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:&#xA;  bottom;mso-height-rule:exactly"><span lang="FA"><o:p> </o:p></span></p>
-							<p class="MyRightTextSmall" align="center" dir="RTL" style="margin-top:18.0pt;&#xA;  text-align:center;line-height:50%;mso-element:frame;mso-element-wrap:around;&#xA;  mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:&#xA;  bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:24.0pt;&#xA;  line-height:50%;font-family:GSymbols">K<o:p></o:p></span></p>
-							<p class="MsoNormal" align="center" dir="RTL" style="text-align:center;mso-element:&#xA;  frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;&#xA;  mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="RTL"></span><span lang="FA"><span dir="RTL"></span>1402<o:p></o:p></span></p>
+							<p class="MyCenterText" dir="RTL" style="mso-element:frame;mso-element-wrap:around; mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top: bottom;mso-height-rule:exactly"><span lang="FA"><o:p> </o:p></span></p>
+							<p class="MyRightTextSmall" align="center" dir="RTL" style="margin-top:18.0pt; text-align:center;line-height:50%;mso-element:frame;mso-element-wrap:around; mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top: bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:24.0pt; line-height:50%;font-family:GSymbols">K<o:p></o:p></span></p>
+							<p class="MsoNormal" align="center" dir="RTL" style="text-align:center;mso-element: frame;mso-element-wrap:around;mso-element-anchor-horizontal:column; mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="RTL"></span><span lang="FA"><span dir="RTL"></span>1402<o:p></o:p></span></p>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&#xA;&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:&#xA;FA"><br clear="all" style="mso-special-character:line-break;page-break-before:&#xA;always" />
+		<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="mso-special-character:line-break;page-break-before:always"  />
 		</span>
 		<p class="MsoNormal" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
 		<p class="MyBase" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
 		<p class="MsoNormal" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
 		<div align="right" dir="rtl">
-			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;&#xA; mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:&#xA; -2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;&#xA; mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;&#xA; mso-table-dir:bidi">
+			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:-2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi">
 				<tbody>
 					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes">
 						<td width="100%" valign="top" style="width:100.0%;padding:0mm 0mm 0mm 0mm">
-							<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:frame;&#xA;  mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left:&#xA;  right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:20.0pt;font-family:GSymbols">K<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">داستان کوتاه<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span class="MyStrong"><span lang="FA">رویان<o:p></o:p></span></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">نوشتهٔ اندی ویر<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ترجمهٔ قاسم کیانی مقدم<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:frame; mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left: right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:20.0pt;font-family:GSymbols">K<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">داستان کوتاه<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span class="MyStrong"><span lang="FA">رویان<o:p></o:p></span></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">نوشتهٔ اندی ویر<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ترجمهٔ قاسم کیانی مقدم<o:p></o:p></span></p>
 							<div align="right" dir="rtl">
-								<table class="MsoTableGrid" dir="rtl" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-yfti-tbllook:1184;&#xA;   mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi;mso-border-insideh:none;&#xA;   mso-border-insidev:none">
+								<table class="MsoTableGrid" dir="rtl" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-yfti-tbllook:1184;  mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi;mso-border-insideh:none;  mso-border-insidev:none">
 									<tbody>
 										<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
 											<td colspan="3" valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;	around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;	mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">پیوندهای اینترنتی:<o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">پیوندهای اینترنتی:<o:p></o:p></span></p>
 											</td>
 										</tr>
 										<tr style="mso-yfti-irow:1">
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;	around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;	mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">متن اصلی<o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">متن اصلی<o:p></o:p></span></p>
 											</td>
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;	around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;	mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"><o:p> </o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"><o:p> </o:p></span></p>
 											</td>
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;	around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;	mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">ترجمهٔ فارسی<o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">ترجمهٔ فارسی<o:p></o:p></span></p>
 											</td>
 										</tr>
 										<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:&#xA;	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;&#xA;	mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="http://www.galactanet.com/oneoff/theegg_mod.html"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="41" height="41" id="_x0000_i1026" src="../../cover/transparent-qrcode-en.png" /></span></a><span lang="FA"><o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="http://www.galactanet.com/oneoff/theegg_mod.html"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="41" height="41" id="_x0000_i1026" src="../../cover/transparent-qrcode-en.png"  /></span></a><span lang="FA"><o:p></o:p></span></p>
 											</td>
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;	around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;	mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"> ‌<o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"> ‌<o:p></o:p></span></p>
 											</td>
 											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:&#xA;	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;&#xA;	mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="https://ghasemkiani.ir/books/theegg"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="37" height="37" id="_x0000_i1025" src="../../cover/transparent-qrcode.png" /></span></a><span lang="FA"><o:p></o:p></span></p>
+												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="https://ghasemkiani.ir/books/theegg"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="37" height="37" id="_x0000_i1025" src="../../cover/transparent-qrcode.png"  /></span></a><span lang="FA"><o:p></o:p></span></p>
 											</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ویراست: ۱٫۰<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار متن اصلی: ۲۰۰۹</span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار ترجمه: ۱۴۰۲<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:&#xA;  around;mso-element-anchor-horizontal:column;mso-element-left:right;&#xA;  mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">© ۱۴۰۲، کلیهٔ حقوق ترجمه برای مترجم محفوظ است.</span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ویراست: ۱٫۰<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار متن اصلی: ۲۰۰۹</span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار ترجمه: ۱۴۰۲<o:p></o:p></span></p>
+							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">© ۱۴۰۲، کلیهٔ حقوق ترجمه برای مترجم محفوظ است.</span></p>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&#xA;&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:&#xA;FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break" />
+	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"  />
 	</span>
 	<div class="WordSection2" dir="RTL">
 		<p class="MyTitle" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-		<b:body component="{context.templateComponent}"/>
+		<b:body component="{context.templateComponent}" />
 	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&#xA;&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:&#xA;FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break" />
+	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"  />
 	</span>
 	<div class="WordSection1" dir="RTL">
 		<p class="MsoNormal" dir="RTL">
 			<o:wrapblock>
 				<v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
-					<v:stroke joinstyle="miter"/>
+					<v:stroke joinstyle="miter" />
 					<v:formulas>
-						<v:f eqn="if lineDrawn pixelLineWidth 0"/>
-						<v:f eqn="sum @0 1 0"/>
-						<v:f eqn="sum 0 0 @1"/>
-						<v:f eqn="prod @2 1 2"/>
-						<v:f eqn="prod @3 21600 pixelWidth"/>
-						<v:f eqn="prod @3 21600 pixelHeight"/>
-						<v:f eqn="sum @0 0 1"/>
-						<v:f eqn="prod @6 1 2"/>
-						<v:f eqn="prod @7 21600 pixelWidth"/>
-						<v:f eqn="sum @8 21600 0"/>
-						<v:f eqn="prod @7 21600 pixelHeight"/>
-						<v:f eqn="sum @10 21600 0"/>
+						<v:f eqn="if lineDrawn pixelLineWidth 0" />
+						<v:f eqn="sum @0 1 0" />
+						<v:f eqn="sum 0 0 @1" />
+						<v:f eqn="prod @2 1 2" />
+						<v:f eqn="prod @3 21600 pixelWidth" />
+						<v:f eqn="prod @3 21600 pixelHeight" />
+						<v:f eqn="sum @0 0 1" />
+						<v:f eqn="prod @6 1 2" />
+						<v:f eqn="prod @7 21600 pixelWidth" />
+						<v:f eqn="sum @8 21600 0" />
+						<v:f eqn="prod @7 21600 pixelHeight" />
+						<v:f eqn="sum @10 21600 0" />
 					</v:formulas>
-					<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
-					<o:lock v:ext="edit" aspectratio="t"/>
+					<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" />
+					<o:lock v:ext="edit" aspectratio="t" />
 				</v:shapetype>
 				<v:shape id="Picture_x0020_2" o:spid="_x0000_s1026" type="#_x0000_t75" style='
 					position:absolute;
@@ -2570,9 +2491,9 @@
 					mso-width-relative:page;
 					mso-height-relative:page
 				'>
-					<v:imagedata src="../../cover/cover-a.png"/>
-					<o:lock v:ext="edit" aspectratio="f"/>
-					<w:wrap anchorx="page" anchory="page"/>
+					<v:imagedata src="../../cover/cover-a.png" />
+					<o:lock v:ext="edit" aspectratio="f" />
+					<w:wrap anchorx="page" anchory="page" />
 				</v:shape>
 			</o:wrapblock>
 		</p>
@@ -2584,11 +2505,11 @@
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="ProgId" content="Word.Document" />
-	<meta name="Generator" content="Microsoft Word 15" />
-	<meta name="Originator" content="Microsoft Word 15" />
-	<link id="Main-File" rel="Main-File" href="../faeb.htm" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+	<meta name="ProgId" content="Word.Document"  />
+	<meta name="Generator" content="Microsoft Word 15"  />
+	<meta name="Originator" content="Microsoft Word 15"  />
+	<link id="Main-File" rel="Main-File" href="../faeb.htm"  />
 </head>
 
 <body lang="EN-US" link="#000000" vlink="purple">
