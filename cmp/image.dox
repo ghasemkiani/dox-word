@@ -1,0 +1,43 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		const {cutil} = await import("../node_modules")
+		let uri = renderer.x.attr(context.templateComponent.node, "uri");
+		context.image = {
+			uri,
+		};
+	</cmn:script>
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<o:wrapblock>
+			<v:shape type="#MyShapeType1" style='
+				position:absolute;
+				left:0;
+				text-align:left;
+				margin-left:0;
+				margin-top:0;
+				width:170.1pt;
+				height:85.1162790697674mm;
+				z-index:251659264;
+				visibility:visible;
+				mso-wrap-style:square;
+				mso-width-percent:0;
+				mso-height-percent:0;
+				mso-wrap-distance-left:9pt;
+				mso-wrap-distance-top:0;
+				mso-wrap-distance-right:9pt;
+				mso-wrap-distance-bottom:0;
+				mso-position-horizontal:left;
+				mso-position-horizontal-relative:page;
+				mso-position-vertical:top;
+				mso-position-vertical-relative:page;
+				mso-width-percent:0;
+				mso-height-percent:0;
+				mso-width-relative:page;
+				mso-height-relative:page
+			'>
+				<v:imagedata src="G:/dev/gkbooks/theegg/cover/cover-a.png"/>
+				<o:lock v:ext="edit" aspectratio="f"/>
+				<w:wrap anchorx="page" anchory="page"/>
+			</v:shape>
+		</o:wrapblock>
+	</cmn:g>
+</cmn:g>

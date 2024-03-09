@@ -1,0 +1,26 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		let type = renderer.x.attr(context.templateComponent.node, "type") || "WordSection1";
+		let rtl = /ltr/i.test(renderer.x.attr(context.templateComponent.node, "dir")) || context.docw.rtl;
+		let dir = rtl ? "rtl" : "ltr";
+		let context.section = {
+			num: context.docw.sections.length + 1,
+			type,
+			rtl,
+			dir,
+			ndiv: null,
+		};
+		context.docw.sections.push(context.section);
+	</cmn:script>
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<b:if cond="{context.section.num &gt; 1}"><br clear="all" style="page-break-before:always;mso-break-type:section-break"/></b:if>
+		<div>
+			<cmn:script>
+				context.section.ndiv = node;
+				renderer.x.attr(node, "class", context.section.type);
+				renderer.x.attr(node, "dir", context.section.dir);
+			</cmn:script>
+			<b:body component="{context.templateComponent}"/>
+		</div>
+	</cmn:g>
+</cmn:g>
