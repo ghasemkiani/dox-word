@@ -1,25 +1,65 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
 		let type = renderer.x.attr(context.templateComponent.node, "type") || "WordSection1";
+		let break = renderer.x.attr(context.templateComponent.node, "break") || "page";
 		let rtl = /ltr/i.test(renderer.x.attr(context.templateComponent.node, "dir")) || context.docw.rtl;
 		let dir = rtl ? "rtl" : "ltr";
 		let width = renderer.x.attr(context.templateComponent.node, "width") || context.docw.width;
 		let height = renderer.x.attr(context.templateComponent.node, "height") || context.docw.height;
+		let margin = renderer.x.attr(context.templateComponent.node, "margin") || context.docw.margin;
+		let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || context.docw.marginY;
+		let marginTop = renderer.x.attr(context.templateComponent.node, "margin-top") || marginY || margin;
+		let marginBottom = renderer.x.attr(context.templateComponent.node, "margin-bottom") || marginY || margin;
+		let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || context.docw.marginX;
+		let marginStart = renderer.x.attr(context.templateComponent.node, "margin-start") || marginX || margin;
+		let marginEnd = renderer.x.attr(context.templateComponent.node, "margin-end") || marginX || margin;
+		let marginHeader = renderer.x.attr(context.templateComponent.node, "margin-header") || context.docw.marginHeader;
+		let marginFooter = renderer.x.attr(context.templateComponent.node, "margin-footer") || context.docw.marginFooter;
 		let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || context.docw.orientation;
+		let num = context.docw.sections.length + 1;
+		let id = "WordSection" + num;
 		let context.section = {
-			num: context.docw.sections.length + 1,
+			num,
+			id,
 			type,
 			rtl,
 			dir,
 			width,
 			height,
+			margin,
+			marginX,
+			marginY,
+			marginTop,
+			marginBottom,
+			marginStart,
+			marginEnd,
+			marginHeader,
+			marginFooter,
 			orientation,
 			ndiv: null,
 		};
 		context.docw.sections.push(context.section);
 	</cmn:script>
+	<b:g node="{context.docw.d.nhead}">
+		<style><cmn:script>renderer.x.t(node, `
+			@page ${context.section.id} {
+				size: ${context.section.width} ${context.section.height};
+				margin: ${context.section.marginTop} ${context.section.marginEnd} ${context.section.marginBottom} ${context.section.marginStart};
+				mso-header-margin: ${context.section.marginHeader};
+				mso-footer-margin: ${context.section.marginFooter};
+				mso-title-page: yes;
+				mso-paper-source: 0;
+			}
+
+			div.${context.section.id} {
+				page: ${context.section.id};
+			}
+		`);</cmn:script></style>
+	</b:g>
 	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
-		<b:if cond="{context.section.num &gt; 1}"><br clear="all" style="page-break-before:always;mso-break-type:section-break"/></b:if>
+		<b:if cond="{context.section.num &gt; 1}">
+			<wrd:break type="{`section.${context.section.break}`}"/>
+		</b:if>
 		<div>
 			<cmn:script>
 				context.section.ndiv = node;

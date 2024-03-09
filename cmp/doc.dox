@@ -12,6 +12,15 @@
 	let tabInterval = renderer.x.attr(context.templateComponent.node, "tab-interval") || "5mm";
 	let width = renderer.x.attr(context.templateComponent.node, "width") || "148mm";
 	let height = renderer.x.attr(context.templateComponent.node, "height") || "210mm";
+	let margin = renderer.x.attr(context.templateComponent.node, "margin");
+	let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || "25mm";
+	let marginTop = renderer.x.attr(context.templateComponent.node, "margin-top") || marginY;
+	let marginBottom = renderer.x.attr(context.templateComponent.node, "margin-bottom") || marginY;
+	let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || "24mm";
+	let marginStart = renderer.x.attr(context.templateComponent.node, "margin-start") || marginX;
+	let marginEnd = renderer.x.attr(context.templateComponent.node, "margin-end") || marginX;
+	let marginHeader = renderer.x.attr(context.templateComponent.node, "margin-header") || "10mm";
+	let marginFooter = renderer.x.attr(context.templateComponent.node, "margin-footer") || "10mm";
 	let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || "portrait";
 	context.templateComponent.context.docw = {
 		lang,
@@ -26,6 +35,15 @@
 		tabInterval,
 		width,
 		height,
+		margin,
+		marginX,
+		marginY,
+		marginTop,
+		marginBottom,
+		marginStart,
+		marginEnd,
+		marginHeader,
+		marginFooter,
 		orientation,
 		d: {
 			nhtml: null,
