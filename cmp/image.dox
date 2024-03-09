@@ -1,21 +1,50 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
-		const {cutil} = await import("../node_modules")
 		let uri = renderer.x.attr(context.templateComponent.node, "uri");
+		let width = renderer.x.attr(context.templateComponent.node, "width");
+		let height = renderer.x.attr(context.templateComponent.node, "height");
+		
+		let type = context.imports.cutil.srand(6);
+		let id = context.imports.cutil.srand(6);
+		
 		context.image = {
 			uri,
+			type,
+			id,
+			width,
+			height,
 		};
 	</cmn:script>
 	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
 		<o:wrapblock>
-			<v:shape type="#MyShapeType1" style='
+			<v:shapetype coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+				<cmn:script>
+					renderer.x.attr(node, "id", context.image.type);
+				</cmn:script>
+				<v:stroke joinstyle="miter"/>
+				<v:formulas>
+					<v:f eqn="if lineDrawn pixelLineWidth 0"/>
+					<v:f eqn="sum @0 1 0"/>
+					<v:f eqn="sum 0 0 @1"/>
+					<v:f eqn="prod @2 1 2"/>
+					<v:f eqn="prod @3 21600 pixelWidth"/>
+					<v:f eqn="prod @3 21600 pixelHeight"/>
+					<v:f eqn="sum @0 0 1"/>
+					<v:f eqn="prod @6 1 2"/>
+					<v:f eqn="prod @7 21600 pixelWidth"/>
+					<v:f eqn="sum @8 21600 0"/>
+					<v:f eqn="prod @7 21600 pixelHeight"/>
+					<v:f eqn="sum @10 21600 0"/>
+				</v:formulas>
+				<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+				<o:lock v:ext="edit" aspectratio="t"/>
+			</v:shapetype>
+			<v:shape style='
 				position:absolute;
 				left:0;
 				text-align:left;
 				margin-left:0;
 				margin-top:0;
-				width:170.1pt;
-				height:85.1162790697674mm;
 				z-index:251659264;
 				visibility:visible;
 				mso-wrap-style:square;
@@ -34,7 +63,15 @@
 				mso-width-relative:page;
 				mso-height-relative:page
 			'>
-				<v:imagedata src="G:/dev/gkbooks/theegg/cover/cover-a.png"/>
+				<cmn:script>
+					renderer.x.attr(node, "id", context.image.id);
+					renderer.x.attr(node, "type", "#" + context.image.type);
+					renderer.x.css(node, {
+						width: context.image.width,
+						height: context.image.height,
+					});
+				</cmn:script>
+				<v:imagedata><cmn:script>renderer.x.attr(node, "src", context.image.uri);</cmn:script></v:imagedata>
 				<o:lock v:ext="edit" aspectratio="f"/>
 				<w:wrap anchorx="page" anchory="page"/>
 			</v:shape>

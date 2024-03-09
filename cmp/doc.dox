@@ -10,6 +10,9 @@
 	let fontCode = renderer.x.attr(context.templateComponent.node, "font-code") || "Consolas";
 	let fontMath = renderer.x.attr(context.templateComponent.node, "font-math") || "GNazaninMath";
 	let tabInterval = renderer.x.attr(context.templateComponent.node, "tab-interval") || "5mm";
+	let width = renderer.x.attr(context.templateComponent.node, "width") || "148mm";
+	let height = renderer.x.attr(context.templateComponent.node, "height") || "210mm";
+	let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || "portrait";
 	context.templateComponent.context.docw = {
 		lang,
 		rtl,
@@ -21,6 +24,9 @@
 		fontCode,
 		fontMath,
 		tabInterval,
+		width,
+		height,
+		orientation,
 		d: {
 			nhtml: null,
 			nhead: null,

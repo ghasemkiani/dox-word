@@ -3,11 +3,17 @@
 		let type = renderer.x.attr(context.templateComponent.node, "type") || "WordSection1";
 		let rtl = /ltr/i.test(renderer.x.attr(context.templateComponent.node, "dir")) || context.docw.rtl;
 		let dir = rtl ? "rtl" : "ltr";
+		let width = renderer.x.attr(context.templateComponent.node, "width") || context.docw.width;
+		let height = renderer.x.attr(context.templateComponent.node, "height") || context.docw.height;
+		let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || context.docw.orientation;
 		let context.section = {
 			num: context.docw.sections.length + 1,
 			type,
 			rtl,
 			dir,
+			width,
+			height,
+			orientation,
 			ndiv: null,
 		};
 		context.docw.sections.push(context.section);
