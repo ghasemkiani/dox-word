@@ -3,6 +3,7 @@
 	let lang = renderer.x.attr(context.templateComponent.node, "lang") || "fa-IR";
 	let rtl = /^(fa|ar|he)/i.test(lang);
 	let dir = rtl ? "rtl" : "ltr";
+	let bgcolor = renderer.x.attr(context.templateComponent.node, "bgcolor") || "";
 	let title = renderer.x.attr(context.templateComponent.node, "title") || "";
 	let author = renderer.x.attr(context.templateComponent.node, "author") || "Ghasem Kiani";
 	let fontMain = renderer.x.attr(context.templateComponent.node, "font-main") || "GBadr";
@@ -13,10 +14,10 @@
 	let width = renderer.x.attr(context.templateComponent.node, "width") || "148mm";
 	let height = renderer.x.attr(context.templateComponent.node, "height") || "210mm";
 	let margin = renderer.x.attr(context.templateComponent.node, "margin");
-	let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || "25mm";
+	let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || margin || "25mm";
 	let marginTop = renderer.x.attr(context.templateComponent.node, "margin-top") || marginY;
 	let marginBottom = renderer.x.attr(context.templateComponent.node, "margin-bottom") || marginY;
-	let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || "24mm";
+	let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || margin || "24mm";
 	let marginStart = renderer.x.attr(context.templateComponent.node, "margin-start") || marginX;
 	let marginEnd = renderer.x.attr(context.templateComponent.node, "margin-end") || marginX;
 	let marginHeader = renderer.x.attr(context.templateComponent.node, "margin-header") || "10mm";
@@ -26,6 +27,7 @@
 		lang,
 		rtl,
 		dir,
+		bgcolor,
 		title,
 		author,
 		fontMain,
@@ -135,182 +137,14 @@
 	</xml>
 </head>
 
-<body lang="EN-US" link="black" vlink="purple" style="word-wrap:break-word"><cmn:script>renderer.x.css(node, {"tab-interval": context.docw.tabInterval});</cmn:script><cmn:script>context.docw.d.nbody = node;</cmn:script>
-	<div bgcolor="#FDE9D9" class="WordSection1" dir="RTL">
-		<p class="MsoNormal" dir="RTL">
-			<o:wrapblock>
-				<v:shapetype id="MyShapeType1" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
-					<v:stroke joinstyle="miter"/>
-					<v:formulas>
-						<v:f eqn="if lineDrawn pixelLineWidth 0"/>
-						<v:f eqn="sum @0 1 0"/>
-						<v:f eqn="sum 0 0 @1"/>
-						<v:f eqn="prod @2 1 2"/>
-						<v:f eqn="prod @3 21600 pixelWidth"/>
-						<v:f eqn="prod @3 21600 pixelHeight"/>
-						<v:f eqn="sum @0 0 1"/>
-						<v:f eqn="prod @6 1 2"/>
-						<v:f eqn="prod @7 21600 pixelWidth"/>
-						<v:f eqn="sum @8 21600 0"/>
-						<v:f eqn="prod @7 21600 pixelHeight"/>
-						<v:f eqn="sum @10 21600 0"/>
-					</v:formulas>
-					<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
-					<o:lock v:ext="edit" aspectratio="t"/>
-				</v:shapetype>
-				<v:shape id="Picture_x0020_2" o:spid="_x0000_s1026" type="#MyShapeType1" style='
-					position:absolute;
-					left:0;
-					text-align:left;
-					margin-left:0;
-					margin-top:0;
-					width:170.1pt;
-					height:85.1162790697674mm;
-					z-index:251659264;
-					visibility:visible;
-					mso-wrap-style:square;
-					mso-width-percent:0;
-					mso-height-percent:0;
-					mso-wrap-distance-left:9pt;
-					mso-wrap-distance-top:0;
-					mso-wrap-distance-right:9pt;
-					mso-wrap-distance-bottom:0;
-					mso-position-horizontal:left;
-					mso-position-horizontal-relative:page;
-					mso-position-vertical:top;
-					mso-position-vertical-relative:page;
-					mso-width-percent:0;
-					mso-height-percent:0;
-					mso-width-relative:page;
-					mso-height-relative:page
-				'>
-					<v:imagedata src="G:/dev/gkbooks/theegg/cover/cover-a.png"/>
-					<o:lock v:ext="edit" aspectratio="f"/>
-					<w:wrap anchorx="page" anchory="page"/>
-				</v:shape>
-			</o:wrapblock>
-		</p>
-	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"/></span>
-	<div class="WordSection1a" dir="RTL">
-		<br style="mso-ignore:vglayout" clear="ALL"/>
-		<p class="MyTitle" dir="RTL"><span style='mso-element:field-begin'></span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span><span style='mso-spacerun:yes'> </span>title «</span><span lang="FA">رویان</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span>» <span style='mso-element:field-separator'></span></span><span lang="FA">رویان</span><span style='mso-element:field-end'></span><span lang="FA"><o:p></o:p></span></p>
-		<p class="MySubtitle" dir="RTL"><span lang="FA">داستان کوتاه<o:p></o:p></span></p>
-		<p class="MySubtitle1CxSpFirst" dir="RTL"><span lang="FA">نوشتهٔ اَندی وِیر<o:p></o:p></span></p>
-		<p class="MySubtitle1CxSpLast" dir="RTL"><span lang="FA">ترجمهٔ قاسم کیانی مقدم<o:p></o:p></span></p>
-		<p class="MsoNormal" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-		<div align="right" dir="rtl">
-			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:-2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi">
-				<tbody>
-					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes">
-						<td width="100%" valign="top" style="width:100.0%;padding:0mm 0mm 0mm 0mm">
-							<p class="MyCenterText" dir="RTL" style="mso-element:frame;mso-element-wrap:around; mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top: bottom;mso-height-rule:exactly"><span lang="FA"><o:p> </o:p></span></p>
-							<p class="MyRightTextSmall" align="center" dir="RTL" style="margin-top:18.0pt; text-align:center;line-height:50%;mso-element:frame;mso-element-wrap:around; mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top: bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:24.0pt; line-height:50%;font-family:GSymbols">K<o:p></o:p></span></p>
-							<p class="MsoNormal" align="center" dir="RTL" style="text-align:center;mso-element: frame;mso-element-wrap:around;mso-element-anchor-horizontal:column; mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="RTL"></span><span lang="FA"><span dir="RTL"></span>1402<o:p></o:p></span></p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/>
-		</span>
-		<p class="MsoNormal" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-		<p class="MyBase" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
-		<p class="MsoNormal" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
-		<div align="right" dir="rtl">
-			<table class="MsoNormalTable" dir="rtl" border="0" cellspacing="0" cellpadding="0" align="right" width="100%" style="width:100.0%;border-collapse:collapse;mso-table-overlap:never;mso-yfti-tbllook:1184;margin-left:-2.25pt;margin-right:-2.25pt;mso-table-anchor-vertical:margin;mso-table-anchor-horizontal:column;mso-table-left:right;mso-table-top:bottom;mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi">
-				<tbody>
-					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes">
-						<td width="100%" valign="top" style="width:100.0%;padding:0mm 0mm 0mm 0mm">
-							<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:frame; mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left: right;mso-element-top:bottom;mso-height-rule:exactly"><span dir="LTR" style="font-size:20.0pt;font-family:GSymbols">K<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">داستان کوتاه<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span class="MyStrong"><span lang="FA">رویان<o:p></o:p></span></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">نوشتهٔ اندی ویر<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ترجمهٔ قاسم کیانی مقدم<o:p></o:p></span></p>
-							<div align="right" dir="rtl">
-								<table class="MsoTableGrid" dir="rtl" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-yfti-tbllook:1184;  mso-padding-alt:0mm 0mm 0mm 0mm;mso-table-dir:bidi;mso-border-insideh:none;  mso-border-insidev:none">
-									<tbody>
-										<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-											<td colspan="3" valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">پیوندهای اینترنتی:<o:p></o:p></span></p>
-											</td>
-										</tr>
-										<tr style="mso-yfti-irow:1">
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">متن اصلی<o:p></o:p></span></p>
-											</td>
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"><o:p> </o:p></span></p>
-											</td>
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes">ترجمهٔ فارسی<o:p></o:p></span></p>
-											</td>
-										</tr>
-										<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="http://www.galactanet.com/oneoff/theegg_mod.html"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="41" height="41" id="_x0000_i1026" src="../../cover/transparent-qrcode-en.png"/></span></a><span lang="FA"><o:p></o:p></span></p>
-											</td>
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap:	around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA" style="mso-ansi-language:FA;mso-no-proof:yes"> ‌<o:p></o:p></span></p>
-											</td>
-											<td valign="top" style="padding:0mm 0mm 0mm 0mm">
-												<p class="MyRightTextTiny" dir="RTL" style="line-height:normal;mso-element:	frame;mso-element-wrap:around;mso-element-anchor-horizontal:column;mso-element-left:right;mso-element-top:bottom;mso-height-rule:exactly"><a href="https://ghasemkiani.ir/books/theegg"><span lang="FA" dir="LTR" style="mso-ansi-language:FA;mso-no-proof:yes"><img border="0" width="37" height="37" id="_x0000_i1025" src="../../cover/transparent-qrcode.png"/></span></a><span lang="FA"><o:p></o:p></span></p>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">ویراست: ۱٫۰<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار متن اصلی: ۲۰۰۹</span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">سال انتشار ترجمه: ۱۴۰۲<o:p></o:p></span></p>
-							<p class="MyRightTextTiny" dir="RTL" style="mso-element:frame;mso-element-wrap: around;mso-element-anchor-horizontal:column;mso-element-left:right; mso-element-top:bottom;mso-height-rule:exactly"><span lang="FA">© ۱۴۰۲، کلیهٔ حقوق ترجمه برای مترجم محفوظ است.</span></p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"/></span>
-	<div class="WordSection2" dir="RTL">
-		<p class="MyTitle" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-	</div>
-	<span lang="FA" dir="RTL" style="font-size:12.0pt;font-family:GBadr;mso-fareast-font-family:&quot;MS Mincho&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:FA"><br clear="all" style="page-break-before:always;mso-break-type:section-break"/></span>
-	<div class="WordSection1" dir="RTL">
-		<p class="MsoNormal" dir="RTL">
-			<o:wrapblock>
-				<v:shape id="Picture_x0020_2" o:spid="_x0000_s1026" type="#MyShapeType1" style='
-					position:absolute;
-					left:0;
-					text-align:left;
-					margin-left:0;
-					margin-top:0;
-					width:170.1pt;
-					height:85.1162790697674mm;
-					z-index:251659264;
-					visibility:visible;
-					mso-wrap-style:square;
-					mso-width-percent:0;
-					mso-height-percent:0;
-					mso-wrap-distance-left:9pt;
-					mso-wrap-distance-top:0;
-					mso-wrap-distance-right:9pt;
-					mso-wrap-distance-bottom:0;
-					mso-position-horizontal:left;
-					mso-position-horizontal-relative:page;
-					mso-position-vertical:top;
-					mso-position-vertical-relative:page;
-					mso-width-percent:0;
-					mso-height-percent:0;
-					mso-width-relative:page;
-					mso-height-relative:page
-				'>
-					<v:imagedata src="G:/dev/gkbooks/theegg/cover/cover-a.png"/>
-					<o:lock v:ext="edit" aspectratio="f"/>
-					<w:wrap anchorx="page" anchory="page"/>
-				</v:shape>
-			</o:wrapblock>
-		</p>
-	</div>
+<body lang="EN-US" link="black" vlink="purple" style="word-wrap:break-word">
+	<cmn:script>
+		renderer.x.css(node, {"tab-interval": context.docw.tabInterval});
+		if (context.docw.bgcolor) {
+			renderer.x.attr(node, "bgcolor", context.docw.bgcolor);
+		}
+	</cmn:script>
+	<cmn:script>context.docw.d.nbody = node;</cmn:script>
 </body>
 
 </html>
