@@ -1,8 +1,8 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
-		let uri = renderer.x.attr(context.templateComponent.node, "uri");
-		let width = renderer.x.attr(context.templateComponent.node, "width");
-		let height = renderer.x.attr(context.templateComponent.node, "height");
+		let {uri} = props;
+		let {width} = props;
+		let {height} = props;
 		
 		let type = context.imports.cutil.srand(6);
 		let id = context.imports.cutil.srand(6);
