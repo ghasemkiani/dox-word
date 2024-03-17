@@ -1,0 +1,13 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<b:g node="{context.wdoc.d.body}">
+			<div>
+				<cmn:script>
+					renderer.x.css({"mso-element": "header"});
+					renderer.x.attr("id": context.wsect.idHeader);
+				</cmn:script>
+				<b:body component="{context.templateComponent}"/>
+			</div>
+		</b:g>
+	</cmn:g>
+</cmn:g>

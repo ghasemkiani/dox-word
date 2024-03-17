@@ -1,24 +1,35 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
-		let type = renderer.x.attr(context.templateComponent.node, "type") || "WordSection1";
-		let break_ = renderer.x.attr(context.templateComponent.node, "break") || "page";
-		let rtl = /ltr/i.test(renderer.x.attr(context.templateComponent.node, "dir")) || context.docw.rtl;
+		const {cutil} = context.imports;
+		
+		let type = props["type"] || "WordSection1";
+		let break_ = props["break"] || "page";
+		let rtl = /ltr/i.test(props["dir"]) || context.wdoc.rtl;
 		let dir = rtl ? "rtl" : "ltr";
-		let width = renderer.x.attr(context.templateComponent.node, "width") || context.docw.width;
-		let height = renderer.x.attr(context.templateComponent.node, "height") || context.docw.height;
-		let margin = renderer.x.attr(context.templateComponent.node, "margin") || context.docw.margin;
-		let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || context.docw.marginY;
-		let marginTop = renderer.x.attr(context.templateComponent.node, "margin-top") || marginY || margin;
-		let marginBottom = renderer.x.attr(context.templateComponent.node, "margin-bottom") || marginY || margin;
-		let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || context.docw.marginX;
-		let marginStart = renderer.x.attr(context.templateComponent.node, "margin-start") || marginX || margin;
-		let marginEnd = renderer.x.attr(context.templateComponent.node, "margin-end") || marginX || margin;
-		let marginHeader = renderer.x.attr(context.templateComponent.node, "margin-header") || context.docw.marginHeader;
-		let marginFooter = renderer.x.attr(context.templateComponent.node, "margin-footer") || context.docw.marginFooter;
-		let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || context.docw.orientation;
-		let num = context.docw.sections.length + 1;
+		let width = props["width"] || context.wdoc.width;
+		let height = props["height"] || context.wdoc.height;
+		let margin = props["margin"] || context.wdoc.margin;
+		let marginY = props["margin-y"] || context.wdoc.marginY;
+		let marginTop = props["margin-top"] || marginY || margin;
+		let marginBottom = props["margin-bottom"] || marginY || margin;
+		let marginX = props["margin-x"] || context.wdoc.marginX;
+		let marginStart = props["margin-start"] || marginX || margin;
+		let marginEnd = props["margin-end"] || marginX || margin;
+		let marginHeader = props["margin-header"] || context.wdoc.marginHeader;
+		let marginFooter = props["margin-footer"] || context.wdoc.marginFooter;
+		let orientation = props["orientation"] || context.wdoc.orientation;
+		let page = props["page"];
+		let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || context.wdoc.hfFirst;
+		let hfEven = /^(true|yes)$/.test(props["hf-even"]) || context.wdoc.hfEven;
+		let num = context.wdoc.sections.length + 1;
 		let id = "WordSection" + num;
-		context.templateComponent.context.section = {
+		let idHeaderFirst = cutil.srand(6);
+		let idFooterFirst = cutil.srand(6);
+		let idHeader = cutil.srand(6);
+		let idFooter = cutil.srand(6);
+		let idHeaderEven = cutil.srand(6);
+		let idFooterEven = cutil.srand(6);
+		context.templateComponent.context.wsect = {
 			num,
 			id,
 			type,
@@ -37,35 +48,46 @@
 			marginHeader,
 			marginFooter,
 			orientation,
+			page,
+			hfFirst,
+			hfEven,
+			idHeaderFirst,
+			idFooterFirst,
+			idHeader,
+			idFooter,
+			idHeaderEven,
+			idFooterEven,
 			ndiv: null,
 		};
-		context.docw.sections.push(context.section);
+		context.wdoc.sections.push(context.wsect);
 	</cmn:script>
-	<b:g node="{context.docw.d.nhead}">
+	<b:g node="{context.wdoc.d.nhead}">
 		<style><cmn:script>renderer.x.t(node, `
-			@page ${context.section.id} {
-				size: ${context.section.width} ${context.section.height};
-				margin: ${context.section.marginTop} ${context.section.marginEnd} ${context.section.marginBottom} ${context.section.marginStart};
-				mso-header-margin: ${context.section.marginHeader};
-				mso-footer-margin: ${context.section.marginFooter};
+			@page ${context.wsect.id} {
+				size: ${context.wsect.width} ${context.wsect.height};
+				margin: ${context.wsect.marginTop} ${context.wsect.marginEnd} ${context.wsect.marginBottom} ${context.wsect.marginStart};
+				mso-header-margin: ${context.wsect.marginHeader};
+				mso-footer-margin: ${context.wsect.marginFooter};
 				mso-title-page: yes;
 				mso-paper-source: 0;
+				mso-page-orientation: ${context.wsect.orientation};
+				${cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
 			}
 
-			div.${context.section.id} {
-				page: ${context.section.id};
+			div.${context.wsect.id} {
+				page: ${context.wsect.id};
 			}
 		`);</cmn:script></style>
 	</b:g>
 	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
-		<b:if cond="{context.section.num &gt; 1}">
-			<wrd:break type="{`section.${context.section.break}`}"/>
+		<b:if cond="{context.wsect.num &gt; 1}">
+			<wrd:break type="{`section.${context.wsect.break}`}"/>
 		</b:if>
 		<div>
 			<cmn:script>
-				context.section.ndiv = node;
-				renderer.x.attr(node, "class", context.section.type);
-				renderer.x.attr(node, "dir", context.section.dir);
+				context.wsect.ndiv = node;
+				renderer.x.attr(node, "class", context.wsect.type);
+				renderer.x.attr(node, "dir", context.wsect.dir);
 			</cmn:script>
 			<b:body component="{context.templateComponent}"/>
 		</div>

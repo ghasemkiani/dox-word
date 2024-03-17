@@ -1,29 +1,33 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 <cmn:script>
-	let lang = renderer.x.attr(context.templateComponent.node, "lang") || "fa-IR";
+	let target = props["target"] || context.templateComponent.context;
+	
+	let lang = props["lang"] || "fa-IR";
 	let rtl = /^(fa|ar|he)/i.test(lang);
 	let dir = rtl ? "rtl" : "ltr";
-	let bgcolor = renderer.x.attr(context.templateComponent.node, "bgcolor") || "";
-	let title = renderer.x.attr(context.templateComponent.node, "title") || "";
-	let author = renderer.x.attr(context.templateComponent.node, "author") || "Ghasem Kiani";
-	let fontMain = renderer.x.attr(context.templateComponent.node, "font-main") || "GBadr";
-	let fontHeadings = renderer.x.attr(context.templateComponent.node, "font-headings") || "GJalal";
-	let fontCode = renderer.x.attr(context.templateComponent.node, "font-code") || "Consolas";
-	let fontMath = renderer.x.attr(context.templateComponent.node, "font-math") || "GNazaninMath";
-	let tabInterval = renderer.x.attr(context.templateComponent.node, "tab-interval") || "5mm";
-	let width = renderer.x.attr(context.templateComponent.node, "width") || "148mm";
-	let height = renderer.x.attr(context.templateComponent.node, "height") || "210mm";
-	let margin = renderer.x.attr(context.templateComponent.node, "margin");
-	let marginY = renderer.x.attr(context.templateComponent.node, "margin-y") || margin || "25mm";
-	let marginTop = renderer.x.attr(context.templateComponent.node, "margin-top") || marginY;
-	let marginBottom = renderer.x.attr(context.templateComponent.node, "margin-bottom") || marginY;
-	let marginX = renderer.x.attr(context.templateComponent.node, "margin-x") || margin || "24mm";
-	let marginStart = renderer.x.attr(context.templateComponent.node, "margin-start") || marginX;
-	let marginEnd = renderer.x.attr(context.templateComponent.node, "margin-end") || marginX;
-	let marginHeader = renderer.x.attr(context.templateComponent.node, "margin-header") || "10mm";
-	let marginFooter = renderer.x.attr(context.templateComponent.node, "margin-footer") || "10mm";
-	let orientation = renderer.x.attr(context.templateComponent.node, "orientation") || "portrait";
-	context.templateComponent.context.docw = {
+	let bgcolor = props["bgcolor"] || "";
+	let title = props["title"] || "";
+	let author = props["author"] || "Ghasem Kiani";
+	let fontMain = props["font-main"] || "GBadr";
+	let fontHeadings = props["font-headings"] || "GJalal";
+	let fontCode = props["font-code"] || "Consolas";
+	let fontMath = props["font-math"] || "GNazaninMath";
+	let tabInterval = props["tab-interval"] || "5mm";
+	let width = props["width"] || "148mm";
+	let height = props["height"] || "210mm";
+	let margin = props["margin"];
+	let marginY = props["margin-y"] || margin || "25mm";
+	let marginTop = props["margin-top"] || marginY;
+	let marginBottom = props["margin-bottom"] || marginY;
+	let marginX = props["margin-x"] || margin || "24mm";
+	let marginStart = props["margin-start"] || marginX;
+	let marginEnd = props["margin-end"] || marginX;
+	let marginHeader = props["margin-header"] || "10mm";
+	let marginFooter = props["margin-footer"] || "10mm";
+	let orientation = props["orientation"] || "portrait";
+	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
+	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
+	target.wdoc = {
 		lang,
 		rtl,
 		dir,
@@ -47,6 +51,8 @@
 		marginHeader,
 		marginFooter,
 		orientation,
+		hfFirst,
+		hfEven,
 		d: {
 			nhtml: null,
 			nhead: null,
@@ -61,18 +67,18 @@
 	};
 </cmn:script>
 <!-- document -->
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><cmn:script>context.docw.d.nhtml = node;</cmn:script>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><cmn:script>context.wdoc.d.nhtml = node;</cmn:script>
 
-<head><cmn:script>context.docw.d.nhead = node;</cmn:script>
+<head><cmn:script>context.wdoc.d.nhead = node;</cmn:script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="ProgId" content="Word.Document"/>
 	<meta name="Generator" content="Microsoft Word 15"/>
 	<meta name="Originator" content="Microsoft Word 15"/>
-	<title><b:out text="{context.docw.title}"/></title>
+	<title><cmn:script>context.wdoc.d.ntitle = node;</cmn:script><b:out text="{context.wdoc.title}"/></title>
 	<xml>
 		<o:DocumentProperties>
-			<o:Author><b:out text="{context.docw.author}"/></o:Author>
-			<o:LastAuthor><b:out text="{context.docw.author}"/></o:LastAuthor>
+			<o:Author><b:out text="{context.wdoc.author}"/></o:Author>
+			<o:LastAuthor><b:out text="{context.wdoc.author}"/></o:LastAuthor>
 			<o:Revision>0</o:Revision>
 			<o:TotalTime>0</o:TotalTime>
 			<o:LastPrinted></o:LastPrinted>
@@ -112,7 +118,7 @@
 				<w:SplitPgBreakAndParaMark/>
 			</w:Compatibility>
 			<m:mathPr>
-				<m:mathFont><cmn:script>renderer.x.attr(node, "m:val", context.docw.fontMath);</cmn:script></m:mathFont>
+				<m:mathFont><cmn:script>renderer.x.attr(node, "m:val", context.wdoc.fontMath);</cmn:script></m:mathFont>
 				<m:brkBin m:val="before"/>
 				<m:brkBinSub m:val="--"/>
 				<m:smallFrac/>
@@ -139,19 +145,19 @@
 
 <body lang="EN-US" link="black" vlink="purple" style="word-wrap:break-word">
 	<cmn:script>
-		renderer.x.css(node, {"tab-interval": context.docw.tabInterval});
-		if (context.docw.bgcolor) {
-			renderer.x.attr(node, "bgcolor", context.docw.bgcolor);
+		renderer.x.css(node, {"tab-interval": context.wdoc.tabInterval});
+		if (context.wdoc.bgcolor) {
+			renderer.x.attr(node, "bgcolor", context.wdoc.bgcolor);
 		}
 	</cmn:script>
-	<cmn:script>context.docw.d.nbody = node;</cmn:script>
+	<cmn:script>context.wdoc.d.nbody = node;</cmn:script>
 </body>
 
 </html>
 <!-- header -->
-<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><cmn:script>context.docw.h.nhtml = node;</cmn:script>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><cmn:script>context.wdoc.h.nhtml = node;</cmn:script>
 
-<head><cmn:script>context.docw.h.nhead = node;</cmn:script>
+<head><cmn:script>context.wdoc.h.nhead = node;</cmn:script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="ProgId" content="Word.Document"/>
 	<meta name="Generator" content="Microsoft Word 15"/>
@@ -159,7 +165,7 @@
 	<link id="Main-File" rel="Main-File" href="../faeb.htm"/>
 </head>
 
-<body lang="EN-US" link="#000000" vlink="purple"><cmn:script>context.docw.h.nbody = node;</cmn:script>
+<body lang="EN-US" link="#000000" vlink="purple"><cmn:script>context.wdoc.h.nbody = node;</cmn:script>
 	<div style="mso-element:footnote-separator" id="fs">
 		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-separator"></span></span></p>
 	</div>
@@ -193,5 +199,5 @@
 </body>
 
 </html>
-	<b:body component="{context.templateComponent}" node="{context.docw.d.nbody}"/>
+	<b:body component="{context.templateComponent}" node="{context.wdoc.d.nbody}"/>
 </cmn:g>
