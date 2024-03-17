@@ -1,6 +1,6 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 <cmn:script>
-	let target = props["target"] || context.templateComponent.context;
+	let target = props["target"];
 	
 	let lang = props["lang"] || "fa-IR";
 	let rtl = /^(fa|ar|he)/i.test(lang);
@@ -27,7 +27,7 @@
 	let orientation = props["orientation"] || "portrait";
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
-	target.wdoc = {
+	context.templateComponent.context.wdoc = {
 		lang,
 		rtl,
 		dir,
@@ -65,6 +65,10 @@
 		},
 		sections: [],
 	};
+	
+	if (target) {
+		target.wdoc = context.wdoc;
+	}
 </cmn:script>
 <!-- document -->
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><cmn:script>context.wdoc.d.nhtml = node;</cmn:script>
