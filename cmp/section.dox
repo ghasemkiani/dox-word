@@ -2,7 +2,7 @@
 	<cmn:script>
 		const {cutil} = context.imports;
 		
-		let type = props["type"] || "WordSection1";
+		let type = props["type"];
 		let break_ = props["break"] || "page";
 		let rtl = /ltr/i.test(props["dir"]) || context.wdoc.rtl;
 		let dir = rtl ? "rtl" : "ltr";
@@ -71,7 +71,7 @@
 				mso-title-page: yes;
 				mso-paper-source: 0;
 				mso-page-orientation: ${context.wsect.orientation};
-				${cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
+				${context.imports.cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
 			}
 
 			div.${context.wsect.id} {
@@ -86,7 +86,7 @@
 		<div>
 			<cmn:script>
 				context.wsect.ndiv = node;
-				renderer.x.attr(node, "class", context.wsect.type);
+				renderer.x.attr(node, "class", context.wsect.id);
 				renderer.x.attr(node, "dir", context.wsect.dir);
 			</cmn:script>
 			<b:body component="{context.templateComponent}"/>

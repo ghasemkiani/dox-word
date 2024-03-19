@@ -1,1 +1,4 @@
-<cmn:g xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base"><b:import name="cutil" uri="./node_modules/@ghasemkiani/base/index.js"/><cmn:templates ns="urn:dox:word" uri="cmp"/></cmn:g>
+<cmn:g xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
+	<b:import name="cutil" uri="./node_modules/@ghasemkiani/base/index.js"/>
+	<cmn:templates ns="urn:dox:word" uri="cmp"/>
+</cmn:g>

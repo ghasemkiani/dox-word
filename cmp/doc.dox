@@ -1,6 +1,7 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 <cmn:script>
 	let target = props["target"];
+	let stub = props["stub"] || "fa";
 	
 	let lang = props["lang"] || "fa-IR";
 	let rtl = /^(fa|ar|he)/i.test(lang);
@@ -28,6 +29,7 @@
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
 	context.templateComponent.context.wdoc = {
+		stub,
 		lang,
 		rtl,
 		dir,
@@ -78,6 +80,7 @@
 	<meta name="ProgId" content="Word.Document"/>
 	<meta name="Generator" content="Microsoft Word 15"/>
 	<meta name="Originator" content="Microsoft Word 15"/>
+	<link rel="File-List"><cmn:script>renderer.x.attr(node, "href", `${context.wdoc.stub}_filelist.xml`);</cmn:script></link>
 	<title><cmn:script>context.wdoc.d.ntitle = node;</cmn:script><b:out text="{context.wdoc.title}"/></title>
 	<xml>
 		<o:DocumentProperties>
@@ -166,7 +169,6 @@
 	<meta name="ProgId" content="Word.Document"/>
 	<meta name="Generator" content="Microsoft Word 15"/>
 	<meta name="Originator" content="Microsoft Word 15"/>
-	<link id="Main-File" rel="Main-File" href="../faeb.htm"/>
 </head>
 
 <body lang="EN-US" link="#000000" vlink="purple"><cmn:script>context.wdoc.h.nbody = node;</cmn:script>
