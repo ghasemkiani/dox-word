@@ -55,6 +55,44 @@
 			"mso-line-height-rule": "exactly",
 		});
 		
+		ss.rule(p`MyDraft`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyDraft",
+			"mso-style-next": "MyDraft",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "start",
+			"mso-pagination": "none",
+		});
+		
+		ss.rule(p`MyDraftCenter`, {
+			"mso-style-parent": "MyDraft",
+			"mso-style-name": "MyDraftCenter",
+			"mso-style-next": "MyDraftCenter",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "center",
+			"mso-pagination": "none",
+		});
+		
 		ss.rule(p`MyNormal`, {
 			"mso-style-parent": "MyBase",
 			"mso-style-name": "MyNormal",

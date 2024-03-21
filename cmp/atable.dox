@@ -4,7 +4,7 @@
 		
 		let width = props ["width"] || "100%";
 		let left = props ["left"] || "left";
-		let top = props ["top"] || "top";
+		let top = props ["top"] || "bottom";
 		
 		ctx.watable = {
 			context: ctx,
