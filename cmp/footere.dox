@@ -7,7 +7,7 @@
 			<b:style>
 				<cmn:script>
 					context.ss.rule(`@page ${context.wsect.id}`, {
-						"mso-header": `url("${context.wdoc.stub}_header.htm") ${context.wsect.idHeader}`,
+						"mso-even-footer": `url("${context.wdoc.stub}_header.htm") ${context.wsect.idFooterEven}`,
 					});
 				</cmn:script>
 			</b:style>
@@ -15,8 +15,8 @@
 		<b:g node="{context.wdoc.h.nbody}">
 			<div>
 				<cmn:script>
-					renderer.x.css(node, {"mso-element": "header"});
-					renderer.x.attr(node, "id", context.wsect.idHeader);
+					renderer.x.css(node, {"mso-element": "footer"});
+					renderer.x.attr(node, "id", context.wsect.idFooterEven);
 				</cmn:script>
 				<b:body component="{context.templateComponentHF}"/>
 			</div>

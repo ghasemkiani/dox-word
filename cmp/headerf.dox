@@ -7,7 +7,7 @@
 			<b:style>
 				<cmn:script>
 					context.ss.rule(`@page ${context.wsect.id}`, {
-						"mso-header": `url("${context.wdoc.stub}_header.htm") ${context.wsect.idHeader}`,
+						"mso-first-header": `url("${context.wdoc.stub}_header.htm") ${context.wsect.idHeaderFirst}`,
 					});
 				</cmn:script>
 			</b:style>
@@ -16,7 +16,7 @@
 			<div>
 				<cmn:script>
 					renderer.x.css(node, {"mso-element": "header"});
-					renderer.x.attr(node, "id", context.wsect.idHeader);
+					renderer.x.attr(node, "id", context.wsect.idHeaderFirst);
 				</cmn:script>
 				<b:body component="{context.templateComponentHF}"/>
 			</div>
