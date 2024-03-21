@@ -1,5 +1,7 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 <cmn:script>
+	const {quantity} = await import("@ghasemkiani/base-utils");
+	
 	let target = props["target"];
 	let stub = props["stub"] || "fa";
 	
@@ -29,6 +31,9 @@
 	let orientation = props["orientation"] || "portrait";
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
+	
+	let lineWidth$ = quantity.length(width).u("mm").delta(-quantity.length(marginStart).u("mm").n()).delta(-quantity.length(marginEnd).u("mm").n());
+	
 	context.templateComponent.context.wdoc = {
 		stub,
 		lang,
@@ -57,6 +62,7 @@
 		orientation,
 		hfFirst,
 		hfEven,
+		lineWidth$,
 		d: {
 			nhtml: null,
 			nhead: null,
