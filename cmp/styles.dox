@@ -1,7 +1,362 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:e="urn:dox:gkbooks/theegg">
-	<cmn:script>
+	<b:style><cmn:script>
+		const {ss} = context;
 		
-	</cmn:script>
+		function p([n]) {
+			return `p.${n}, li.${n}, div.${n}`
+		}
+		function c([n]) {
+			return `span.${n}`
+		}
+		
+		ss.rule("html", {
+			"font-size": context.wdoc.fontSize,
+		});
+		
+		ss.rule(p`MsoNormal`, {
+			"mso-style-parent": `""`,
+			"mso-style-name": "Normal",
+			"mso-style-next": "Normal",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "start",
+			"mso-pagination": "none",
+		});
+		
+		ss.rule(p`MyBase`, {
+			"mso-style-parent": "Normal",
+			"mso-style-name": "MyBase",
+			"mso-style-next": "MyBase",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyNormal`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyNormal",
+			"mso-style-next": "MyNormal",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"text-indent": "1.5em",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyNormal1`, {
+			"mso-style-parent": `MyNormal`,
+			"mso-style-name": "MyNormal1",
+			"mso-style-next": "MyNormal",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyHeadingBase`, {
+			"mso-style-parent": `MyBase`,
+			"mso-style-name": "MyHeadingBase",
+			"mso-style-next": "MyNormal1",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontHeadings,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"margin-top": "12pt",
+			"margin-bottom": "3pt",
+			"text-align": "start",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"mso-hyphenate": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyBlockText`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyBlockText",
+			"mso-style-next": "MyBlockText",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"margin-right": "4.5em",
+			"margin-bottom": "4.5em",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyCenterText`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyCenterText",
+			"mso-style-next": "MyCenterText",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "center",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyRightText`, {
+			"mso-style-parent": "MyCenterText",
+			"mso-style-name": "MyRightText",
+			"mso-style-next": "MyRightText",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "start",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyLeftText`, {
+			"mso-style-parent": "MyCenterText",
+			"mso-style-name": "MyLeftText",
+			"mso-style-next": "MyLeftText",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"text-align": "end",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyLeftTextLtr`, {
+			"mso-style-parent": "MyLeftText",
+			"mso-style-name": "MyLeftTextLtr",
+			"mso-style-next": "MyLeftTextLtr",
+			
+			"direction": "ltr",
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"text-align": "start",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyCaption`, {
+			"mso-style-parent": "MyCenterText",
+			"mso-style-name": "MyCaption",
+			"mso-style-next": "MyNormal",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"font-style": "italic",
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"margin-top": "3pt",
+			"margin-bottom": "6pt",
+			"text-align": "center",
+			"mso-pagination": "widow-orphan lines-together",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyCaptionTable`, {
+			"mso-style-parent": "MyCaption",
+			"mso-style-name": "MyCaptionTable",
+			"mso-style-next": "MyRightText",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"font-style": "italic",
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"margin-top": "6pt",
+			"margin-bottom": "3pt",
+			"text-align": "center",
+			"mso-pagination": "widow-orphan lines-together",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyFigure`, {
+			"mso-style-parent": "MyCenterText",
+			"mso-style-name": "MyFigure",
+			"mso-style-next": "MyCaption",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"font-style": "italic",
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"margin-top": "3pt",
+			"margin-bottom": "3pt",
+			"text-align": "center",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"text-indent": "0mm",
+		});
+		
+		ss.rule(p`MyEquation`, {
+			"mso-style-parent": "MyCenterText",
+			"mso-style-name": "MyEquation",
+			"mso-style-next": "MyNormal1",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"font-style": "italic",
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"tab-stops": "right 90mm 100mm",
+			"text-align": "center",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"text-indent": "0mm",
+		});
+		
+		ss.rule(p`MyEquationIndented`, {
+			"mso-style-parent": "MyEquation",
+			"mso-style-name": "MyEquationIndented",
+			"mso-style-next": "MyNormal1",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize,
+			"font-style": "italic",
+			"mso-fareast-font-family": "MS Mincho",
+			"margin": "0mm",
+			"tab-stops": "right 70mm 100mm",
+			"text-align": "center",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"text-indent": "0mm",
+		});
+		
+	</cmn:script></b:style>
 	<style><cmn:script>renderer.x.t(node, `
 		p.MsoNormal,
 		li.MsoNormal,
@@ -514,272 +869,6 @@
 			mso-themecolor: accent1;
 			letter-spacing: .25pt;
 			font-weight: bold;
-		}
-
-		p.MyBase,
-		li.MyBase,
-		div.MyBase {
-			mso-style-name: MyBase;
-			margin: 0mm;
-			text-align: justify;
-			text-justify: kashida;
-			text-kashida: 0%;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyNormal,
-		li.MyNormal,
-		div.MyNormal {
-			mso-style-name: MyNormal;
-			mso-style-parent: MyBase;
-			margin: 0mm;
-			text-align: justify;
-			text-justify: kashida;
-			text-kashida: 0%;
-			text-indent: 18.0pt;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyNormal1,
-		li.MyNormal1,
-		div.MyNormal1 {
-			mso-style-name: MyNormal1;
-			mso-style-parent: MyNormal;
-			mso-style-next: MyNormal;
-			margin: 0mm;
-			text-align: justify;
-			text-justify: kashida;
-			text-kashida: 0%;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyHeadingBase,
-		li.MyHeadingBase,
-		div.MyHeadingBase {
-			mso-style-name: MyHeadingBase;
-			mso-style-parent: MyBase;
-			mso-style-next: MyNormal1;
-			margin-top: 12.0pt;
-			margin-right: 0mm;
-			margin-bottom: 3.0pt;
-			margin-left: 0mm;
-			text-align: right;
-			mso-pagination: widow-orphan lines-together;
-			page-break-after: avoid;
-			mso-hyphenate: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontHeadings};
-			mso-bidi-language: FA;
-		}
-
-		p.MyBlockText,
-		li.MyBlockText,
-		div.MyBlockText {
-			mso-style-name: MyBlockText;
-			mso-style-parent: MyBase;
-			margin-top: 0mm;
-			margin-right: 54.0pt;
-			margin-bottom: 0mm;
-			margin-left: 54.0pt;
-			text-align: justify;
-			text-justify: kashida;
-			text-kashida: 0%;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyCenterText,
-		li.MyCenterText,
-		div.MyCenterText {
-			mso-style-name: MyCenterText;
-			mso-style-parent: MyBase;
-			margin: 0mm;
-			text-align: center;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyRightText,
-		li.MyRightText,
-		div.MyRightText {
-			mso-style-name: MyRightText;
-			mso-style-parent: MyCenterText;
-			margin: 0mm;
-			text-align: right;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftText,
-		li.MyLeftText,
-		div.MyLeftText {
-			mso-style-name: MyLeftText;
-			mso-style-parent: MyCenterText;
-			margin: 0mm;
-			text-align: left;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftTextLtr,
-		li.MyLeftTextLtr,
-		div.MyLeftTextLtr {
-			mso-style-name: MyLeftTextLtr;
-			mso-style-parent: MyCenterText;
-			margin: 0mm;
-			text-align: left;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: ltr;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyCaption,
-		li.MyCaption,
-		div.MyCaption {
-			mso-style-name: MyCaption;
-			mso-style-parent: MyCenterText;
-			mso-style-next: MyNormal;
-			margin-top: 3.0pt;
-			margin-right: 0mm;
-			margin-bottom: 6.0pt;
-			margin-left: 0mm;
-			text-align: center;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: widow-orphan lines-together;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-			font-style: italic;
-		}
-
-		p.MyCaptionTable,
-		li.MyCaptionTable,
-		div.MyCaptionTable {
-			mso-style-name: MyCaptionTable;
-			mso-style-parent: MyCaption;
-			mso-style-next: MyRightText;
-			margin-top: 6.0pt;
-			margin-right: 0mm;
-			margin-bottom: 3.0pt;
-			margin-left: 0mm;
-			text-align: center;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: widow-orphan lines-together;
-			page-break-after: avoid;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-			font-style: italic;
-		}
-
-		p.MyFigure,
-		li.MyFigure,
-		div.MyFigure {
-			mso-style-name: MyFigure;
-			mso-style-parent: MyCenterText;
-			mso-style-next: MyCaption;
-			margin-top: 3.0pt;
-			margin-right: 0mm;
-			margin-bottom: 3.0pt;
-			margin-left: 0mm;
-			text-align: center;
-			mso-pagination: none;
-			page-break-after: avoid;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyEquation,
-		li.MyEquation,
-		div.MyEquation {
-			mso-style-name: MyEquation;
-			mso-style-next: MyNormal1;
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			tab-stops: right 275.9pt 311.9pt;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyEquationIndented,
-		li.MyEquationIndented,
-		div.MyEquationIndented {
-			mso-style-name: MyEquationIndented;
-			mso-style-next: MyNormal1;
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			tab-stops: right 257.9pt 311.9pt;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
 		}
 
 		span.MyLiteral {

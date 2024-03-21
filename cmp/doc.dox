@@ -9,6 +9,7 @@
 	let bgcolor = props["bgcolor"] || "";
 	let title = props["title"] || "";
 	let author = props["author"] || "Ghasem Kiani";
+	let fontSize = props["font-size"] || "12pt";
 	let fontMain = props["font-main"] || "GBadr";
 	let fontHeadings = props["font-headings"] || "GJalal";
 	let fontCode = props["font-code"] || "Consolas";
@@ -36,6 +37,7 @@
 		bgcolor,
 		title,
 		author,
+		fontSize,
 		fontMain,
 		fontHeadings,
 		fontCode,

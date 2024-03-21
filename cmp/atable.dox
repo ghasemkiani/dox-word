@@ -1,0 +1,49 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		let ctx = context.templateComponent.context;
+		
+		let width = props ["width"] || "100%";
+		let left = props ["left"] || "left";
+		let top = props ["top"] || "top";
+		
+		let ctx.watable = {
+			context: ctx,
+			width,
+			left,
+			top,
+		};
+	</cmn:script>
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<table style="
+			width:100.0%;
+			border-collapse:collapse;
+			border:none;
+			mso-table-overlap:never;
+			mso-table-lspace:0pt;
+			margin-left:0pt;
+			mso-table-rspace:0pt;
+			margin-right:0pt;
+			mso-table-anchor-vertical:margin;
+			mso-table-anchor-horizontal:margin;
+			mso-table-left:left;
+			mso-table-top:bottom;
+			mso-padding-alt:0mm 0mm 0mm 0mm;
+			mso-border-insideh:none;
+			mso-border-insidev:none;
+		">
+			<cmn:script>
+				context.watable.ntable = node;
+				renderer.x.css(node, {
+					"width": context.watable.width,
+					"mso-table-left": context.watable.left,
+					"mso-table-top": context.watable.top,
+				});
+			</cmn:script>
+			<tr>
+				<td valign="top" style='padding:0mm 0mm 0mm 0mm;'>
+					<b:body component="{context.templateComponent}"/>
+				</td>
+			</tr>
+		</table>
+	</cmn:g>
+</cmn:g>
