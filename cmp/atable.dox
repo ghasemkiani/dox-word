@@ -6,7 +6,7 @@
 		let left = props ["left"] || "left";
 		let top = props ["top"] || "top";
 		
-		let ctx.watable = {
+		ctx.watable = {
 			context: ctx,
 			width,
 			left,
