@@ -25,14 +25,18 @@
 				<cmn:script>renderer.x.attr(node, "lang", context.wdoc.lang);</cmn:script>
 				<b:body component="{context.wftn.templateComponent}"/>
 				<cmn:script>
-					renderer.x.insertBefore(node, renderer.x.dfrag(node =&gt; {
-						renderer.x.ch(node, "span.MyFootnoteReference", node =&gt; {
-							renderer.x.ch(node, "span{mso-special-character:footnote}", node =&gt; {
-								renderer.x.css(node, {"mso-footnote-id": context.wftn.id});
-							});
+					if (node.children[0]) {
+						renderer.x.chain(node.children[0], node =&gt; {
+							renderer.x.insertBefore(node, renderer.x.dfrag(node =&gt; {
+								renderer.x.ch(node, "span.MyFootnoteReference", node =&gt; {
+									renderer.x.ch(node, "span{mso-special-character:footnote}", node =&gt; {
+										renderer.x.css(node, {"mso-footnote-id": context.wftn.id});
+									});
+								});
+								renderer.x.t(node, " ");
+							}), renderer.x.nodes(node)[0]);
 						});
-						renderer.x.t(node, " ");
-					}), renderer.x.nodes(node)[0]);
+					}
 				</cmn:script>
 			</div>
 		</b:g>
