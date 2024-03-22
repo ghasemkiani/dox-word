@@ -13,12 +13,11 @@
 		context.wdoc.footnotes.push(context.wftn);
 	</cmn:script>
 	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<a href=""><cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script><span style="mso-special-character:footnote;"></span></a>
 		<b:g node="{context.wftn.nftn}">
 			<div style="mso-element:footnote;">
-				<cmn:script>
-					renderer.x.attr(node, "id", context.wftn.id);
-				</cmn:script>
-				<b:body component="{context.wftn.templateComponent}"/>
+				<cmn:script>renderer.x.attr(node, "id", context.wftn.id);</cmn:script>
+				<div class="MsoFootnoteText"><span style="mso-special-character:footnote;"><cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script></span><b:body component="{context.wftn.templateComponent}"/></div>
 			</div>
 		</b:g>
 	</cmn:g>
