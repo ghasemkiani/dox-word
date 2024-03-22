@@ -33,6 +33,7 @@
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
 	
 	let lineWidth$ = quantity.length(width).u("mm").delta(-quantity.length(marginStart).u("mm").n()).delta(-quantity.length(marginEnd).u("mm").n());
+	let fontSize$ = quantity.length(fontSize).u("pt");
 	
 	context.templateComponent.context.wdoc = {
 		stub,
@@ -43,6 +44,7 @@
 		title,
 		author,
 		fontSize,
+		fontSize$,
 		fontMain,
 		fontHeadings,
 		fontCode,

@@ -786,7 +786,7 @@
 			"unicode-bidi": "embed",
 			
 			"font-family": context.wdoc.fontMain,
-			"font-size": "80%",
+			"font-size": context.wdoc.fontSize$.clone().scale(0.8).s(),
 			"mso-fareast-font-family": "MS Mincho",
 			
 			"margin": "0mm",
@@ -794,8 +794,8 @@
 			"text-justify": "kashida",
 			"text-kashida": "0%",
 			"mso-pagination": "none",
-			"text-indent": "1.5em",
-			"line-height": "1.5em",
+			"text-indent": context.wdoc.fontSize$.clone().scale(0.8).scale(1.5).s(),
+			"line-height": context.wdoc.fontSize$.clone().scale(0.8).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
 		});
 		
