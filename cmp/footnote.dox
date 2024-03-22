@@ -15,7 +15,7 @@
 			<div style="mso-element:footnote;">
 				<cmn:script>context.wftn.nftn = node;</cmn:script>
 				<cmn:script>renderer.x.attr(node, "id", context.wftn.id);</cmn:script>
-				<div class="MyFootnoteText"><span class="MyFootnoteReference"><span style="mso-special-character:footnote;"><cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script></span></span><b:body component="{context.wftn.templateComponent}"/></div>
+				<div class="MyFootnoteText"><span class="MyFootnoteReference"><span style="mso-special-character:footnote;"><cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script></span></span><span>&#x00A0;&#x00A0;</span><b:body component="{context.wftn.templateComponent}"/></div>
 			</div>
 		</b:g>
 	</cmn:g>
