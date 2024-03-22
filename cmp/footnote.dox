@@ -1,5 +1,4 @@
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
-	<cmn:script>
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><cmn:script>
 		let num = context.wdoc.footnotes.length + 1;
 		let id = `_ftn${num.toFixed(0).padStart(2, "0")}`;
 		context.templateComponent.context.wftn = {
@@ -9,22 +8,7 @@
 			templateComponent: context.templateComponent,
 		};
 		context.wdoc.footnotes.push(context.wftn);
-	</cmn:script>
-	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
-		<a href="">
-			<cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script>
-			<span class="MyFootnoteReference">
-				<span style="mso-special-character:footnote;"/>
-			</span>
-		</a>
-		<b:g node="{context.wftn.nftn}">
-			<div style="mso-element:footnote;">
-				<cmn:script>context.wftn.nftn = node;</cmn:script>
-				<cmn:script>renderer.x.attr(node, "id", context.wftn.id);</cmn:script>
-				<cmn:script>renderer.x.attr(node, "dir", context.wdoc.dir);</cmn:script>
-				<cmn:script>renderer.x.attr(node, "lang", context.wdoc.lang);</cmn:script>
-				<b:body component="{context.wftn.templateComponent}"/>
-				<cmn:script>
+	</cmn:script><cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><a href=""><cmn:script>renderer.x.css(node, {"mso-footnote-id": context.wftn.id});</cmn:script><span class="MyFootnoteReference"><span style="mso-special-character:footnote;"/></span></a><b:g node="{context.wftn.nftn}"><div style="mso-element:footnote;"><cmn:script>context.wftn.nftn = node;</cmn:script><cmn:script>renderer.x.attr(node, "id", context.wftn.id);</cmn:script><cmn:script>renderer.x.attr(node, "dir", context.wdoc.dir);</cmn:script><cmn:script>renderer.x.attr(node, "lang", context.wdoc.lang);</cmn:script><b:body component="{context.wftn.templateComponent}"/><cmn:script>
 					if (node.children[0]) {
 						renderer.x.chain(node.children[0], node =&gt; {
 							renderer.x.insertBefore(node, renderer.x.dfrag(node =&gt; {
@@ -37,8 +21,4 @@
 							}), renderer.x.nodes(node)[0]);
 						});
 					}
-				</cmn:script>
-			</div>
-		</b:g>
-	</cmn:g>
-</cmn:g>
+				</cmn:script></div></b:g></cmn:g></cmn:g>
