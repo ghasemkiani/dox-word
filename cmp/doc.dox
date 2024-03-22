@@ -74,6 +74,7 @@
 			nbody: null,
 		},
 		sections: [],
+		footnotes: [],
 	};
 	
 	if (target) {
@@ -214,4 +215,9 @@
 
 </html>
 	<b:body component="{context.templateComponent}" node="{context.wdoc.d.nbody}"/>
+	<b:g node="{context.wdoc.d.nbody}">
+		<div style="mso-element:footnote-list;">
+			<cmn:script>renderer.x.aps(node, context.wdoc.footnotes.map(({nftn}) =&gt; nftn));</cmn:script>
+		</div>
+	</b:g>
 </cmn:g>
