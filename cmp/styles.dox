@@ -751,6 +751,61 @@
 			"mso-line-height-rule": "exactly",
 		});
 		
+		ss.rule(p`MyFootnoteText`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyFootnoteText",
+			"mso-style-next": "MyFootnoteTextIndented",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": "80%",
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"text-indent": "0mm",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyFootnoteTextIndented`, {
+			"mso-style-parent": "MyFootnoteText",
+			"mso-style-name": "MyFootnoteTextIndented",
+			"mso-style-next": "MyFootnoteTextIndented",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": "80%",
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"text-align": "justify",
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			"mso-pagination": "none",
+			"text-indent": "1.5em",
+			"line-height": "1.5em",
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(c`MyFootnoteReference`, {
+			"mso-style-parent": "Default Paragraph Font",
+			"mso-style-name": "MyFootnoteReference",
+			
+			"vertical-align": "super",
+		});
+		
 	</cmn:script></b:style>
 	<style><cmn:script>renderer.x.t(node, `
 		p.MsoFootnoteText,

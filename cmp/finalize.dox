@@ -1,0 +1,9 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<b:if cond="{context.wdoc.footnotes.length &gt; 0}">
+		<b:g node="{context.wdoc.d.nbody}">
+			<div style="mso-element:footnote-list;">
+				<cmn:script>renderer.x.aps(node, context.wdoc.footnotes.map(({nftn}) =&gt; nftn));</cmn:script>
+			</div>
+		</b:g>
+	</b:if>
+</cmn:g>
