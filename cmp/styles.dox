@@ -806,6 +806,57 @@
 			"vertical-align": "super",
 		});
 		
+		ss.rule(p`MyQuote`, {
+			"mso-style-parent": "MyBase",
+			"mso-style-name": "MyQuote",
+			"mso-style-next": "MyQuoteSource",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize$.clone().scale(0.9).s(),
+			"mso-fareast-font-family": "MS Mincho",
+			
+			"margin": "0mm",
+			"margin-top": "2em",
+			"margin-right": "5em",
+			"text-align": "right",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"text-indent": "0mm",
+			"line-height": context.wdoc.fontSize$.clone().scale(0.9).scale(1.5).s(),
+			"mso-line-height-rule": "exactly",
+		});
+		
+		ss.rule(p`MyQuoteSource`, {
+			"mso-style-parent": "MyQuote",
+			"mso-style-name": "MyQuoteSource",
+			"mso-style-next": "MyNormal1",
+			
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+			
+			"font-family": context.wdoc.fontMain,
+			"font-size": context.wdoc.fontSize$.clone().scale(0.9).s(),
+			"mso-fareast-font-family": "MS Mincho",
+			"font-style": "italic",
+			
+			"margin": "0mm",
+			"margin-right": "5em",
+			"margin-bottom": "4em",
+			"text-align": "right",
+			"mso-pagination": "widow-orphan lines-together",
+			"page-break-after": "avoid",
+			"text-indent": "0mm",
+			"line-height": context.wdoc.fontSize$.clone().scale(0.9).scale(1.5).s(),
+			"mso-line-height-rule": "exactly",
+		});
+		
 	</cmn:script></b:style>
 	<style><cmn:script>renderer.x.t(node, `
 		p.MsoFootnoteText,
