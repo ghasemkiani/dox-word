@@ -32,8 +32,8 @@
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
 	
-	let lineWidth$ = quantity.length({string: width, space: false}).u("mm").delta(-quantity.length(marginStart).u("mm").n()).delta(-quantity.length(marginEnd).u("mm").n());
-	let fontSize$ = quantity.length({string: fontSize, space: false}).u("pt");
+	let lineWidth$ = quantity.length({string: width, space: false, dpi: 96}).u("mm").delta(-quantity.length(marginStart).u("mm").n()).delta(-quantity.length(marginEnd).u("mm").n());
+	let fontSize$ = quantity.length({string: fontSize, space: false, dpi: 96}).u("pt");
 	
 	context.templateComponent.context.wdoc = {
 		stub,

@@ -13,8 +13,52 @@
 			return `span.${s}`
 		}
 		
-		ss.rule("html", {
+		let bidi = {
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+		};
+		
+		let bidiLtr = {
+			"direction": context.wdoc.dir,
+			
+			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+			"unicode-bidi": "embed",
+		};
+		
+		let fontFamilyMain = {
+			"font-family": context.wdoc.fontMain,
+			"mso-fareast-font-family": "MS Mincho",
+		};
+		
+		let fontSizeNormal = {
 			"font-size": context.wdoc.fontSize,
+		};
+		
+		let textAlignJustify = {
+			"text-align": "justify",
+			/*
+			"text-justify": "kashida",
+			"text-kashida": "0%",
+			*/
+		};
+		
+		let paginationNone = {
+			"mso-pagination": "none",
+		};
+		
+		let paginationWidowOrphan = {
+			"mso-pagination": "widow-orphan lines-together",
+		};
+		
+		let paginationWidowOrphanNext = {
+			...paginationWidowOrphan,
+			"page-break-after": "avoid",
+		};
+		
+		ss.rule("html", {
+			...fontSizeNormal,
 		});
 		
 		ss.rule(p`MsoNormal`, {
@@ -22,18 +66,14 @@
 			"mso-style-name": "Normal",
 			"mso-style-next": "Normal",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 		});
 		
 		ss.rule(p`MyBase`, {
@@ -41,20 +81,14 @@
 			"mso-style-name": "MyBase",
 			"mso-style-next": "MyBase",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
 		});
@@ -64,18 +98,14 @@
 			"mso-style-name": "MyDraft",
 			"mso-style-next": "MyDraft",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 		});
 		
 		ss.rule(p`MyDraftCenter`, {
@@ -83,18 +113,14 @@
 			"mso-style-name": "MyDraftCenter",
 			"mso-style-next": "MyDraftCenter",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "center",
-			"mso-pagination": "none",
+			...paginationNone,
 		});
 		
 		ss.rule(p`MyNormal`, {
@@ -102,20 +128,14 @@
 			"mso-style-name": "MyNormal",
 			"mso-style-next": "MyNormal",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"text-indent": "1.5em",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -126,20 +146,14 @@
 			"mso-style-name": "MyNormal1",
 			"mso-style-next": "MyNormal",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -150,21 +164,17 @@
 			"mso-style-name": "MyHeadingBase",
 			"mso-style-next": "MyNormal1",
 			
-			"direction": context.wdoc.dir,
-			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
+			...bidi,
 			
 			"font-family": context.wdoc.fontHeadings,
-			"font-size": context.wdoc.fontSize,
 			"mso-fareast-font-family": "MS Mincho",
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"margin-top": "12pt",
 			"margin-bottom": "3pt",
 			"text-align": "right",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphanNext,
 			"mso-hyphenate": "none",
 			"text-indent": "0mm",
 			"line-height": "1.5em",
@@ -176,22 +186,16 @@
 			"mso-style-name": "MyBlockText",
 			"mso-style-next": "MyBlockText",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"margin-right": "4.5em",
 			"margin-bottom": "4.5em",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -202,18 +206,14 @@
 			"mso-style-name": "MyCenterText",
 			"mso-style-next": "MyCenterText",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "center",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -224,18 +224,14 @@
 			"mso-style-name": "MyRightText",
 			"mso-style-next": "MyRightText",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -246,17 +242,14 @@
 			"mso-style-name": "MyLeftText",
 			"mso-style-next": "MyLeftText",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
 			"margin": "0mm",
 			"text-align": "left",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -267,17 +260,14 @@
 			"mso-style-name": "MyLeftTextLtr",
 			"mso-style-next": "MyLeftTextLtr",
 			
-			"direction": "ltr",
+			...bidiLtr,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
 			"margin": "0mm",
 			"text-align": "left",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -288,20 +278,17 @@
 			"mso-style-name": "MyCaption",
 			"mso-style-next": "MyNormal",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
+			...fontFamilyMain,
+			...fontSizeNormal,
 			"font-style": "italic",
-			"mso-fareast-font-family": "MS Mincho",
+			
 			"margin": "0mm",
 			"margin-top": "3pt",
 			"margin-bottom": "6pt",
 			"text-align": "center",
-			"mso-pagination": "widow-orphan lines-together",
+			...paginationWidowOrphan,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -312,20 +299,17 @@
 			"mso-style-name": "MyCaptionTable",
 			"mso-style-next": "MyRightText",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
+			...fontFamilyMain,
+			...fontSizeNormal,
 			"font-style": "italic",
-			"mso-fareast-font-family": "MS Mincho",
+			
 			"margin": "0mm",
 			"margin-top": "6pt",
 			"margin-bottom": "3pt",
 			"text-align": "center",
-			"mso-pagination": "widow-orphan lines-together",
+			...paginationWidowOrphanNext,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -336,21 +320,17 @@
 			"mso-style-name": "MyFigure",
 			"mso-style-next": "MyCaption",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
+			...fontFamilyMain,
+			...fontSizeNormal,
 			"font-style": "italic",
-			"mso-fareast-font-family": "MS Mincho",
+			
 			"margin": "0mm",
 			"margin-top": "3pt",
 			"margin-bottom": "3pt",
 			"text-align": "center",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphanNext,
 			"text-indent": "0mm",
 		});
 		
@@ -359,20 +339,15 @@
 			"mso-style-name": "MyEquation",
 			"mso-style-next": "MyNormal1",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"font-style": "italic",
-			"mso-fareast-font-family": "MS Mincho",
 			"margin": "0mm",
 			"tab-stops": "right 90mm 100mm",
 			"text-align": "center",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphan,
 			"text-indent": "0mm",
 		});
 		
@@ -381,20 +356,15 @@
 			"mso-style-name": "MyEquationIndented",
 			"mso-style-next": "MyNormal1",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"font-style": "italic",
-			"mso-fareast-font-family": "MS Mincho",
 			"margin": "0mm",
 			"tab-stops": "right 70mm 100mm",
 			"text-align": "center",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphan,
 			"text-indent": "0mm",
 		});
 		
@@ -404,18 +374,15 @@
 				"mso-style-name": `"Heading ${i}"`,
 				"mso-style-next": "MyNormal1",
 				
-				"direction": context.wdoc.dir,
+				...bidi,
 				
-				"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-				"unicode-bidi": "embed",
+				...fontFamilyMain,
 				
-				"font-family": context.wdoc.fontHeadings,
-				"mso-fareast-font-family": "MS Mincho",
 				"margin": "0mm",
 				"margin-top": "12pt",
 				"margin-bottom": "3pt",
 				"text-align": "right",
-				"mso-pagination": "widow-orphan lines-together",
+				...paginationWidowOrphanNext,
 				"page-break-after": "avoid",
 				"text-indent": "0mm",
 				"mso-outline-level": `${i}`,
@@ -475,19 +442,13 @@
 				"mso-style-name": `MyHangingRtl${i}`,
 				"mso-style-next": `MyHangingRtl${i}`,
 				
-				"direction": context.wdoc.dir,
+				...bidi,
 				
-				"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-				"unicode-bidi": "embed",
-				
-				"font-family": context.wdoc.fontHeadings,
-				"mso-fareast-font-family": "MS Mincho",
+				...fontFamilyMain,
 				"margin": "0mm",
 				"margin-right": `${1.5*i}em`,
-				"text-align": "justify",
-				"text-justify": "kashida",
-				"text-kashida": "0%",
-				"mso-pagination": "none",
+				...textAlignJustify,
+				...paginationNone,
 				"text-indent": "-1.5em",
 				"line-height": "1.5em",
 				"mso-line-height-rule": "exactly",
@@ -501,19 +462,13 @@
 				"mso-style-name": `MyIndentedRtl${i}`,
 				"mso-style-next": `MyIndentedRtl${i}`,
 				
-				"direction": context.wdoc.dir,
+				...bidi,
 				
-				"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-				"unicode-bidi": "embed",
-				
-				"font-family": context.wdoc.fontHeadings,
-				"mso-fareast-font-family": "MS Mincho",
+				...fontFamilyMain,
 				"margin": "0mm",
 				"margin-right": `${1.5*i}em`,
-				"text-align": "justify",
-				"text-justify": "kashida",
-				"text-kashida": "0%",
-				"mso-pagination": "none",
+				...textAlignJustify,
+				...paginationNone,
 				"text-indent": "0mm",
 				"line-height": "1.5em",
 				"mso-line-height-rule": "exactly",
@@ -527,19 +482,13 @@
 				"mso-style-name": `MyHangingLtr${i}`,
 				"mso-style-next": `MyHangingLtr${i}`,
 				
-				"direction": "ltr",
+				...bidiLtr,
 				
-				"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-				"unicode-bidi": "embed",
-				
-				"font-family": context.wdoc.fontHeadings,
-				"mso-fareast-font-family": "MS Mincho",
+				...fontFamilyMain,
 				"margin": "0mm",
 				"margin-left": `${1.5*i}em`,
-				"text-align": "justify",
-				"text-justify": "kashida",
-				"text-kashida": "0%",
-				"mso-pagination": "none",
+				...textAlignJustify,
+				...paginationNone,
 				"text-indent": "-1.5em",
 				"line-height": "1.5em",
 				"mso-line-height-rule": "exactly",
@@ -553,19 +502,13 @@
 				"mso-style-name": `MyIndentedLtr${i}`,
 				"mso-style-next": `MyIndentedLtr${i}`,
 				
-				"direction": "ltr",
+				...bidiLtr,
 				
-				"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-				"unicode-bidi": "embed",
-				
-				"font-family": context.wdoc.fontHeadings,
-				"mso-fareast-font-family": "MS Mincho",
+				...fontFamilyMain,
 				"margin": "0mm",
 				"margin-left": `${1.5*i}em`,
-				"text-align": "justify",
-				"text-justify": "kashida",
-				"text-kashida": "0%",
-				"mso-pagination": "none",
+				...textAlignJustify,
+				...paginationNone,
 				"text-indent": "0mm",
 				"line-height": "1.5em",
 				"mso-line-height-rule": "exactly",
@@ -573,23 +516,38 @@
 			});
 		}
 		
+		ss.rule(p`MyReference`, {
+			"mso-style-parent": "MyHangingLtr1",
+			"mso-style-name": `MyReference`,
+			"mso-style-next": `MyReference`,
+			
+			...bidiLtr,
+			
+			...fontFamilyMain,
+			"font-size": context.wdoc.fontSize$.clone().scale(0.75).s(),
+			"margin": "0mm",
+			"margin-left": `1.5em`,
+			...textAlignJustify,
+			...paginationNone,
+			"text-indent": "-1.5em",
+			"line-height": context.wdoc.fontSize$.clone().scale(0.75).s(),
+			"mso-line-height-rule": "exactly",
+			"tab-stops": "1.5em",
+		});
+		
 		ss.rule(p`MyHeader`, {
 			"mso-style-parent": "MyCenterText",
 			"mso-style-name": "MyHeader",
 			"mso-style-next": "MyHeader",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -601,18 +559,14 @@
 			"mso-style-name": "MyHeaderFirst",
 			"mso-style-next": "MyHeaderFirst",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "center",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -623,18 +577,14 @@
 			"mso-style-name": "MyHeaderOdd",
 			"mso-style-next": "MyHeaderOdd",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "left",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -645,18 +595,14 @@
 			"mso-style-name": "MyHeaderEven",
 			"mso-style-next": "MyHeaderEven",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -667,18 +613,14 @@
 			"mso-style-name": "MyFooter",
 			"mso-style-next": "MyFooter",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -690,18 +632,14 @@
 			"mso-style-name": "MyFooterFirst",
 			"mso-style-next": "MyFooterFirst",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "center",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -712,18 +650,14 @@
 			"mso-style-name": "MyFooterOdd",
 			"mso-style-next": "MyFooterOdd",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "left",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -734,18 +668,14 @@
 			"mso-style-name": "MyFooterEven",
 			"mso-style-next": "MyFooterEven",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize,
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			...fontSizeNormal,
 			
 			"margin": "0mm",
 			"text-align": "right",
-			"mso-pagination": "none",
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
@@ -756,20 +686,14 @@
 			"mso-style-name": "MyFootnoteText",
 			"mso-style-next": "MyFootnoteTextIndented",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize$.clone().scale(0.8).s(),
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			"font-size": context.wdoc.fontSize$.clone().scale(0.75).s(),
 			
 			"margin": "0mm",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"text-indent": "0mm",
 			"line-height": context.wdoc.fontSize$.clone().scale(0.8).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
@@ -780,20 +704,14 @@
 			"mso-style-name": "MyFootnoteTextIndented",
 			"mso-style-next": "MyFootnoteTextIndented",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
-			"font-size": context.wdoc.fontSize$.clone().scale(0.8).s(),
-			"mso-fareast-font-family": "MS Mincho",
+			...fontFamilyMain,
+			"font-size": context.wdoc.fontSize$.clone().scale(0.75).s(),
 			
 			"margin": "0mm",
-			"text-align": "justify",
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			"mso-pagination": "none",
+			...textAlignJustify,
+			...paginationNone,
 			"text-indent": context.wdoc.fontSize$.clone().scale(0.8).scale(1.5).s(),
 			"line-height": context.wdoc.fontSize$.clone().scale(0.8).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
@@ -811,21 +729,16 @@
 			"mso-style-name": "MyQuote",
 			"mso-style-next": "MyQuoteSource",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
+			...fontFamilyMain,
 			"font-size": context.wdoc.fontSize$.clone().scale(0.9).s(),
-			"mso-fareast-font-family": "MS Mincho",
 			
 			"margin": "0mm",
 			"margin-top": "2em",
 			"margin-right": "5em",
 			"text-align": "right",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphanNext,
 			"text-indent": "0mm",
 			"line-height": context.wdoc.fontSize$.clone().scale(0.9).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
@@ -836,22 +749,17 @@
 			"mso-style-name": "MyQuoteSource",
 			"mso-style-next": "MyNormal1",
 			
-			"direction": context.wdoc.dir,
+			...bidi,
 			
-			"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
-			"unicode-bidi": "embed",
-			
-			"font-family": context.wdoc.fontMain,
+			...fontFamilyMain,
 			"font-size": context.wdoc.fontSize$.clone().scale(0.9).s(),
-			"mso-fareast-font-family": "MS Mincho",
 			"font-style": "italic",
 			
 			"margin": "0mm",
 			"margin-right": "5em",
 			"margin-bottom": "4em",
 			"text-align": "right",
-			"mso-pagination": "widow-orphan lines-together",
-			"page-break-after": "avoid",
+			...paginationWidowOrphan,
 			"text-indent": "0mm",
 			"line-height": context.wdoc.fontSize$.clone().scale(0.9).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
@@ -1087,30 +995,6 @@
 			font-family: ${context.wdoc.fontMain};
 			mso-bidi-language: FA;
 			font-weight: bold;
-		}
-
-		p.MyReference,
-		li.MyReference,
-		div.MyReference {
-			mso-style-name: MyReference;
-			mso-style-parent: MyHangingLtr1;
-			margin-top: 0mm;
-			margin-right: 0mm;
-			margin-bottom: 0mm;
-			margin-left: 18.0pt;
-			text-align: justify;
-			text-justify: kashida;
-			text-kashida: 0%;
-			text-indent: -18.0pt;
-			line-height: 13.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			tab-stops: 18.0pt;
-			direction: ltr;
-			unicode-bidi: embed;
-			font-size: 9.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
 		}
 
 		span.MyReferenceText {
