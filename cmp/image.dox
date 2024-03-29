@@ -1,11 +1,13 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
+		const {cutil} = await import("@ghasemkiani/base");
+		
 		let {uri} = props;
 		let {width} = props;
 		let {height} = props;
 		
-		let type = context.imports.cutil.srand(6);
-		let id = context.imports.cutil.srand(6);
+		let type = cutil.srand(6);
+		let id = cutil.srand(6);
 		
 		context.image = {
 			uri,

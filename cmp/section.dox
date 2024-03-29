@@ -1,6 +1,6 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
-		const {cutil} = context.imports;
+		const {cutil} = await import("@ghasemkiani/base");
 		
 		let type = props["type"];
 		let break_ = props["break"] || "page";
@@ -62,7 +62,10 @@
 		context.wdoc.sections.push(context.wsect);
 	</cmn:script>
 	<b:g node="{context.wdoc.d.nhead}">
-		<style><cmn:script>renderer.x.t(node, `
+		<style><cmn:script>
+			const {cutil} = await import("@ghasemkiani/base");
+			
+			renderer.x.t(node, `
 			@page ${context.wsect.id} {
 				size: ${context.wsect.width} ${context.wsect.height};
 				margin: ${context.wsect.marginTop} ${context.wsect.marginEnd} ${context.wsect.marginBottom} ${context.wsect.marginStart};
@@ -71,7 +74,7 @@
 				mso-title-page: yes;
 				mso-paper-source: 0;
 				mso-page-orientation: ${context.wsect.orientation};
-				${context.imports.cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
+				${cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
 			}
 
 			div.${context.wsect.id} {
