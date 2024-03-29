@@ -1,5 +1,6 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 <cmn:script>
+	const {cutil} = await import("@ghasemkiani/base");
 	const {quantity} = await import("@ghasemkiani/base-utils");
 	
 	let target = props["target"];
@@ -77,6 +78,41 @@
 		},
 		sections: [],
 		footnotes: [],
+		
+		St: class {
+			static p(ss, ...vv) {
+				let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
+				return `p.${s}, li.${s}, div.${s}`
+			}
+			static c(ss, ...vv) {
+				let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
+				return `span.${s}`
+			}
+			s(o) {
+				return cutil.assign(this, o);
+			}
+			n(s) {
+				let [a, b, c] = s.split(".");
+				if (!b &amp;&amp; !c) {
+					b = a;
+					c = b;
+					a = `""`;
+				} else if (!c) {
+					c = b;
+				}
+				return this.s({
+					"mso-style-parent": a,
+					"mso-style-name": b,
+					"mso-style-next": c,
+				});
+			}
+		},
+		st() {
+			return new this.St();
+		},
+		get stbound() {
+			return this.st.bind(this);
+		},
 	};
 	
 	if (target) {

@@ -1,9 +1,205 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:e="urn:dox:gkbooks/theegg">
 	<b:style><cmn:script>
 		const {cutil} = await import("@ghasemkiani/base");
+		const {quantity} = await import("@ghasemkiani/base-utils");
 		
 		const {ss} = context;
 		
+		const {St, stbound: st} = context.wdoc;
+
+		cutil.extend(St.prototype, {
+			directionRtl() {
+				return this.s({
+					"direction": "rtl",
+				});
+			},
+			directionLtr() {
+				return this.s({
+					"direction": "ltr",
+				});
+			},
+			direction() {
+				return this.s({
+					"direction": context.wdoc.dir,
+				});
+			},
+			language() {
+				return this.s({
+					"mso-bidi-language": /^(fa|ar|he)/i.test(context.wdoc.lang) ? context.wdoc.lang : "fa-IR",
+					"unicode-bidi": "embed",
+				});
+			},
+			bidi() {
+				return this.direction().language();
+			},
+			fontFamilyMain() {
+				return this.s({
+					"font-family": context.wdoc.fontMain,
+					"mso-fareast-font-family": "MS Mincho",
+				});
+			},
+			fontFamilyHeadings() {
+				return this.s({
+					"font-family": context.wdoc.fontHeadings,
+					"mso-fareast-font-family": "MS Mincho",
+				});
+			},
+			fontSize(fs) {
+				return this.s({
+					"font-size": fs,
+				});
+			},
+			fontSizeNormal() {
+				return this.fontSize(context.wdoc.fontSize);
+			},
+			fontSizeEm(em) {
+				return this.fontSize(this.em(em));
+			},
+			fontSizeSmall() {
+				return this.fontSizeNormal().fontSizeEm(9 / 12);
+			},
+			fontSizeTiny() {
+				return this.fontSizeNormal().fontSizeEm(7 / 12);
+			},
+			paginationNone() {
+				return this.s({
+					"mso-pagination": "none",
+					"page-break-after": null,
+				});
+			},
+			paginationWidowOrphan() {
+				return this.s({
+					"mso-pagination": "widow-orphan lines-together",
+					"page-break-after": null,
+				});
+			},
+			paginationWidowOrphanNext() {
+				return this.paginationWidowOrphan().s({
+					"page-break-after": "avoid",
+				});
+			},
+			textAlignClear() {
+				return this.s({
+					"text-align": null,
+					"text-justify": null,
+					"text-kashida": null,
+				});
+			},
+			textAlignCenter() {
+				return this.s({
+					"text-align": "center",
+				});
+			},
+			textAlignRight() {
+				return this.s({
+					"text-align": "right",
+				});
+			},
+			textAlignLeft() {
+				return this.s({
+					"text-align": "left",
+				});
+			},
+			textAlignStart() {
+				return this.s({
+					"text-align": this.direction === "rtl" ? "right" : "left",
+				});
+			},
+			textAlignEnd() {
+				return this.s({
+					"text-align": this.direction === "rtl" ? "left" : "right",
+				});
+			},
+			textAlignJustify() {
+				return this.s({
+					"text-align": "justify",
+					"text-justify": null,
+					"text-kashida": null,
+				});
+			},
+			textAlignJustifyLow() {
+				return this.s({
+					"text-align": "justify",
+					"text-justify": "kashida",
+					"text-kashida": "0%",
+				});
+			},
+			marginZero() {
+				return this.s({
+					"margin": "0mm",
+				});
+			},
+			em(n) {
+				return quantity.length(this["font-size"]).scale(n).nosp().s();
+			},
+			lineHeightSingle() {
+				return this.s({
+					"line-height": null,
+					"mso-line-height-rule": null,
+				});
+			},
+			lineHeightExactlyEm(em) {
+				return this.s({
+					"line-height": this.em(em),
+					"mso-line-height-rule": "exactly",
+				});
+			},
+			lineHeightNormal() {
+				return this.lineHeightExactlyEm(1.5);
+			},
+			Normal() {
+				return this
+					.bidi()
+					.fontFamilyMain()
+					.fontSizeNormal()
+					.marginZero()
+					.textAlignStart()
+					.paginationNone()
+					.n("Normal");
+			},
+			MyBase() {
+				return this
+					.Normal()
+					.textAlignJustifyLow()
+					.lineHeightNormal()
+					.n("Normal.MyBase");
+			},
+			MyDraft() {
+				return this
+					.MyBase()
+					.textAlignClear()
+					.textAlignStart()
+					.lineHeightSingle()
+					.n("MyBase.MyDraft");
+			},
+			MyDraftSmall() {
+				return this
+					.MyDraft()
+					.fontSizeSmall()
+					.n("MyDraft.MyDraftSmall");
+			},
+			MyDraftCenter() {
+				return this
+					.MyDraft()
+					.textAlignCenter()
+					.n("MyDraft.MyDraftCenter");
+			},
+			MyDraftCenterSmall() {
+				return this
+					.MyDraftCenter()
+					.fontSizeSmall()
+					.n("MyDraftCenter.MyDraftCenterSmall");
+			},
+		});
+		
+		ss.rule("html", st().fontSizeNormal());
+		ss.rule(St.p`MsoNormal`, st().Normal());
+		ss.rule(St.p`MyBase`, st().MyBase());
+		ss.rule(St.p`MyDraft`, st().MyDraft());
+		ss.rule(St.p`MyDraftSmall`, st().MyDraftSmall());
+		ss.rule(St.p`MyDraftCenter`, st().MyDraftCenter());
+		ss.rule(St.p`MyDraftCenterSmall`, st().MyDraftCenterSmall());
+
 		function p(ss, ...vv) {
 			let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
 			return `p.${s}, li.${s}, div.${s}`
@@ -62,6 +258,7 @@
 			"page-break-after": "avoid",
 		};
 		
+		/*
 		ss.rule("html", {
 			...fontSizeNormal,
 		});
@@ -80,7 +277,6 @@
 			"text-align": "right",
 			...paginationNone,
 		});
-		
 		ss.rule(p`MyBase`, {
 			"mso-style-parent": "Normal",
 			"mso-style-name": "MyBase",
@@ -127,6 +323,7 @@
 			"text-align": "center",
 			...paginationNone,
 		});
+		*/
 		
 		ss.rule(p`MyNormal`, {
 			"mso-style-parent": "MyBase",
