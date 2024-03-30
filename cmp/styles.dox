@@ -55,6 +55,9 @@
 			fontSizeEm(em) {
 				return this.fontSize(this.em(em));
 			},
+			fontSizeRem(rem) {
+				return this.fontSizeNormal().fontSizeEm(rem);
+			},
 			fontSizeSmall() {
 				return this.fontSizeNormal().fontSizeEm(9 / 12);
 			},
@@ -236,9 +239,9 @@
 			},
 			MyRightText() {
 				return this
-					.MyBase()
+					.MyCenterText()
 					.textAlignStart()
-					.n("MyBase.MyRightText");
+					.n("MyCenterText.MyRightText");
 			},
 			MyRightTextSmall() {
 				return this
@@ -254,9 +257,9 @@
 			},
 			MyLeftText() {
 				return this
-					.MyBase()
+					.MyCenterText()
 					.textAlignEnd()
-					.n("MyBase.MyLeftText");
+					.n("MyCenterText.MyLeftText");
 			},
 			MyLeftTextSmall() {
 				return this
@@ -298,17 +301,115 @@
 					})
 					.n("MyBase.MyBlockText");
 			},
+			MyEquation() {
+				return this
+					.MyCenterText()
+					.s({
+						"tab-stops": `right ${context.wdoc.lineWidth$.clone().u("mm").delta(-10).s()} ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+					})
+					.paginationWidowOrphan()
+					.lineHeightSingle()
+					.n("MyCenterText.MyEquation.MyNormal1");
+			},
+			MyEquationIndented() {
+				return this
+					.MyEquation()
+					.s({
+						"tab-stops": `right ${context.wdoc.lineWidth$.clone().u("mm").delta(-30).s()} ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+					})
+					.n("MyEquationIndented.MyEquationIndented.MyNormal1");
+			},
+			MyFigure() {
+				return this
+					.MyCenterText()
+					.s({
+						"margin-top": "3pt",
+						"margin-bottom": "3pt",
+					})
+					.paginationWidowOrphanNext()
+					.lineHeightSingle()
+					.n("MyCenterText.MyFigure.MyCaption");
+			},
+			MyCaption() {
+				return this
+					.MyCenterText()
+					.s({
+						"margin-top": "3pt",
+						"margin-bottom": "6pt",
+						"font-style": "italic",
+					})
+					.paginationWidowOrphan()
+					.n("MyCenterText.MyCaption.MyNormal");
+			},
+			MyCaptionTable() {
+				return this
+					.MyCenterText()
+					.s({
+						"margin-top": "6pt",
+						"margin-bottom": "3pt",
+					})
+					.paginationWidowOrphanNext()
+					.n("MyCaption.MyCaptionTable.MyRightText");
+			},
 			MyHeadingBase() {
 				return this
 					.MyBase()
 					.fontFamilyHeadings()
 					.paginationWidowOrphanNext()
 					.s({
+						"font-weight": "bold",
 						"margin-top": "12pt",
 						"margin-bottom": "3pt",
 						"mso-hyphenate": "none",
 					})
 					.n("MyBase.MyHeadingBase.MyNormal1");
+			},
+			MyTitle() {
+				return this
+					.MyHeadingBase()
+					.fontSizeEm(3)
+					.textAlignCenter()
+					.paginationWidowOrphanNext()
+					.s({
+						"margin-top": "72pt",
+						"margin-bottom": "3pt",
+					})
+					.n("MyHeadingBase.MyTitle.MySubtitle");
+			},
+			MySubtitle() {
+				return this
+					.MyTitle()
+					.fontSizeRem(1.1)
+					.s({
+						"font-weight": "normal",
+						"font-style": "italic",
+						"margin-top": "3pt",
+						"margin-bottom": "24pt",
+					})
+					.n("MyTitle.MySubtitle.MyAuthor");
+			},
+			MyAuthor() {
+				return this
+					.MySubtitle()
+					.fontFamilyMain()
+					.fontSizeRem(1.2)
+					.s({
+						"font-weight": "bold",
+						"font-style": "normal",
+						"margin-top": "24pt",
+						"margin-bottom": "3pt",
+					})
+					.n("Subtitle.MyAuthor.MyTranslator");
+			},
+			MyTranslator() {
+				return this
+					.MyAuthor()
+					.s({
+						"font-weight": "normal",
+						"margin-top": "3pt",
+						"margin-bottom": "48pt",
+					})
+					.n("MyAuthor.MyTranslator.MyCenterText");
 			},
 		});
 		
@@ -334,7 +435,16 @@
 		ss.rule(St.p`MyLeftTextLtrSmall`, st().MyLeftTextLtrSmall());
 		ss.rule(St.p`MyLeftTextLtrTiny`, st().MyLeftTextLtrTiny());
 		ss.rule(St.p`MyBlockText`, st().MyBlockText());
+		ss.rule(St.p`MyEquation`, st().MyEquation());
+		ss.rule(St.p`MyEquationIndented`, st().MyEquationIndented());
+		ss.rule(St.p`MyFigure`, st().MyFigure());
+		ss.rule(St.p`MyCaption`, st().MyCaption());
+		ss.rule(St.p`MyCaptionTable`, st().MyCaptionTable());
 		ss.rule(St.p`MyHeadingBase`, st().MyHeadingBase());
+		ss.rule(St.p`MyTitle`, st().MyTitle());
+		ss.rule(St.p`MySubtitle`, st().MySubtitle());
+		ss.rule(St.p`MyAuthor`, st().MyAuthor());
+		ss.rule(St.p`MyTranslator`, st().MyTranslator());
 
 		function p(ss, ...vv) {
 			let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
@@ -609,7 +719,6 @@
 			"line-height": "1.5em",
 			"mso-line-height-rule": "exactly",
 		});
-		*/
 		
 		ss.rule(p`MyCaption`, {
 			"mso-style-parent": "MyCenterText",
@@ -743,6 +852,7 @@
 			...paginationWidowOrphanNext,
 			"text-indent": "0mm",
 		});
+		*/
 		
 		ss.rule(p`MyAuthor`, {
 			"mso-style-parent": "MyTitle",
