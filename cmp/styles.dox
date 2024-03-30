@@ -360,6 +360,7 @@
 						"font-weight": "bold",
 						"margin-top": "12pt",
 						"margin-bottom": "3pt",
+						"mso-font-kerning": "0pt",
 						"mso-hyphenate": "none",
 					})
 					.n("MyBase.MyHeadingBase.MyNormal1");
@@ -411,6 +412,105 @@
 					})
 					.n("MyAuthor.MyTranslator.MyCenterText");
 			},
+			HeadingBase(i) {
+				return this
+					.MyHeadingBase()
+					.s({
+						"mso-outline-level": `${i}`,
+					})
+					.n(`MyHeadingBase.Heading ${i}.MyNormal1`);
+			},
+			Heading1() {
+				return this
+					.HeadingBase(1)
+					.fontSizeRem(1.333333333)
+					.s({
+						"font-weight": "bold",
+						"font-style": "normal",
+					});
+			},
+			Heading2() {
+				return this
+					.HeadingBase(2)
+					.fontSizeRem(1.20)
+					.s({
+						"font-weight": "bold",
+						"font-style": "italic",
+					});
+			},
+			Heading3() {
+				return this
+					.HeadingBase(3)
+					.fontSizeRem(1.15)
+					.s({
+						"font-weight": "bold",
+						"font-style": "normal",
+					});
+			},
+			Heading4() {
+				return this
+					.HeadingBase(4)
+					.fontSizeRem(1.10)
+					.s({
+						"font-weight": "bold",
+						"font-style": "italic",
+					});
+			},
+			Heading5() {
+				return this
+					.HeadingBase(5)
+					.fontSizeRem(1.05)
+					.s({
+						"font-weight": "bold",
+						"font-style": "normal",
+					});
+			},
+			Heading6() {
+				return this
+					.HeadingBase(6)
+					.fontSizeRem(1.00)
+					.s({
+						"font-weight": "bold",
+						"font-style": "italic",
+					});
+			},
+			Heading7() {
+				return this
+					.HeadingBase(7)
+					.fontSizeRem(1.00)
+					.s({
+						"font-weight": "normal",
+						"font-style": "normal",
+					});
+			},
+			Heading8() {
+				return this
+					.HeadingBase(8)
+					.fontSizeRem(0.95)
+					.s({
+						"font-weight": "normal",
+						"font-style": "normal",
+					});
+			},
+			Heading9() {
+				return this
+					.HeadingBase(9)
+					.fontSizeRem(0.90)
+					.s({
+						"font-weight": "normal",
+						"font-style": "normal",
+					});
+			},
+			MyHangingRtl(i) {
+				return this
+					.MyBase()
+					.s({
+						"margin-right": this.em(1.5 * i),
+						"text-indent": this.em(-1.5),
+						"tab-stops": this.em(1.5),
+					})
+					.n(`MyBase.MyHangingRtl${i}`);
+			},
 		});
 		
 		ss.rule("html", st().fontSizeNormal());
@@ -445,7 +545,13 @@
 		ss.rule(St.p`MySubtitle`, st().MySubtitle());
 		ss.rule(St.p`MyAuthor`, st().MyAuthor());
 		ss.rule(St.p`MyTranslator`, st().MyTranslator());
-
+		for (let i = 1; i &lt;= 9; i++) {
+			ss.rule(i &lt;= 6 ? `h${i}` : St.p`MsoHeading${i}`, st()[`Heading${i}`]());
+		}
+		for (let i = 1; i &lt;= 9; i++) {
+			ss.rule(St.p`MyHangingRtl${i}`, st().MyHangingRtl(i));
+		}
+		
 		function p(ss, ...vv) {
 			let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
 			return `p.${s}, li.${s}, div.${s}`
@@ -511,8 +617,8 @@
 		
 		ss.rule(p`MsoNormal`, {
 			"mso-style-parent": `""`,
-			"mso-style-name": "Normal",
-			"mso-style-next": "Normal",
+			"mso-style-name": "normal",
+			"mso-style-next": "normal",
 			
 			...bidi,
 			
@@ -524,7 +630,7 @@
 			...paginationNone,
 		});
 		ss.rule(p`MyBase`, {
-			"mso-style-parent": "Normal",
+			"mso-style-parent": "normal",
 			"mso-style-name": "MyBase",
 			"mso-style-next": "MyBase",
 			
@@ -852,7 +958,6 @@
 			...paginationWidowOrphanNext,
 			"text-indent": "0mm",
 		});
-		*/
 		
 		ss.rule(p`MyAuthor`, {
 			"mso-style-parent": "MyTitle",
@@ -962,6 +1067,7 @@
 			"font-size": "90%",
 		});
 		
+		*/
 		for (let i = 1; i &lt;= 9; i++) {
 			ss.rule(p`MyHangingRtl${i}`, {
 				"mso-style-parent": "MyBase",
