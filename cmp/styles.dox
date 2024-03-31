@@ -460,6 +460,51 @@
 					})
 					.n(`MyBase.MyHangingRtl${i}`);
 			},
+			MyIndentedRtl(i) {
+				return this
+					.MyBase()
+					.textIndentZero()
+					.s({
+						"margin-right": this.em(1.5 * i),
+						"tab-stops": this.em(1.5),
+					})
+					.n(`MyBase.MyIndentedRtl${i}`);
+			},
+			MyHangingLtr(i) {
+				return this
+					.directionLtr()
+					.MyBase()
+					.s({
+						"margin-left": this.em(1.5 * i),
+						"text-indent": this.em(-1.5),
+						"tab-stops": this.em(1.5),
+					})
+					.n(`MyBase.MyHangingLtr${i}`);
+			},
+			MyIndentedLtr(i) {
+				return this
+					.directionLtr()
+					.MyBase()
+					.textIndentZero()
+					.s({
+						"margin-left": this.em(1.5 * i),
+						"tab-stops": this.em(1.5),
+					})
+					.n(`MyBase.MyIndentedLtr${i}`);
+			},
+			MyReference() {
+				return this
+					.directionLtr()
+					.MyHangingLtr(1)
+					.fontSizeSmall()
+					.lineHeightNormal()
+					.s({
+						"margin-left": this.em(1.5),
+						"text-indent": this.em(-1.5),
+						"tab-stops": this.em(1.5),
+					})
+					.n("MyHangingLtr1.MyReference");
+			},
 		});
 		
 		ss.rule("html", st().fontSizeNormal());
@@ -499,6 +544,15 @@
 		}
 		for (let i = 1; i &lt;= 9; i++) {
 			ss.rule(St.p`MyHangingRtl${i}`, st().MyHangingRtl(i));
+		}
+		for (let i = 0; i &lt;= 9; i++) {
+			ss.rule(St.p`MyIndentedRtl${i}`, st().MyIndentedRtl(i));
+		}
+		for (let i = 1; i &lt;= 9; i++) {
+			ss.rule(St.p`MyHangingLtr${i}`, st().MyHangingLtr(i));
+		}
+		for (let i = 0; i &lt;= 9; i++) {
+			ss.rule(St.p`MyIndentedLtr${i}`, st().MyIndentedLtr(i));
 		}
 		
 		function p(ss, ...vv) {
@@ -1016,7 +1070,6 @@
 			"font-size": "90%",
 		});
 		
-		*/
 		for (let i = 1; i &lt;= 9; i++) {
 			ss.rule(p`MyHangingRtl${i}`, {
 				"mso-style-parent": "MyBase",
@@ -1116,6 +1169,7 @@
 			"tab-stops": "1.5em",
 		});
 		
+		*/
 		ss.rule(p`MyHeader`, {
 			"mso-style-parent": "MyCenterText",
 			"mso-style-name": "MyHeader",
