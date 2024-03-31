@@ -106,6 +106,17 @@
 					"mso-style-next": c,
 				});
 			}
+			nc(s) {
+				let [a, b] = s.split(".");
+				if (!b) {
+					b = a;
+					a = "Default Paragraph Font";
+				}
+				return this.s({
+					"mso-style-parent": a,
+					"mso-style-name": b,
+				});
+			}
 		},
 		st() {
 			return new this.St();
