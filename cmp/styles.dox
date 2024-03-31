@@ -505,6 +505,94 @@
 					})
 					.n("MyHangingLtr1.MyReference");
 			},
+			MyHeader() {
+				return this
+					.MyCenterText()
+					.s({
+						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()}right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+					})
+					.n("MyCenterText.MyHeader");
+			},
+			MyHeaderFirst() {
+				return this
+					.MyHeader()
+					.n("MyHeader.MyHeaderFirst");
+			},
+			MyHeaderOdd() {
+				return this
+					.MyHeader()
+					.textAlignEnd()
+					.n("MyHeader.MyHeaderOdd");
+			},
+			MyHeaderEven() {
+				return this
+					.MyHeader()
+					.textAlignStart()
+					.n("MyHeader.MyHeaderEven");
+			},
+			MyFooter() {
+				return this
+					.MyCenterText()
+					.s({
+						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()}right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+					})
+					.n("MyCenterText.MyFooter");
+			},
+			MyFooterFirst() {
+				return this
+					.MyFooter()
+					.n("MyFooter.MyFooterFirst");
+			},
+			MyFooterOdd() {
+				return this
+					.MyFooter()
+					.textAlignEnd()
+					.n("MyFooter.MyFooterOdd");
+			},
+			MyFooterEven() {
+				return this
+					.MyFooter()
+					.textAlignStart()
+					.n("MyFooter.MyFooterEven");
+			},
+			MyFootnoteText() {
+				return this
+					.MyBase()
+					.fontSizeSmall()
+					.lineHeightNormal()
+					.n("MyBase.MyFootnoteText.MyFootnoteTextIndented");
+			},
+			MyFootnoteTextIndented() {
+				return this
+					.MyFootnoteText()
+					.textIndentNormal()
+					.n("MyFootnoteText.MyFootnoteTextIndented.MyFootnoteTextIndented");
+			},
+			MyQuote() {
+				return this
+					.MyBase()
+					.fontSizeEm(0.9),
+					.lineHeightNormal()
+					.textAlignStart()
+					.paginationWidowOrphanNext()
+					.s({
+						"margin-top": this.em(2),
+						"margin-right": this.em(5),
+					})
+					.n("MyBase.MyQuote.MyQuoteSource");
+			},
+			MyQuoteSource() {
+				return this
+					.MyQuote()
+					.textAlignEnd()
+					.paginationWidowOrphanNext()
+					.s({
+						"margin-top": "0pt",
+						"margin-bottom": this.em(2),
+						"font-style": "italic",
+					})
+					.n("MyBase.MyQuote.MyQuoteSource");
+			},
 		});
 		
 		ss.rule("html", st().fontSizeNormal());
@@ -554,7 +642,19 @@
 		for (let i = 0; i &lt;= 9; i++) {
 			ss.rule(St.p`MyIndentedLtr${i}`, st().MyIndentedLtr(i));
 		}
+		ss.rule(St.p`MyReference`, st().MyReference());
+		ss.rule(St.p`MyHeader`, st().MyHeader());
+		ss.rule(St.p`MyHeaderFirst`, st().MyHeaderFirst());
+		ss.rule(St.p`MyHeaderOdd`, st().MyHeaderOdd());
+		ss.rule(St.p`MyHeaderEven`, st().MyHeaderEven());
+		ss.rule(St.p`MyFooter`, st().MyFooter());
+		ss.rule(St.p`MyFooterFirst`, st().MyFooterFirst());
+		ss.rule(St.p`MyFooterOdd`, st().MyFooterOdd());
+		ss.rule(St.p`MyFooterEven`, st().MyFooterEven());
+		ss.rule(St.p`MyQuote`, st().MyQuote());
+		ss.rule(St.p`MyQuoteSource`, st().MyQuoteSource());
 		
+		/*
 		function p(ss, ...vv) {
 			let s = cutil.zip(ss, vv).map(bi => bi.join("")).join("");
 			return `p.${s}, li.${s}, div.${s}`
@@ -594,10 +694,8 @@
 		
 		let textAlignJustify = {
 			"text-align": "justify",
-			/*
-			"text-justify": "kashida",
-			"text-kashida": "0%",
-			*/
+			"text-justify": null,
+			"text-kashida": null,
 		};
 		
 		let paginationNone = {
@@ -613,7 +711,6 @@
 			"page-break-after": "avoid",
 		};
 		
-		/*
 		ss.rule("html", {
 			...fontSizeNormal,
 		});
@@ -1169,7 +1266,6 @@
 			"tab-stops": "1.5em",
 		});
 		
-		*/
 		ss.rule(p`MyHeader`, {
 			"mso-style-parent": "MyCenterText",
 			"mso-style-name": "MyHeader",
@@ -1352,13 +1448,6 @@
 			"mso-line-height-rule": "exactly",
 		});
 		
-		ss.rule(c`MyFootnoteReference`, {
-			"mso-style-parent": "Default Paragraph Font",
-			"mso-style-name": "MyFootnoteReference",
-			
-			"vertical-align": "super",
-		});
-		
 		ss.rule(p`MyQuote`, {
 			"mso-style-parent": "MyBase",
 			"mso-style-name": "MyQuote",
@@ -1398,6 +1487,14 @@
 			"text-indent": "0mm",
 			"line-height": context.wdoc.fontSize$.clone().scale(0.9).scale(1.5).s(),
 			"mso-line-height-rule": "exactly",
+		});
+		
+		*/
+		ss.rule(c`MyFootnoteReference`, {
+			"mso-style-parent": "Default Paragraph Font",
+			"mso-style-name": "MyFootnoteReference",
+			
+			"vertical-align": "super",
 		});
 		
 	</cmn:script></b:style>
