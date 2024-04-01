@@ -1,11 +1,9 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:e="urn:dox:gkbooks/theegg">
-	<b:style><cmn:script>
+	<cmn:script>
 		const {cutil} = await import("@ghasemkiani/base");
 		const {quantity} = await import("@ghasemkiani/base-utils");
 		
-		const {ss} = context;
-		
-		const {St, stbound: st} = context.wdoc;
+		const {St} = context.wdoc;
 
 		cutil.extend(St.prototype, {
 			directionRtl() {
@@ -709,6 +707,13 @@
 					.n("HTML Code");
 			},
 		});
+	</cmn:script>
+	<b:pub target="{context.wdoc.context}" msg="before-styles"/>
+	<b:style><cmn:script>
+		const {ss} = context;
+		
+		const {St, stbound: st} = context.wdoc;
+
 		
 		ss.rule("html", st().fontSizeNormal());
 		ss.rule(St.p`MsoNormal`, st().Normal());
@@ -789,6 +794,7 @@
 		ss.rule("a:visited," + St.c`MsoHyperlinkFollowed`, st().MsoHyperlinkFollowed());
 		ss.rule("code", st().MsoCode());
 	</cmn:script></b:style>
+	<b:pub target="{context.wdoc.context}" msg="after-styles"/>
 	<style><cmn:script>renderer.x.t(node, `
 		p.MsoPlainText,
 		li.MsoPlainText,
