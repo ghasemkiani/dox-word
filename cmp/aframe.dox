@@ -1,0 +1,29 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		let ctx = context.templateComponent.context;
+		
+		let top = props ["top"] || "bottom";
+		
+		ctx.waframe = {
+			context: ctx,
+			top,
+		};
+	</cmn:script>
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<div style="
+			mso-element:frame;
+			mso-element-wrap:no-wrap-beside;
+			mso-element-anchor-horizontal:margin;
+			mso-element-top:bottom;
+			mso-height-rule:exactly;
+		">
+			<cmn:script>
+				context.waframe.ndiv = node;
+				renderer.x.css(node, {
+					"mso-element-top": context.waframe.top,
+				});
+			</cmn:script>
+			<b:body component="{context.templateComponent}"/>
+		</div>
+	</cmn:g>
+</cmn:g>

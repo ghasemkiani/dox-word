@@ -7,6 +7,7 @@
 			<b:style>
 				<cmn:script>
 					context.ss.rule(`@page ${context.wsect.id}`, {
+						"mso-facing-pages": "yes",
 						"mso-even-footer": `url("${context.wdoc.stub}_header.htm") ${context.wsect.idFooterEven}`,
 					});
 				</cmn:script>

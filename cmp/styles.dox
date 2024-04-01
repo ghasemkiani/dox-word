@@ -159,7 +159,7 @@
 				});
 			},
 			lineHeightNormal() {
-				return this.lineHeightExactlyEm(1.5);
+				return this.lineHeightExactlyEm(Number(context.wdoc.lineHeightEms));
 			},
 			Normal() {
 				return this
@@ -876,7 +876,8 @@
 			"mso-footnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) fcs`,
 			"mso-endnote-separator": `url(${context.wdoc.stub}_header.htm) es`,
 			"mso-endnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) ecs`,
-			"mso-facing-pages": `yes`,
+			"mso-facing-pages": "no",
+			"mso-title-page": "no",
 		});
 		ss.rule("@list l0", {
 			"mso-list-id": "-129",

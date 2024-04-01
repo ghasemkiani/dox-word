@@ -13,6 +13,7 @@
 	let title = props["title"] || "";
 	let author = props["author"] || "Ghasem Kiani";
 	let fontSize = props["font-size"] || "12pt";
+	let lineHeightEms = props["line-height-ems"] || "1.5";
 	let fontMain = props["font-main"] || "GBadr";
 	let fontHeadings = props["font-headings"] || "GJalal";
 	let fontCode = props["font-code"] || "Consolas";
@@ -21,12 +22,12 @@
 	let width = props["width"] || "148mm";
 	let height = props["height"] || "210mm";
 	let margin = props["margin"];
-	let marginY = props["margin-y"] || margin || "25mm";
-	let marginTop = props["margin-top"] || marginY;
-	let marginBottom = props["margin-bottom"] || marginY;
-	let marginX = props["margin-x"] || margin || "24mm";
-	let marginStart = props["margin-start"] || marginX;
-	let marginEnd = props["margin-end"] || marginX;
+	let marginY = props["margin-y"] || margin;
+	let marginTop = props["margin-top"] || marginY || "25mm";
+	let marginBottom = props["margin-bottom"] || marginY || "25mm";
+	let marginX = props["margin-x"] || margin;
+	let marginStart = props["margin-start"] || marginX || "24mm";
+	let marginEnd = props["margin-end"] || marginX || "24mm";
 	let marginHF = props["margin-hf"];
 	let marginHeader = props["margin-header"] || marginHF || "10mm";
 	let marginFooter = props["margin-footer"] || marginHF || "10mm";
@@ -38,6 +39,9 @@
 	let fontSize$ = quantity.length({string: fontSize, space: false, dpi: 96}).u("pt");
 	
 	context.templateComponent.context.wdoc = {
+		context: context.templateComponent.context,
+		target: target,
+		
 		stub,
 		lang,
 		rtl,
@@ -47,6 +51,7 @@
 		author,
 		fontSize,
 		fontSize$,
+		lineHeightEms,
 		fontMain,
 		fontHeadings,
 		fontCode,
@@ -243,24 +248,6 @@
 	</div>
 	<div style="mso-element:endnote-continuation-separator" id="ecs">
 		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-continuation-separator"></span></span></p>
-	</div>
-	<div style="mso-element:header" id="eh2">
-		<p class="MsoHeader" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-	</div>
-	<div style="mso-element:header" id="h2">
-		<p class="MsoHeader" dir="RTL"><span lang="FA"><o:p> </o:p></span></p>
-	</div>
-	<div style="mso-element:footer" id="ef2">
-		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA">4</span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
-	</div>
-	<div style="mso-element:footer" id="f2">
-		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA">4</span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
-	</div>
-	<div style="mso-element:header" id="fh2">
-		<p class="MsoHeader" dir="RTL"><span dir="LTR"><o:p> </o:p></span></p>
-	</div>
-	<div style="mso-element:footer" id="ff2">
-		<p class="MsoFooter" dir="RTL"><span lang="FA"><span style='mso-element:field-begin'></span><span style='mso-spacerun:yes'> </span></span><span dir="LTR">page</span><span dir="RTL"></span><span dir="RTL"></span> <span lang="FA"><span style='mso-element:field-separator'></span></span><span lang="FA"><span style="mso-no-proof:yes">7</span></span><span lang="FA"><span style='mso-element:field-end'></span></span></p>
 	</div>
 </body>
 

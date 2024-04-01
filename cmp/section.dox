@@ -71,8 +71,6 @@
 				margin: ${context.wsect.marginTop} ${context.wsect.marginEnd} ${context.wsect.marginBottom} ${context.wsect.marginStart};
 				mso-header-margin: ${context.wsect.marginHeader};
 				mso-footer-margin: ${context.wsect.marginFooter};
-				mso-title-page: yes;
-				mso-paper-source: 0;
 				mso-page-orientation: ${context.wsect.orientation};
 				${cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
 			}
