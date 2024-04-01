@@ -27,8 +27,9 @@
 	let marginX = props["margin-x"] || margin || "24mm";
 	let marginStart = props["margin-start"] || marginX;
 	let marginEnd = props["margin-end"] || marginX;
-	let marginHeader = props["margin-header"] || "10mm";
-	let marginFooter = props["margin-footer"] || "10mm";
+	let marginHF = props["margin-hf"];
+	let marginHeader = props["margin-header"] || marginHF || "10mm";
+	let marginFooter = props["margin-footer"] || marginHF || "10mm";
 	let orientation = props["orientation"] || "portrait";
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
@@ -60,6 +61,7 @@
 		marginBottom,
 		marginStart,
 		marginEnd,
+		marginHF,
 		marginHeader,
 		marginFooter,
 		orientation,
