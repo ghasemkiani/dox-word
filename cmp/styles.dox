@@ -750,6 +750,21 @@
 					})
 					.n("HTML Code");
 			},
+			MsoNormalTable() {
+				return this
+				.fontSizeNormal()
+				.lineHeightNormal()
+				.s({
+					"mso-style-parent": "",
+					"mso-style-name": "Table Normal",
+					
+					"mso-tstyle-rowband-size": "0",
+					"mso-tstyle-colband-size": "0",
+					"mso-padding-alt": "0mm 5.4pt 0mm 5.4pt",
+					"mso-para-margin": "0mm",
+					"mso-pagination": "widow-orphan",
+				});
+			},
 		});
 	</cmn:script>
 	<b:pub target="{context.wdoc.context}" msg="wdoc-before-styles"/>
@@ -845,6 +860,8 @@
 		ss.rule("a:visited," + St.c`MsoHyperlinkFollowed`, st().MsoHyperlinkFollowed());
 		ss.rule("code", st().MsoCode());
 		
+		ss.rule("table.MsoNormalTable", st().MsoNormalTable());
+		
 		ss.rule("@page", {
 			"mso-footnote-separator": `url(${context.wdoc.stub}_header.htm) fs`,
 			"mso-footnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) fcs`,
@@ -852,50 +869,17 @@
 			"mso-endnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) ecs`,
 			"mso-facing-pages": `yes`,
 		});
+		ss.rule("@list l0", {
+			"mso-list-id": "-129",
+			"mso-list-type": "simple",
+			"mso-list-template-ids": "-1155740664",
+		});
+		ss.rule("ol", {
+			"margin-bottom": "0mm",
+		});
+		ss.rule("ul", {
+			"margin-bottom": "0mm",
+		});
 	</cmn:script></b:style>
 	<b:pub target="{context.wdoc.context}" msg="wdoc-after-styles"/>
-	<style><cmn:script>renderer.x.t(node, `
-		@list l0 {
-			mso-list-id: -129;
-			mso-list-type: simple;
-			mso-list-template-ids: -1155740664;
-		}
-
-		ol {
-			margin-bottom: 0mm;
-		}
-
-		ul {
-			margin-bottom: 0mm;
-		}
-		table.MsoNormalTable {
-			mso-style-name:"Table Normal";
-			mso-tstyle-rowband-size:0;
-			mso-tstyle-colband-size:0;
-			mso-style-noshow:yes;
-			mso-style-priority:99;
-			mso-style-parent:"";
-			mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
-			mso-para-margin:0mm;
-			line-height:18.0pt;
-			mso-line-height-rule:exactly;
-			mso-pagination:widow-orphan;
-			font-size:11.0pt;
-		}
-		table.MsoTableGrid {
-			mso-style-name:"Table Grid";
-			mso-tstyle-rowband-size:0;
-			mso-tstyle-colband-size:0;
-			mso-style-priority:59;
-			mso-style-unhide:no;
-			border:solid windowtext 1.0pt;
-			mso-border-alt:solid windowtext .5pt;
-			mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
-			mso-border-insideh:.5pt solid windowtext;
-			mso-border-insidev:.5pt solid windowtext;
-			mso-para-margin:0mm;
-			mso-pagination:widow-orphan;
-			font-size:11.0pt;
-		}
-	`);</cmn:script></style>
 </cmn:g>
