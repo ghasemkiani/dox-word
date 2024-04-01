@@ -353,6 +353,7 @@
 				return this
 					.MyBase()
 					.fontFamilyHeadings()
+					.lineHeightSingle()
 					.paginationWidowOrphanNext()
 					.s({
 						"font-weight": "bold",

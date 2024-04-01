@@ -1,6 +1,6 @@
 {
 	"name": "@ghasemkiani/dox-word",
-	"version": "1.0.43",
+	"version": "1.0.44",
 	"description": "DOX components for Word",
 	"type": "module",
 	"main": "index.js",
