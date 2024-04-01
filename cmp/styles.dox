@@ -555,6 +555,16 @@
 					.textAlignStart()
 					.n("MyFooter.MyFooterEven");
 			},
+			MsoHeader() {
+				return this
+					.MyHeader()
+					.n("Normal.Header");
+			},
+			MsoFooter() {
+				return this
+					.MyHeader()
+					.n("Normal.Footer");
+			},
 			MyFootnoteText() {
 				return this
 					.MyBase()
@@ -567,6 +577,11 @@
 					.MyFootnoteText()
 					.textIndentNormal()
 					.n("MyFootnoteText.MyFootnoteTextIndented.MyFootnoteTextIndented");
+			},
+			MsoFootnoteText() {
+				return this
+					.MyFootnoteText()
+					.n("Normal.Footnote Text");
 			},
 			MyQuote() {
 				return this
@@ -591,7 +606,33 @@
 						"margin-bottom": this.em(2),
 						"font-style": "italic",
 					})
-					.n("MyBase.MyQuote.MyQuoteSource");
+					.n("MyBase.MyQuoteSource.MyNormal1");
+			},
+			MsoPlainText() {
+				return this
+					.Normal()
+					.textAlignStart()
+					.s({
+						"font-family": context.wdoc.fontCode,
+						"mso-fareast-font-family": "MS Gothic",
+					})
+					.n("Normal.Plain Text");
+			},
+			MyPlainText() {
+				return this
+					.MyBase()
+					.textAlignStart()
+					.s({
+						"font-family": context.wdoc.fontCode,
+						"mso-fareast-font-family": "MS Gothic",
+					})
+					.n("MyBase.MyPlainText");
+			},
+			MsoPre() {
+				return this
+					.directionLtr()
+					.MsoPlainText()
+					.n("Plain Text.HTML Preformatted");
 			},
 			
 			MyFootnoteReference() {
@@ -635,6 +676,37 @@
 					"font-style": "italic",
 				})
 				.nc("MyEmphasis");
+			},
+			MyHyperlink() {
+				return this
+				.s({
+					"text-decoration": "none",
+					"text-underline": "none",
+				})
+				.nc("MyHyperlink");
+			},
+			MyHyperlinkFollowed() {
+				return this
+				.MyHyperlink()
+				.nc("MyHyperlinkFollowed");
+			},
+			MsoHyperlink() {
+				return this
+				.MyHyperlink()
+				.nc("Hyperlink");
+			},
+			MsoHyperlinkFollowed() {
+				return this
+				.MyHyperlinkFollowed()
+				.nc("Hyperlink Followed");
+			},
+			MsoCode() {
+				return this
+					.s({
+						"font-family": context.wdoc.fontCode,
+						"mso-fareast-font-family": "MS Gothic",
+					})
+					.n("HTML Code");
 			},
 		});
 		
@@ -694,8 +766,16 @@
 		ss.rule(St.p`MyFooterFirst`, st().MyFooterFirst());
 		ss.rule(St.p`MyFooterOdd`, st().MyFooterOdd());
 		ss.rule(St.p`MyFooterEven`, st().MyFooterEven());
+		ss.rule(St.p`MsoHeader`, st().MsoHeader());
+		ss.rule(St.p`MsoFooter`, st().MsoFooter());
 		ss.rule(St.p`MyQuote`, st().MyQuote());
 		ss.rule(St.p`MyQuoteSource`, st().MyQuoteSource());
+		ss.rule(St.p`MyFootnoteText`, st().MyFootnoteText());
+		ss.rule(St.p`MyFootnoteTextIndented`, st().MyFootnoteTextIndented());
+		ss.rule(St.p`MsoFootnoteText`, st().MsoFootnoteText());
+		ss.rule(St.p`MsoPlainText`, st().MsoPlainText());
+		ss.rule(St.p`MyPlainText`, st().MyPlainText());
+		ss.rule("pre", st().MsoPre());
 		
 		ss.rule(St.c`MyFootnoteReference`, st().MyFootnoteReference());
 		ss.rule(St.c`MyBold`, st().MyBold());
@@ -703,99 +783,13 @@
 		ss.rule(St.c`MyLiteral`, st().MyLiteral());
 		ss.rule(St.c`MyItalic`, st().MyItalic());
 		ss.rule(St.c`MyEmphasis`, st().MyEmphasis());
+		ss.rule(St.c`MyHyperlink`, st().MyHyperlink());
+		ss.rule(St.c`MyHyperlinkFollowed`, st().MyHyperlinkFollowed());
+		ss.rule("a:link," + St.c`MsoHyperlink`, st().MsoHyperlink());
+		ss.rule("a:visited," + St.c`MsoHyperlinkFollowed`, st().MsoHyperlinkFollowed());
+		ss.rule("code", st().MsoCode());
 	</cmn:script></b:style>
 	<style><cmn:script>renderer.x.t(node, `
-		p.MsoFootnoteText,
-		li.MsoFootnoteText,
-		div.MsoFootnoteText {
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 10.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MsoHeader,
-		li.MsoHeader,
-		div.MsoHeader {
-			margin: 0mm;
-			text-align: center;
-			mso-pagination: none;
-			tab-stops: center 155.95pt right 311.9pt;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MsoFooter,
-		li.MsoFooter,
-		div.MsoFooter {
-			margin: 0mm;
-			text-align: center;
-			mso-pagination: none;
-			tab-stops: center 155.95pt right 311.9pt;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MsoTof,
-		li.MsoTof,
-		div.MsoTof {
-			mso-style-next: Normal;
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MsoEnvelopeReturn,
-		li.MsoEnvelopeReturn,
-		div.MsoEnvelopeReturn {
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 10.0pt;
-			font-family: "Cambria", serif;
-			mso-ascii-font-family: Cambria;
-			mso-ascii-theme-font: major-latin;
-			mso-fareast-font-family: "Times New Roman";
-			mso-fareast-theme-font: major-fareast;
-			mso-hansi-font-family: Cambria;
-			mso-hansi-theme-font: major-latin;
-			mso-bidi-font-family: "Times New Roman";
-			mso-bidi-theme-font: major-bidi;
-			mso-bidi-language: FA;
-		}
-
-		a:link,
-		span.MsoHyperlink {
-			color: windowtext;
-			text-decoration: none;
-			text-underline: none;
-		}
-
-		a:visited,
-		span.MsoHyperlinkFollowed {
-			color: purple;
-			mso-themecolor: followedhyperlink;
-			text-decoration: underline;
-			text-underline: single;
-		}
-
 		p.MsoPlainText,
 		li.MsoPlainText,
 		div.MsoPlainText {
@@ -869,156 +863,10 @@
 			text-underline: single;
 		}
 
-		span.MyStrong {
-			mso-style-name: MyStrong;
-			font-weight: bold;
-		}
-
-		span.MyEmphasis {
-			mso-style-name: MyEmphasis;
-			font-style: italic;
-		}
-
 		span.MyStrongEmphasis {
 			mso-style-name: MyStrongEmphasis;
 			font-weight: bold;
 			font-style: italic;
-		}
-
-		p.MyCenterTextSmall,
-		li.MyCenterTextSmall,
-		div.MyCenterTextSmall {
-			mso-style-name: MyCenterTextSmall;
-			mso-style-parent: MyCenterText;
-			margin: 0mm;
-			text-align: center;
-			line-height: 13.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 9.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyRightTextSmall,
-		li.MyRightTextSmall,
-		div.MyRightTextSmall {
-			mso-style-name: MyRightTextSmall;
-			mso-style-parent: MyRightText;
-			margin: 0mm;
-			text-align: right;
-			line-height: 13.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 9.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftTextSmall,
-		li.MyLeftTextSmall,
-		div.MyLeftTextSmall {
-			mso-style-name: MyLeftTextSmall;
-			mso-style-parent: MyLeftText;
-			margin: 0mm;
-			text-align: left;
-			line-height: 13.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 9.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftTextLtrSmall,
-		li.MyLeftTextLtrSmall,
-		div.MyLeftTextLtrSmall {
-			mso-style-name: MyLeftTextLtrSmall;
-			mso-style-parent: MyLeftTextLtr;
-			margin: 0mm;
-			text-align: left;
-			line-height: 13.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: ltr;
-			unicode-bidi: embed;
-			font-size: 9.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyCenterTextTiny,
-		li.MyCenterTextTiny,
-		div.MyCenterTextTiny {
-			mso-style-name: MyCenterTextTiny;
-			mso-style-parent: MyCenterText;
-			margin: 0mm;
-			text-align: center;
-			line-height: 10.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 7.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyRightTextTiny,
-		li.MyRightTextTiny,
-		div.MyRightTextTiny {
-			mso-style-name: MyRightTextTiny;
-			mso-style-parent: MyRightText;
-			margin: 0mm;
-			text-align: right;
-			line-height: 10.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 7.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftTextTiny,
-		li.MyLeftTextTiny,
-		div.MyLeftTextTiny {
-			mso-style-name: MyLeftTextTiny;
-			mso-style-parent: MyLeftText;
-			margin: 0mm;
-			text-align: left;
-			line-height: 10.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 7.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		p.MyLeftTextLtrTiny,
-		li.MyLeftTextLtrTiny,
-		div.MyLeftTextLtrTiny {
-			mso-style-name: MyLeftTextLtrTiny;
-			mso-style-parent: MyLeftTextLtr;
-			margin: 0mm;
-			text-align: left;
-			line-height: 10.5pt;
-			mso-line-height-rule: exactly;
-			mso-pagination: none;
-			direction: ltr;
-			unicode-bidi: embed;
-			font-size: 7.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
 		}
 
 		span.MySup {
