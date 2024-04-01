@@ -584,7 +584,7 @@
 			MyQuote() {
 				return this
 					.MyBase()
-					.fontSizeEm(0.9),
+					.fontSizeEm(0.9)
 					.lineHeightNormal()
 					.textAlignStart()
 					.paginationWidowOrphanNext()
@@ -640,6 +640,22 @@
 				})
 				.nc("MyFootnoteReference");
 			},
+			MySup() {
+				return this
+				.s({
+					"vertical-align": "super",
+					"color": "green",
+				})
+				.nc("MySup");
+			},
+			MySub() {
+				return this
+				.s({
+					"vertical-align": "sub",
+					"color": "#993366",
+				})
+				.nc("MySub");
+			},
 			MyBold() {
 				return this
 				.s({
@@ -675,6 +691,34 @@
 				})
 				.nc("MyEmphasis");
 			},
+			MyStrongEmphasis() {
+				return this
+				.MyStrong()
+				.MyEmphasis()
+				.nc("MyStrongEmphasis");
+			},
+			MyReferenceText() {
+				return this
+				.s({
+					"color": "#333399",
+				})
+				.nc("MyReferenceText");
+			},
+			MyError() {
+				return this
+				.s({
+					"color": "red",
+				})
+				.nc("MyError");
+			},
+			MyUnderline() {
+				return this
+				.s({
+					"text-decoration": "underline",
+					"text-underline": "single",
+				})
+				.nc("MyUnderline");
+			},
 			MyHyperlink() {
 				return this
 				.s({
@@ -708,7 +752,7 @@
 			},
 		});
 	</cmn:script>
-	<b:pub target="{context.wdoc.context}" msg="before-styles"/>
+	<b:pub target="{context.wdoc.context}" msg="wdoc-before-styles"/>
 	<b:style><cmn:script>
 		const {ss} = context;
 		
@@ -716,6 +760,7 @@
 
 		
 		ss.rule("html", st().fontSizeNormal());
+		ss.rule("p", st().Normal());
 		ss.rule(St.p`MsoNormal`, st().Normal());
 		ss.rule(St.p`MyBase`, st().MyBase());
 		ss.rule(St.p`MyDraft`, st().MyDraft());
@@ -783,139 +828,33 @@
 		ss.rule("pre", st().MsoPre());
 		
 		ss.rule(St.c`MyFootnoteReference`, st().MyFootnoteReference());
+		ss.rule(St.c`MySup`, st().MySup());
+		ss.rule(St.c`MySub`, st().MySub());
 		ss.rule(St.c`MyBold`, st().MyBold());
 		ss.rule(St.c`MyStrong`, st().MyStrong());
 		ss.rule(St.c`MyLiteral`, st().MyLiteral());
 		ss.rule(St.c`MyItalic`, st().MyItalic());
 		ss.rule(St.c`MyEmphasis`, st().MyEmphasis());
+		ss.rule(St.c`MyStrongEmphasis`, st().MyStrongEmphasis());
+		ss.rule(St.c`MyReferenceText`, st().MyReferenceText());
+		ss.rule(St.c`MyError`, st().MyError());
+		ss.rule(St.c`MyUnderline`, st().MyUnderline());
 		ss.rule(St.c`MyHyperlink`, st().MyHyperlink());
 		ss.rule(St.c`MyHyperlinkFollowed`, st().MyHyperlinkFollowed());
 		ss.rule("a:link," + St.c`MsoHyperlink`, st().MsoHyperlink());
 		ss.rule("a:visited," + St.c`MsoHyperlinkFollowed`, st().MsoHyperlinkFollowed());
 		ss.rule("code", st().MsoCode());
+		
+		ss.rule("@page", {
+			"mso-footnote-separator": `url(${context.wdoc.stub}_header.htm) fs`,
+			"mso-footnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) fcs`,
+			"mso-endnote-separator": `url(${context.wdoc.stub}_header.htm) es`,
+			"mso-endnote-continuation-separator": `url(${context.wdoc.stub}_header.htm) ecs`,
+			"mso-facing-pages": `yes`,
+		});
 	</cmn:script></b:style>
-	<b:pub target="{context.wdoc.context}" msg="after-styles"/>
+	<b:pub target="{context.wdoc.context}" msg="wdoc-after-styles"/>
 	<style><cmn:script>renderer.x.t(node, `
-		p.MsoPlainText,
-		li.MsoPlainText,
-		div.MsoPlainText {
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: "Courier New";
-			mso-fareast-font-family: "MS Gothic";
-			mso-bidi-language: FA;
-		}
-
-		p {
-			margin: 0mm;
-			text-align: right;
-			mso-pagination: none;
-			direction: rtl;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: ${context.wdoc.fontMain};
-			mso-bidi-language: FA;
-		}
-
-		code {
-			mso-ansi-font-size: 12.0pt;
-			mso-bidi-font-size: 12.0pt;
-			font-family: "Courier New";
-			mso-ascii-font-family: "Courier New";
-			mso-fareast-font-family: "MS Gothic";
-			mso-hansi-font-family: "Courier New";
-			mso-bidi-font-family: "Courier New";
-		}
-
-		pre {
-			margin: 0mm;
-			margin-bottom: .0001pt;
-			text-align: left;
-			mso-pagination: none;
-			tab-stops: 18.0pt;
-			direction: ltr;
-			unicode-bidi: embed;
-			font-size: 12.0pt;
-			font-family: "Courier New";
-			mso-fareast-font-family: "MS Gothic";
-			mso-bidi-language: FA;
-		}
-
-		span.MsoIntenseReference {
-			font-variant: small-caps;
-			color: #4F81BD;
-			mso-themecolor: accent1;
-			letter-spacing: .25pt;
-			font-weight: bold;
-		}
-
-		span.MyReferenceText {
-			mso-style-name: MyReferenceText;
-			color: #333399;
-		}
-
-		span.MyError {
-			mso-style-name: MyError;
-			color: red;
-		}
-
-		span.MyUnderline {
-			mso-style-name: MyUnderline;
-			text-decoration: underline;
-			text-underline: single;
-		}
-
-		span.MyStrongEmphasis {
-			mso-style-name: MyStrongEmphasis;
-			font-weight: bold;
-			font-style: italic;
-		}
-
-		span.MySup {
-			mso-style-name: MySup;
-			color: green;
-			vertical-align: super;
-		}
-
-		span.MySub {
-			mso-style-name: MySub;
-			color: #993366;
-			vertical-align: sub;
-		}
-
-		.MsoChpDefault {
-			mso-style-type: export-only;
-			mso-default-props: yes;
-			font-family: "Calibri", sans-serif;
-			mso-ascii-font-family: Calibri;
-			mso-ascii-theme-font: minor-latin;
-			mso-fareast-font-family: Calibri;
-			mso-fareast-theme-font: minor-latin;
-			mso-hansi-font-family: Calibri;
-			mso-hansi-theme-font: minor-latin;
-			mso-bidi-font-family: Arial;
-			mso-bidi-theme-font: minor-bidi;
-			mso-font-kerning: 0pt;
-			mso-ligatures: none;
-		}
-
-		.MsoPapDefault {
-			mso-style-type: export-only;
-			line-height: 18.0pt;
-			mso-line-height-rule: exactly;
-		}
-
-		@page {
-			mso-footnote-separator: url(${context.wdoc.stub}_header.htm) fs;
-			mso-footnote-continuation-separator: url(${context.wdoc.stub}_header.htm) fcs;
-			mso-endnote-separator: url(${context.wdoc.stub}_header.htm) es;
-			mso-endnote-continuation-separator: url(${context.wdoc.stub}_header.htm) ecs;
-			mso-facing-pages: yes;
-		}
 		@list l0 {
 			mso-list-id: -129;
 			mso-list-type: simple;
