@@ -227,12 +227,14 @@
 				return this
 					.MyCenterText()
 					.fontSizeSmall()
+					.lineHeightNormal()
 					.n("MyCenterText.MyCenterTextSmall");
 			},
 			MyCenterTextTiny() {
 				return this
 					.MyCenterText()
 					.fontSizeTiny()
+					.lineHeightNormal()
 					.n("MyCenterText.MyCenterTextTiny");
 			},
 			MyRightText() {
@@ -245,12 +247,14 @@
 				return this
 					.MyRightText()
 					.fontSizeSmall()
+					.lineHeightNormal()
 					.n("MyRightText.MyRightTextSmall");
 			},
 			MyRightTextTiny() {
 				return this
 					.MyRightText()
 					.fontSizeTiny()
+					.lineHeightNormal()
 					.n("MyRightText.MyRightTextTiny");
 			},
 			MyLeftText() {
@@ -263,12 +267,14 @@
 				return this
 					.MyLeftText()
 					.fontSizeSmall()
+					.lineHeightNormal()
 					.n("MyLeftText.MyLeftTextSmall");
 			},
 			MyLeftTextTiny() {
 				return this
 					.MyLeftText()
 					.fontSizeTiny()
+					.lineHeightNormal()
 					.n("MyLeftText.MyLeftTextTiny");
 			},
 			MyLeftTextLtr() {
@@ -282,12 +288,14 @@
 				return this
 					.MyLeftTextLtr()
 					.fontSizeSmall()
+					.lineHeightNormal()
 					.n("MyLeftTextLtr.MyLeftTextLtrSmall");
 			},
 			MyLeftTextLtrTiny() {
 				return this
 					.MyLeftTextLtr()
 					.fontSizeTiny()
+					.lineHeightNormal()
 					.n("MyLeftTextLtr.MyLeftTextLtrTiny");
 			},
 			MyBlockText() {
