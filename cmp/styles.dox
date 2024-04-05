@@ -155,6 +155,12 @@
 					"mso-line-height-rule": null,
 				});
 			},
+			lineHeightMultiple(k) {
+				return this.s({
+					"line-height": `${k * 100}%`,
+					"mso-line-height-rule": null,
+				});
+			},
 			lineHeightExactlyEm(em) {
 				return this.s({
 					"line-height": this.em(em),
