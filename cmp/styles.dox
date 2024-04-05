@@ -146,6 +146,9 @@
 			em(n) {
 				return quantity.length(this["font-size"]).scale(n).nosp().s();
 			},
+			rem(n) {
+				return quantity.length(context.wdoc.fontSize).scale(n).nosp().s();
+			},
 			lineHeightSingle() {
 				return this.s({
 					"line-height": null,
