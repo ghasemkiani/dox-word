@@ -22,10 +22,10 @@
 	let width = props["width"] || "148mm";
 	let height = props["height"] || "210mm";
 	let margin = props["margin"];
-	let marginY = props["margin-y"] || margin;
+	let marginY = props["margin-y"];
+	let marginX = props["margin-x"];
 	let marginTop = props["margin-top"] || marginY || "25mm";
 	let marginBottom = props["margin-bottom"] || marginY || "25mm";
-	let marginX = props["margin-x"] || margin;
 	let marginStart = props["margin-start"] || marginX || "24mm";
 	let marginEnd = props["margin-end"] || marginX || "24mm";
 	let marginHF = props["margin-hf"];
@@ -166,8 +166,12 @@
 		</o:DocumentProperties>
 		<o:OfficeDocumentSettings>
 			<o:AllowPNG/>
+			<o:PixelsPerInch>120</o:PixelsPerInch>
+			<o:TargetScreenSize>1920x1200</o:TargetScreenSize>
 		</o:OfficeDocumentSettings>
 		<w:WordDocument>
+			<w:View>Print</w:View>
+			<w:Zoom>BestFit</w:Zoom>
 			<w:DisplayBackgroundShape/>
 			<w:TrackMoves>false</w:TrackMoves>
 			<w:TrackFormatting/>

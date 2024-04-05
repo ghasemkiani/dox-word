@@ -1,1 +1,10 @@
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><b:body component="{context.templateComponent}" /><span style="mso-element:field-begin;"/><span dir="ltr"><b:if cond="{context.ncode}"><b:insert nodes="{context.ncode}" /></b:if></span><span style="mso-element:field-separator;"/><b:if cond="{context.nresult}"><b:insert nodes="{context.nresult}" /></b:if><span style="mso-element:field-end;"/></cmn:g>
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><cmn:script>
+		const {cutil} = await import("@ghasemkiani/base");
+		let {code, result} = props;
+		if (cutil.a(code)) {
+			context.templateComponent.context.ncode = renderer.x.dt(code);
+		}
+		if (cutil.a(result)) {
+			context.templateComponent.context.nresult = renderer.x.dt(result);
+		}
+	</cmn:script><b:body component="{context.templateComponent}"/><span style="mso-element:field-begin;"/><span dir="ltr"><b:if cond="{context.ncode}"><b:insert nodes="{context.ncode}"/></b:if></span><span style="mso-element:field-separator;"/><b:if cond="{context.nresult}"><b:insert nodes="{context.nresult}"/></b:if><span style="mso-element:field-end;"/></cmn:g>
