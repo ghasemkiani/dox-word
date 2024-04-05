@@ -781,7 +781,6 @@
 		const {ss} = context;
 		
 		const {St, stbound: st} = context.wdoc;
-
 		
 		ss.rule("html", st().fontSizeNormal());
 		ss.rule("p", st().Normal());
