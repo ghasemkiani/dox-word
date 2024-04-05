@@ -1,0 +1,35 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+		<cmn:script>
+			let ctx = context.templateComponent.context;
+			ctx.nabpt = renderer.x.dfrag();
+			await context.templateComponent.toRenderBody(ctx.nabpt);
+		</cmn:script>
+	</cmn:g>
+	<wrd:field result="">
+		<wrd:code>
+			<span>set abpt </span>
+			<b:insertc nodes="{context.nabpt}"/>
+		</wrd:code>
+	</wrd:field>
+	<wrd:field>
+		<wrd:code>if <wrd:field code="abpt"/> = 1 ا 
+			<wrd:field>
+				<wrd:code>if <wrd:field code="abpt"/> = 2 ب 
+					<wrd:field>
+						<wrd:code>if <wrd:field code="abpt"/> = 3 پ 
+							<wrd:field>
+								<wrd:code>if <wrd:field code="abpt"/> = 4 ت 
+									<wrd:field>
+										<wrd:code>if <wrd:field code="abpt"/> = 5 ث 
+										</wrd:code>
+									</wrd:field>
+								</wrd:code>
+							</wrd:field>
+						</wrd:code>
+					</wrd:field>
+				</wrd:code>
+			</wrd:field>
+		</wrd:code>
+	</wrd:field>
+</cmn:g>
