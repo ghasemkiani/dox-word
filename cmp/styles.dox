@@ -525,7 +525,7 @@
 				return this
 					.MyCenterText()
 					.s({
-						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()}right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()} right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
 					})
 					.n("MyCenterText.MyHeader");
 			},
@@ -550,7 +550,7 @@
 				return this
 					.MyCenterText()
 					.s({
-						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()}right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
+						"tab-stops": `center ${context.wdoc.lineWidth$.clone().u("mm").scale(0.5).s()} right ${context.wdoc.lineWidth$.clone().u("mm").s()}`,
 					})
 					.n("MyCenterText.MyFooter");
 			},
