@@ -1,4 +1,4 @@
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:e="urn:dox:gkbooks/theegg">
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
 	<cmn:script>
 		const {cutil} = await import("@ghasemkiani/base");
 		const {quantity} = await import("@ghasemkiani/base-utils");
@@ -344,6 +344,12 @@
 					.paginationWidowOrphanNext()
 					.lineHeightSingle()
 					.n("MyCenterText.MyFigure.MyCaption");
+			},
+			MyFigure1() {
+				return this
+					.MyFigure()
+					.paginationWidowOrphan()
+					.n("MyFigure.MyFigure1.MyNormal");
 			},
 			MyCaption() {
 				return this

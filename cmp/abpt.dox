@@ -12,6 +12,7 @@
 			<b:insertc nodes="{context.nabpt}"/>
 		</wrd:code>
 	</wrd:field>
+	
 	<wrd:field>
 		<wrd:code>if <wrd:field code="abpt"/> = 1 ا 
 			<wrd:field>
@@ -32,4 +33,19 @@
 			</wrd:field>
 		</wrd:code>
 	</wrd:field>
+	
+	<!-- <div>
+		<cmn:script>context.tgt = {node};</cmn:script>
+		<b:for name="i" range="32">
+			<b:g node="{context.tgt.node}">
+				<wrd:field>
+					<wrd:code>
+						if <wrd:field code="abpt"/> = <b:out text="{context.i}"/> <b:out text="{'ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی'[context.i]}"/> 
+						<cmn:script>context.tgt.node = node;</cmn:script>
+					</wrd:code>
+				</wrd:field>
+			</b:g>
+		</b:for>
+		<cmn:script>renderer.x.del(node);</cmn:script>
+	</div> -->
 </cmn:g>

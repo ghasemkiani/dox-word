@@ -1,0 +1,11 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<cmn:script>
+		const path = await import("node:path");
+		
+		context.wdoc.uri = props.uri || "";
+		context.wdoc.d.uri = path.join(context.wdoc.uri, `${context.wdoc.stub}.htm`);
+		context.wdoc.h.uri = path.join(context.wdoc.uri, `${context.wdoc.stub}_header.htm`);
+	</cmn:script>
+	<b:file text="{renderer.x.toStr(context.wdoc.d.nhtml, true)}" uri="{context.wdoc.d.uri}"/>
+	<b:file text="{renderer.x.toStr(context.wdoc.h.nhtml, true)}" uri="{context.wdoc.h.uri}"/>
+</cmn:g>
