@@ -338,7 +338,7 @@
 				return this
 					.MyCenterText()
 					.s({
-						"margin-top": "3pt",
+						"margin-top": "9pt",
 						"margin-bottom": "3pt",
 					})
 					.paginationWidowOrphanNext()
@@ -349,6 +349,9 @@
 				return this
 					.MyFigure()
 					.paginationWidowOrphan()
+					.s({
+						"margin-bottom": "9pt",
+					})
 					.n("MyFigure.MyFigure1.MyNormal");
 			},
 			MyCaption() {
@@ -356,7 +359,7 @@
 					.MyCenterText()
 					.s({
 						"margin-top": "3pt",
-						"margin-bottom": "6pt",
+						"margin-bottom": "9pt",
 						"font-style": "italic",
 					})
 					.paginationWidowOrphan()
@@ -366,7 +369,7 @@
 				return this
 					.MyCenterText()
 					.s({
-						"margin-top": "6pt",
+						"margin-top": "9pt",
 						"margin-bottom": "3pt",
 					})
 					.paginationWidowOrphanNext()
@@ -376,6 +379,7 @@
 				return this
 					.MyBase()
 					.fontFamilyHeadings()
+					.textAlignStart()
 					.lineHeightSingle()
 					.paginationWidowOrphanNext()
 					.s({
@@ -823,6 +827,7 @@
 		ss.rule(St.p`MyEquation`, st().MyEquation());
 		ss.rule(St.p`MyEquationIndented`, st().MyEquationIndented());
 		ss.rule(St.p`MyFigure`, st().MyFigure());
+		ss.rule(St.p`MyFigure1`, st().MyFigure1());
 		ss.rule(St.p`MyCaption`, st().MyCaption());
 		ss.rule(St.p`MyCaptionTable`, st().MyCaptionTable());
 		ss.rule(St.p`MyHeadingBase`, st().MyHeadingBase());

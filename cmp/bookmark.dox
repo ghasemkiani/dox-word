@@ -1,9 +1,1 @@
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><a><cmn:script>
-			let dummy = renderer.x.dfrag();
-			await context.templateComponent.toRenderBody(dummy);
-			let name = props.name;
-			if (!name) {
-				name = renderer.x.toText(dummy);
-			}
-			renderer.x.attr(node, "name", name);
-		</cmn:script></a></cmn:g>
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word"><cmn:g xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"><a><cmn:script>renderer.x.attr(node, "name", props["name"]);</cmn:script><b:body component="{context.templateComponent}"/></a></cmn:g></cmn:g>
