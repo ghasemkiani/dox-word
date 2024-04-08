@@ -62,6 +62,26 @@
 			fontSizeTiny() {
 				return this.fontSizeNormal().fontSizeEm(7 / 12);
 			},
+			fontWeightNormal() {
+				return this.s({
+					"font-weight": "normal",
+				});
+			},
+			fontWeightBold() {
+				return this.s({
+					"font-weight": "bold",
+				});
+			},
+			fontStyleNormal() {
+				return this.s({
+					"font-style": "normal",
+				});
+			},
+			fontStyleItalic() {
+				return this.s({
+					"font-style": "italic",
+				});
+			},
 			textIndentZero() {
 				return this.s({
 					"text-indent": "0pt",
@@ -357,10 +377,10 @@
 			MyCaption() {
 				return this
 					.MyCenterText()
+					.fontStyleItalic()
 					.s({
 						"margin-top": "3pt",
 						"margin-bottom": "9pt",
-						"font-style": "italic",
 					})
 					.paginationWidowOrphan()
 					.n("MyCenterText.MyCaption.MyNormal");
@@ -379,11 +399,11 @@
 				return this
 					.MyBase()
 					.fontFamilyHeadings()
+					.fontWeightBold()
 					.textAlignStart()
 					.lineHeightSingle()
 					.paginationWidowOrphanNext()
 					.s({
-						"font-weight": "bold",
 						"margin-top": "12pt",
 						"margin-bottom": "3pt",
 						"mso-font-kerning": "0pt",
@@ -406,10 +426,10 @@
 			MySubtitle() {
 				return this
 					.MyTitle()
+					.fontWeightNormal()
 					.fontSizeRem(1.1)
+					.fontStyleItalic()
 					.s({
-						"font-weight": "normal",
-						"font-style": "italic",
 						"margin-top": "3pt",
 						"margin-bottom": "24pt",
 					})
@@ -419,10 +439,10 @@
 				return this
 					.MySubtitle()
 					.fontFamilyMain()
+					.fontStyleNormal()
 					.fontSizeRem(1.2)
+					.fontWeightBold()
 					.s({
-						"font-weight": "bold",
-						"font-style": "normal",
 						"margin-top": "24pt",
 						"margin-bottom": "3pt",
 					})
@@ -431,8 +451,8 @@
 			MyTranslator() {
 				return this
 					.MyAuthor()
+					.fontWeightNormal()
 					.s({
-						"font-weight": "normal",
 						"margin-top": "3pt",
 						"margin-bottom": "48pt",
 					})
@@ -625,12 +645,12 @@
 			MyQuoteSource() {
 				return this
 					.MyQuote()
+					.fontStyleItalic()
 					.textAlignEnd()
 					.paginationWidowOrphanNext()
 					.s({
 						"margin-top": "0pt",
 						"margin-bottom": this.em(2),
-						"font-style": "italic",
 					})
 					.n("MyBase.MyQuoteSource.MyNormal1");
 			},
@@ -686,37 +706,37 @@
 			},
 			MyBold() {
 				return this
-				.s({
-					"font-weight": "bold",
-				})
+				.fontWeightBold()
 				.nc("MyBold");
+			},
+			MyNoBold() {
+				return this
+				.fontWeightNormal()
+				.nc("MyNoBold");
 			},
 			MyStrong() {
 				return this
-				.s({
-					"font-weight": "bold",
-				})
+				.fontWeightBold()
 				.nc("MyStrong");
 			},
 			MyLiteral() {
 				return this
-				.s({
-					"font-style": "italic",
-				})
+				.fontStyleItalic()
 				.nc("MyLiteral");
 			},
 			MyItalic() {
 				return this
-				.s({
-					"font-style": "italic",
-				})
+				.fontStyleItalic()
 				.nc("MyItalic");
+			},
+			MyNoItalic() {
+				return this
+				.fontStyleNormal()
+				.nc("MyNoItalic");
 			},
 			MyEmphasis() {
 				return this
-				.s({
-					"font-style": "italic",
-				})
+				.fontStyleItalic()
 				.nc("MyEmphasis");
 			},
 			MyStrongEmphasis() {
@@ -746,6 +766,14 @@
 					"text-underline": "single",
 				})
 				.nc("MyUnderline");
+			},
+			MyNoUnderline() {
+				return this
+				.s({
+					"text-decoration": "none",
+					"text-underline": null,
+				})
+				.nc("MyNoUnderline");
 			},
 			MyHyperlink() {
 				return this
@@ -874,14 +902,17 @@
 		ss.rule(St.c`MySup`, st().MySup());
 		ss.rule(St.c`MySub`, st().MySub());
 		ss.rule(St.c`MyBold`, st().MyBold());
+		ss.rule(St.c`MyNoBold`, st().MyNoBold());
 		ss.rule(St.c`MyStrong`, st().MyStrong());
 		ss.rule(St.c`MyLiteral`, st().MyLiteral());
 		ss.rule(St.c`MyItalic`, st().MyItalic());
+		ss.rule(St.c`MyNoItalic`, st().MyNoItalic());
 		ss.rule(St.c`MyEmphasis`, st().MyEmphasis());
 		ss.rule(St.c`MyStrongEmphasis`, st().MyStrongEmphasis());
 		ss.rule(St.c`MyReferenceText`, st().MyReferenceText());
 		ss.rule(St.c`MyError`, st().MyError());
 		ss.rule(St.c`MyUnderline`, st().MyUnderline());
+		ss.rule(St.c`MyNoUnderline`, st().MyNoUnderline());
 		ss.rule(St.c`MyHyperlink`, st().MyHyperlink());
 		ss.rule(St.c`MyHyperlinkFollowed`, st().MyHyperlinkFollowed());
 		ss.rule("a:link," + St.c`MsoHyperlink`, st().MsoHyperlink());
