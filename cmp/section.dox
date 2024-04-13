@@ -18,6 +18,7 @@
 		let marginHeader = props["margin-header"] || context.wdoc.marginHeader;
 		let marginFooter = props["margin-footer"] || context.wdoc.marginFooter;
 		let orientation = props["orientation"] || context.wdoc.orientation;
+		let footnoteNumbering = props["footnote-numbering"] || context.wdoc.footnoteNumbering;
 		let page = props["page"];
 		let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || context.wdoc.hfFirst;
 		let hfEven = /^(true|yes)$/.test(props["hf-even"]) || context.wdoc.hfEven;
@@ -48,6 +49,7 @@
 			marginHeader,
 			marginFooter,
 			orientation,
+			footnoteNumbering,
 			page,
 			hfFirst,
 			hfEven,
@@ -73,6 +75,8 @@
 				mso-footer-margin: ${context.wsect.marginFooter};
 				mso-page-orientation: ${context.wsect.orientation};
 				${cutil.a(context.wsect.page) ? `mso-page-numbers: ${context.wsect.page};` : ""}
+				${(context.wsect.footnoteNumbering === "page") ? "mso-footnote-numbering-restart: each-page;" : ""}
+				${(context.wsect.footnoteNumbering === "section") ? "mso-footnote-numbering-restart: each-section;" : ""}
 			}
 
 			div.${context.wsect.id} {

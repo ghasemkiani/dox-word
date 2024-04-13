@@ -1,4 +1,5 @@
 <cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base" xmlns:wrd="urn:dox:word">
+	<b:pub target="{context.wdoc.context}" msg="wdoc-complete"/>
 	<b:if cond="{context.wdoc.footnotes.length &gt; 0}">
 		<b:g node="{context.wdoc.d.nbody}">
 			<div style="mso-element:footnote-list;">

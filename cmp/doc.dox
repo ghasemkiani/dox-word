@@ -34,6 +34,7 @@
 	let orientation = props["orientation"] || "portrait";
 	let hfFirst = /^(true|yes)$/.test(props["hf-first"]) || false;
 	let hfEven = /^(true|yes)$/.test(props["hf-even"]) || false;
+	let footnoteNumbering = props["footnote-numbering"] || "continuous";
 	
 	let lineWidth$ = quantity.length({string: width, space: false, dpi: 96}).u("mm").delta(-quantity.length(marginStart).u("mm").n()).delta(-quantity.length(marginEnd).u("mm").n());
 	let fontSize$ = quantity.length({string: fontSize, space: false, dpi: 96}).u("pt");
@@ -70,6 +71,7 @@
 		marginHeader,
 		marginFooter,
 		orientation,
+		footnoteNumbering,
 		hfFirst,
 		hfEven,
 		lineWidth$,
@@ -242,16 +244,16 @@
 
 <body lang="EN-US" link="#000000" vlink="purple"><cmn:script>context.wdoc.h.nbody = node;</cmn:script>
 	<div style="mso-element:footnote-separator" id="fs">
-		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-separator"></span></span></p>
+		<p class="MyFootnoteText" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-separator"></span></span></p>
 	</div>
 	<div style="mso-element:footnote-continuation-separator" id="fcs">
-		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-continuation-separator"></span></span></p>
+		<p class="MyFootnoteText" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-continuation-separator"></span></span></p>
 	</div>
 	<div style="mso-element:endnote-separator" id="es">
-		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-separator"></span></span></p>
+		<p class="MyFootnoteText" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-separator"></span></span></p>
 	</div>
 	<div style="mso-element:endnote-continuation-separator" id="ecs">
-		<p class="MsoNormal" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-continuation-separator"></span></span></p>
+		<p class="MyFootnoteText" dir="RTL"><span dir="LTR"><span style="mso-special-character:footnote-continuation-separator"></span></span></p>
 	</div>
 </body>
 
