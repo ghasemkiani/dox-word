@@ -331,8 +331,9 @@
 				return this
 					.MyBase()
 					.s({
-						"margin-top": this.em(4.5),
-						"margin-bottom": this.em(4.5),
+						"margin-top": this.em(1),
+						"margin-bottom": this.em(1),
+						"margin-right": this.em(3),
 					})
 					.n("MyBase.MyBlockText");
 			},
