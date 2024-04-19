@@ -638,7 +638,7 @@
 					.textAlignStart()
 					.paginationWidowOrphanNext()
 					.s({
-						"margin-top": this.rem(1),
+						"margin-top": this.rem(0.5),
 						"margin-bottom": "0pt",
 						"margin-right": this.rem(5),
 					})
@@ -654,7 +654,7 @@
 					.paginationWidowOrphanNext()
 					.s({
 						"margin-top": "0pt",
-						"margin-bottom": this.rm(1),
+						"margin-bottom": this.rem(0.5),
 					})
 					.n("MyBase.MyQuoteSource.MyNormal1");
 			},
