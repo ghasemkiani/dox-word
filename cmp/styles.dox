@@ -635,12 +635,12 @@
 					.MyBase()
 					.fontSizeEm(0.9)
 					.lineHeightNormal()
-					.textAlignStart()
+					.fontStyleItalic()
 					.paginationWidowOrphanNext()
 					.s({
 						"margin-top": this.rem(0.5),
 						"margin-bottom": "0pt",
-						"margin-right": this.rem(5),
+						"margin-right": this.rem(3),
 					})
 					.n("MyBase.MyQuote.MyQuoteSource");
 			},
@@ -655,6 +655,7 @@
 					.s({
 						"margin-top": "0pt",
 						"margin-bottom": this.rem(0.5),
+						"margin-right": this.rem(4),
 					})
 					.n("MyBase.MyQuoteSource.MyNormal1");
 			},
