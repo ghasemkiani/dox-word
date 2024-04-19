@@ -646,6 +646,8 @@
 			MyQuoteSource() {
 				return this
 					.MyQuote()
+					.fontSizeSmall()
+					.lineHeightNormal()
 					.fontStyleItalic()
 					.textAlignEnd()
 					.paginationWidowOrphanNext()
