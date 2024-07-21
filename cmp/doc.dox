@@ -22,8 +22,8 @@
 	let width = props["width"] || "148mm";
 	let height = props["height"] || "210mm";
 	let margin = props["margin"];
-	let marginY = props["margin-y"];
-	let marginX = props["margin-x"];
+	let marginY = props["margin-y"] || margin;
+	let marginX = props["margin-x"] || margin;
 	let marginTop = props["margin-top"] || marginY || "25mm";
 	let marginBottom = props["margin-bottom"] || marginY || "25mm";
 	let marginStart = props["margin-start"] || marginX || "24mm";
