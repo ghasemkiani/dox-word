@@ -221,9 +221,10 @@
 	</xml>
 </head>
 
-<body lang="EN-US" link="black" vlink="purple" style="word-wrap:break-word">
+<body link="black" vlink="purple" style="word-wrap:break-word">
 	<cmn:script>
 		renderer.x.css(node, {"tab-interval": context.wdoc.tabInterval});
+		renderer.x.attr(node, "lang", context.wdoc.lang);
 		if (context.wdoc.bgcolor) {
 			renderer.x.attr(node, "bgcolor", context.wdoc.bgcolor);
 		}
